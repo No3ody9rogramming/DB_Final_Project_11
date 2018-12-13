@@ -1,4 +1,12 @@
-#account {
-	height: 40px;
-	width: 100px;
-};
+#wrong {
+	position: relative;
+	display: none;
+	color: red;
+	top: 5px;
+}
+
+#account, #password {
+	font-size: 15px;
+	height: 20px;
+	width: 200px;
+}

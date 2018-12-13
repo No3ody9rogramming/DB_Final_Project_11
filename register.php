@@ -97,15 +97,12 @@
 				$isWrong = 1;
 			}
 			if($isWrong == 0){//新增使用者
-				echo "new";
 				$query = ("INSERT INTO users VALUES(?,?,?,?,?,?,?)");
 				$stmt = $db->prepare($query);
 				$result = $stmt->execute(array($account_ID, $password, $user_name, $phoneNum, $school_name, $city, $department));
 				$db = null;
-				echo "<script>document.getElementById('inputForm').action='login.php';</script>";
-				echo "<script>console.log(document.getElementById('inputForm').action)</script>";
-				echo "<script>document.getElementById('inputForm').submit();</script>";
-				//header("Location:regist_process.php");自動轉址
+				echo "<script>document.getElementsByTagName('body')[0].innerHTML = '註冊成功!三秒後到登入頁面。';</script>";
+				header("Refresh:3; url=index.php");//自動轉址
 			}
 			else{//回填已輸入的值		
 				echo "<script>document.getElementsByName('user_name')[0].value='".$user_name."';</script>";

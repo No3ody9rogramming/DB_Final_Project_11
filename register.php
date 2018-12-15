@@ -2,7 +2,7 @@
 <html>
 <head>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <link href="css//register.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="css/register.css">
   <meta charset = "utf-8">
   <title>Bookhub Register</title>
 </head>
@@ -40,19 +40,19 @@
           <input id = "Books_button" type = "button" value = "Books" class="button">
         </li>
         <li class="l_button">
-          <img src="my-icons-collection/png/003-search.png" class="b_img">
+          <img src="src/my-icons-collection/png/003-search.png" class="b_img">
           <input id = "Search_button" type = "button" value = "Search" class="button">
         </li>
         <li class="l_button">
-          <img src="my-icons-collection/png/004-mechanic.png" class="b_img">
+          <img src="src/my-icons-collection/png/004-mechanic.png" class="b_img">
           <input id = "Mechanic_button" type = "button" value = "Mechanic" class="button">
         </li>
         <li class="l_button">
-          <img src="my-icons-collection/png/005-mail.png" class="b_img">
+          <img src="src/my-icons-collection/png/005-mail.png" class="b_img">
           <input id = "Mail_button" type = "button" value = "Mail" class="button">
         </li>
         <li class="l_button">
-          <img src="my-icons-collection/png/006-star.png" class="b_img">
+          <img src="src/my-icons-collection/png/006-star.png" class="b_img">
           <input id = "Star_button" type = "button" value = "Star" class="button">
         </li>
       </ul>

@@ -2,7 +2,7 @@
 <html>
 <head>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/register.css">
+  <link rel="stylesheet" type="text/css" href="css//register.css">
   <meta charset = "utf-8">
   <title>Bookhub Register</title>
 </head>
@@ -73,8 +73,9 @@
           
             <input class="creat" type = "text" name = "user_name" id="user_name" placeholder="使用者名稱">
              
-            <input class="creat phone" type = "text" name = "phoneNum" placeholder="電話號碼(長度為10, e.g. 0912345678)">
+            <input class="creat" type = "text" name = "phoneNum" placeholder="電話號碼(長度為10, e.g. 0912345678)">
             <span id="phoneNumCheck" class="wrongMessage"> 長度為10, e.g. 0912345678</span>
+            <br><br>
 
             <select class="drop_down" id='city' name="city"> 
             <?php

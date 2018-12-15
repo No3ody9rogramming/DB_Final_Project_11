@@ -193,10 +193,6 @@ html .main .center .c_center .c_form form .creat, body .main .center .c_center .
     margin: 7px auto;
     color: #ccc;
 }
-html .main .center .c_center .c_form form .creat.phone, body .main .center .c_center .c_form form .creat.phone{
- /* margin-top: 50px;*/
-    margin-bottom: 30px;
-}
 html .main .center .c_center .c_form form .drop_down, body .main .center .c_center .c_form form .drop_down{
  /* margin-top: 50px;*/
     width: 90%;

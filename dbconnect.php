@@ -8,7 +8,7 @@
 		$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 	}
 	catch(PDOException $e){
-		Print "ERROR!:".$e->message();
+		Print "ERROR!:".$e->getMessage();
 		die();
 	}
 ?>

@@ -62,13 +62,13 @@
         <h2>Sign up for free</h2>
         <span class="subtitle">and enhance your experience</span>
         <form action = "" method = "post" id="inputForm"> 
-            <input class="creat" type = "text" name = "account_ID" id = "account_ID" autofocus="" placeholder="帳號(帳號介於6到12個字元)">
+            <input class="creat" type = "text" name = "account_ID" id = "account_ID" autofocus="" placeholder="帳號(長度介於6到12個字元)">
           
-            <input class="creat" type = "password" name = "password" id = "password" placeholder="密碼(密碼介於6到12個字元)">
+            <input class="creat" type = "password" name = "password" id = "password" placeholder="密碼(長度介於6到12個字元)">
            
             <input class="creat" type = "password" name = "password2" id = "password2" placeholder="再次輸入密碼">
           
-            <input class="creat" type = "text" name = "user_name" id="user_name" placeholder="使用者名稱">
+            <input class="creat" type = "text" name = "user_name" id="user_name" placeholder="使用者名稱(長度為25字元以內)">
              
             <input class="creat" type = "text" name = "phoneNum" id="phoneNum" placeholder="電話號碼(長度為10, e.g. 0912345678)">
 
@@ -149,7 +149,12 @@
               $isPhoneNumWrong = 1;
             }
             if(strlen($user_name) == 0) {
-              echo "<script>document.getElementById('user_name').placeholder = '使用者名稱不得為空';</script>";
+              echo "<script>document.getElementById('user_name').placeholder = '使用者名稱不得為空(長度為25字元以內)';</script>";
+              echo "<script>document.getElementById('user_name').className += ' wrongMessage';</script>";
+              $isWrong = 1;
+              $isUserNameWrong = 1;
+            }
+            else if (strlen($user_name) >= 25) {
               echo "<script>document.getElementById('user_name').className += ' wrongMessage';</script>";
               $isWrong = 1;
               $isUserNameWrong = 1;

@@ -76,7 +76,7 @@
             <input class="creat phone" type = "text" name = "phoneNum" placeholder="電話號碼(長度為10, e.g. 0912345678)">
             <span id="phoneNumCheck" class="wrongMessage"> 長度為10, e.g. 0912345678</span>
 
-            <select class="drop_down" id='city' name="city"> 
+            <select class="drop_down city" id='city' name="city"> 
             <?php
               $query = ("SELECT DISTINCT city FROM school;");
               $stmt = $db->prepare($query);

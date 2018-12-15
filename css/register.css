@@ -195,7 +195,7 @@ html .main .center .c_center .c_form form .creat, body .main .center .c_center .
 }
 html .main .center .c_center .c_form form .creat.phone, body .main .center .c_center .c_form form .creat.phone{
  /* margin-top: 50px;*/
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
 }
 html .main .center .c_center .c_form form .drop_down, body .main .center .c_center .c_form form .drop_down{
  /* margin-top: 50px;*/
@@ -209,6 +209,9 @@ html .main .center .c_center .c_form form .drop_down, body .main .center .c_cent
     font-size: 12px;
     /*margin: 2px auto;*/
     color: #ccc;
+}
+html .main .center .c_center .c_form form .drop_down.city, body .main .center .c_center .c_form form .drop_down.city{
+  margin-top: 30px;
 }
 html .main .center .c_right, body .main .center .c_right {
   display: inline-block;

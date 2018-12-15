@@ -1,3 +1,380 @@
 .wrongMessage {
 	display:none;
 }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .main, body .main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: black;
+}
+html .main .top, body .main .top {
+  position: relative;
+  top: 0px;
+  width: 100%;
+  height: 13%;
+  padding: 0px 0px 0px 0px;
+  background-color: #1B1B1B;
+  border-bottom: 1px solid #333231;
+}
+html .main .top .title, body .main .top .title {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  width: 180px;
+  height: 70%;
+  margin: 10px 0px 0px 0px;
+  padding-left: 2px;
+  display: inline-block;
+  background-color: #1B1B1B;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+html .main .top .title .titlesquare, body .main .top .title .titlesquare {
+  display: inline-block;
+  background-color: #FF9901;
+  font-size: 35px;
+  border-radius: 5px;
+  color: black;
+  padding: 2px;
+  margin: 0px;
+  font-weight: bold;
+}
+html .main .center, body .main .center {
+  width: 100%;
+  height: 75%;
+  position: absolute;
+  top: 16%;
+}
+html .main .center img, body .main .center img {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  opacity:0.1;
+}
+html .main .center .c_left, body .main .center .c_left {
+  position: absolute;
+  left: 0%;
+  background-color: #0c0c0c;
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+}
+html .main .center .c_left .l_message, body .main .center .c_left .l_message {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  width: 80%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1%;
+  margin: 0px;
+  color: #e5e2de;
+  font-size: 40px;
+  font-weight: bolder;
+  letter-spacing: 3px;
+}
+html .main .center .c_left .l_buttons, body .main .center .c_left .l_buttons {
+  position: absolute;
+  top: 55%;
+  left: 8%;
+  margin: 0px;
+  padding-top: 10px;
+  width: 80%;
+  height: 40%;
+  color:white;
+}
+html .main .center .c_left .l_buttons .l_button, body .main .center .c_left .l_buttons .l_button {
+  position: relative;
+  width: 30%;
+  height: 15%;
+  margin-top: 5%;
+  margin-right: 15%;
+  display: inline-block;
+  /*border: solid 1px #333231;*/
+}
+html .main .center .c_left .l_buttons .l_button .b_img, body .main .center .c_left .l_buttons .l_button .b_img {
+  position: absolute;
+  width: 15%;
+  height: 90%;
+  /*padding-top: 100%; */
+  margin: 0px 5px 0px 0px;
+  display: inline-block;
+  opacity:1;
+  /*background: rgba(0, 0, 0, 0);*/
+  /*border: solid 1px #333231;*/
+
+}
+html .main .center .c_left .l_buttons .l_button .button, body .main .center .c_left .l_buttons .l_button .button {
+  position: absolute;
+  right: 0%;
+  width: 80%;
+  height: 90%;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 5%;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #e5e2de;
+  background: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+  /*border: solid 1px #333231;*/
+}
+html .main .center .c_center, body .main .center .c_center {
+  position: absolute;
+  margin: 0;
+  left: 50%;
+  display: inline-block;
+  /*padding: 20px;*/
+  background-color: #0c0c0c;
+  width: 35%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+}
+html .main .center .c_center .c_form, body .main .center .c_center .c_form {
+ /* margin-top: 50px;*/
+  /*margin-left: 2%;*/
+  /*padding-left: 3%;*/
+  position: relative;
+  background-color: black;
+  border: solid 1px #333231;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+html .main .center .c_center .c_form h2, body .main .center .c_center .c_form h2{
+  font-size: 34px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3px;
+  margin-top: 10px;
+  }
+html .main .center .c_center .c_form .subtitle, body .main .center .c_center .c_form .subtitle{
+  display: block;
+  text-align: center;
+  color: #898787;
+  font-size: 14px;
+}
+html .main .center .c_center .c_form form, body .main .center .c_center .c_form form{
+ /* margin-top: 50px;*/
+  margin:0;
+  padding-left:5%;
+  position: absolute;
+  background-color: black;
+  /*border: solid 1px #333231;*/
+  width: 95%;
+  height: 80%;
+  color: white;
+}
+html .main .center .c_center .c_form form .creat, body .main .center .c_center .c_form form .creat{
+ /* margin-top: 50px;*/
+    width: 90%;
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: 1px solid #555;
+    background: rgba(0,0,0,.9);
+    padding: 5px 15px;
+    font-size: 12px;
+    margin: 7px auto;
+    color: #ccc;
+}
+html .main .center .c_center .c_form form .creat.phone, body .main .center .c_center .c_form form .creat.phone{
+ /* margin-top: 50px;*/
+    margin-bottom: 30px;
+}
+html .main .center .c_center .c_form form .drop_down, body .main .center .c_center .c_form form .drop_down{
+ /* margin-top: 50px;*/
+    width: 90%;
+    /*height: 8%;*/
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: 1px solid #555;
+    background: rgba(0,0,0,.9);
+    padding: 5px 15px;
+    font-size: 12px;
+    /*margin: 2px auto;*/
+    color: #ccc;
+}
+html .main .center .c_right, body .main .center .c_right {
+  display: inline-block;
+  position: absolute;
+  right: 0%;
+  background-color: #0c0c0c;
+  width:10%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+}
+
+
+@-webkit-keyframes ani {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 50%;
+  }
+}
+
+@keyframes ani {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 50%;
+  }
+}
+.title {
+  -webkit-animation-name: ani;
+          animation-name: ani;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+@-webkit-keyframes ani_titlesquare {
+  10% {
+    background-color: #ffaf02;
+  }
+  15% {
+    background-color: #ffd402;
+  }
+  20% {
+    background-color: #faff02;
+  }
+  25% {
+    background-color: #e9ff02;
+  }
+  30% {
+    background-color: #c4ff02;
+  }
+  35% {
+    background-color: #67ff02;
+  }
+  40% {
+    background-color: #02ff84;
+  }
+  45% {
+    background-color: #02ffbf;
+  }
+  50% {
+    background-color: #02e9ff;
+  }
+  55% {
+    background-color: #02d4ff;
+  }
+  60% {
+    background-color: #02c8ff;
+  }
+  65% {
+    background-color: #02a2ff;
+  }
+  70% {
+    background-color: #0280ff;
+  }
+  75% {
+    background-color: #0263ff;
+  }
+  80% {
+    background-color: #0235ff;
+  }
+  85% {
+    background-color: #4502ff;
+  }
+  90% {
+    background-color: #5f02ff;
+  }
+  95% {
+    background-color: #5f02ff;
+  }
+  100% {
+    background-color: #5f02ff;
+  }
+}
+
+@keyframes ani_titlesquare {
+  10% {
+    background-color: #ffaf02;
+  }
+  15% {
+    background-color: #ffd402;
+  }
+  20% {
+    background-color: #faff02;
+  }
+  25% {
+    background-color: #e9ff02;
+  }
+  30% {
+    background-color: #c4ff02;
+  }
+  35% {
+    background-color: #67ff02;
+  }
+  40% {
+    background-color: #02ff84;
+  }
+  45% {
+    background-color: #02ffbf;
+  }
+  50% {
+    background-color: #02e9ff;
+  }
+  55% {
+    background-color: #02d4ff;
+  }
+  60% {
+    background-color: #02c8ff;
+  }
+  65% {
+    background-color: #02a2ff;
+  }
+  70% {
+    background-color: #0280ff;
+  }
+  75% {
+    background-color: #0263ff;
+  }
+  80% {
+    background-color: #0235ff;
+  }
+  85% {
+    background-color: #4502ff;
+  }
+  90% {
+    background-color: #5f02ff;
+  }
+  95% {
+    background-color: #5f02ff;
+  }
+  100% {
+    background-color: #5f02ff;
+  }
+}
+.titlesquare {
+  -webkit-animation-name: ani_titlesquare;
+          animation-name: ani_titlesquare;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}

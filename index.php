@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Bookhub</title>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css//index.css">
 </head>
 <body>
 	<form action="" method="post" enctype="multipart/form-data">

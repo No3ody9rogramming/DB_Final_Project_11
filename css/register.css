@@ -206,6 +206,9 @@ html .main .center .c_center .c_form form .drop_down, body .main .center .c_cent
     /*margin: 2px auto;*/
     color: #ccc;
 }
+html .main .center .c_center .c_form form .drop_down.city, body .main .center .c_center .c_form form .drop_down.city{
+  margin-top: 30px;
+}
 html .main .center .c_right, body .main .center .c_right {
   display: inline-block;
   position: absolute;

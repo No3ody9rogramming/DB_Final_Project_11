@@ -75,7 +75,6 @@
              
             <input class="creat" type = "text" name = "phoneNum" placeholder="電話號碼(長度為10, e.g. 0912345678)">
             <span id="phoneNumCheck" class="wrongMessage"> 長度為10, e.g. 0912345678</span>
-            <br><br>
 
             <select class="drop_down city" id='city' name="city"> 
             <?php

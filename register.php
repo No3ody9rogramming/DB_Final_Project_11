@@ -6,15 +6,6 @@
   <meta charset = "utf-8">
   <title>Bookhub Register</title>
 </head>
-<script type="text/javascript">
-  /*
-  $(document).ready(function(){
-  $("#acountCheck2").hide();
-  $("#passwordCheck2").hide(); });
-  */
-  
-
-</script>
 <body>
   <?php
       require_once "dbconnect.php"; //更嚴謹，需要確實加入此PHP  
@@ -93,6 +84,7 @@
 
           <input class="creat" type = "submit" name = "btnsubmit" value = "送出">
         </form>
+        <script src="js//changeSelect.js" type="text/javascript" charset="utf-8"></script>
         <?php
           function register($db) {//傳入$db即不用宣告
             $account_ID = $_POST['account_ID'];
@@ -186,16 +178,17 @@
                 echo "<script>document.getElementsByName('phoneNum')[0].value='".$phoneNum."';</script>";
               }
               echo "<script>document.getElementsByName('city')[0].value='".$city."';</script>";
-              echo "<script>document.getElementsByName('school_name')[0].value='".$school_name."';</script>";
-              echo "<script>document.getElementsByName('department')[0].value='".$department."';</script>";
+              echo "<script>setSchoolName('".$city."','".$school_name."','".$department."');</script>";
             }
 
           }
           if(isset($_POST["btnsubmit"])) {      
             register($db);
           }
+          else {
+            echo "<script>$('#city').change()</script>";
+          }
         ?>
-        <script src="js//changeSelect.js" type="text/javascript" charset="utf-8"></script>
       </div>
     </div>
     <div class="c_right"></div>

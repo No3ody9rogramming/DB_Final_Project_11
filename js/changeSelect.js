@@ -4,6 +4,7 @@ $("#city").change(function() {
 	console.log(document.getElementById("school_name").selectedIndex);
 	$( "#city option:selected" ).each(function() {
 		city = $( this ).text();
+		console.log(document.getElementsByName("school_name"));
 	});
 	console.log(city);
 	$.ajax({
@@ -18,7 +19,9 @@ $("#city").change(function() {
 			$("#school_name").change();
 		}
 	})//end ajax;
-}).trigger( "change" );
+});
+
+//$("#city").change();
 
 $("#school_name").change(function() {
 	var school_name = "";
@@ -35,8 +38,38 @@ $("#school_name").change(function() {
 			cmd:cmd
 		},
 		success:function(res){//處理回吐的資料
-			console.log(res);
 			document.getElementById("department").innerHTML = res;
 		}
 	})//end ajax;
-}).trigger( "change" );
+});
+
+function setSchoolName(city, school, department) {
+	$.ajax({
+		url:"deal.php",
+		type:"POST",
+		data:{
+			city:city,
+			cmd:"1"
+		},
+		success:function(res){//處理回吐的資料
+			document.getElementById("school_name").innerHTML = res;
+			document.getElementById("school_name").value = school;
+			setDepartment(school, department);
+		}
+	})//end ajax;
+}
+
+function setDepartment(school, department) {
+	$.ajax({
+		url:"deal.php",
+		type:"POST",
+		data:{
+			school_name:school,
+			cmd:"0"
+		},
+		success:function(res){//處理回吐的資料
+			document.getElementById("department").innerHTML = res;
+			document.getElementById("department").value = department;
+		}
+	})//end ajax;
+}

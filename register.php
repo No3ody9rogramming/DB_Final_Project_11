@@ -114,7 +114,6 @@
             if($account_IDLength < 6 || $account_IDLength > 12){
                 echo "<script>document.getElementById('acountCheck').style.display='block';</script>\n\t\t";
                 echo "<script>document.getElementById('acountCheck').innerHTML=' 帳號介於6到12個字元';</script>\n\t\t";
-                echo "<script>console.log(document.getElementById('acountCheck'));</script>\n\t\t";
                 echo "<script>document.getElementById('acountCheck').style.color='red';</script>\n\t\t";
               $isWrong = 1;
             }
@@ -125,10 +124,8 @@
               $error = $stmt->execute(array($id));
               $result = $stmt->fetchALl();
               if(count($result) > 0){
-                echo "<script>console.log(document.getElementById('acountCheck'));</script>\n\t\t";
                 echo "<script>document.getElementById('acountCheck').style.display='block';</script>\n\t\t";
                 echo "<script>document.getElementById('acountCheck').value=' 此帳號已存在';</script>\n\t\t";
-                echo "<script>console.log(document.getElementById('acountCheck'));</script>\n\t\t";
                 echo "<script>document.getElementById('acountCheck').style.color='red';</script>\n\t\t";
                 $isWrong = 1;
               }

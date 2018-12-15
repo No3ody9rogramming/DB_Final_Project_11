@@ -63,18 +63,14 @@
         <span class="subtitle">and enhance your experience</span>
         <form action = "" method = "post" id="inputForm"> 
             <input class="creat" type = "text" name = "account_ID" id = "account_ID" autofocus="" placeholder="帳號(帳號介於6到12個字元)">
-            <span id="acountCheck" class="wrongMessage"> 此帳號已存在</span>
           
             <input class="creat" type = "password" name = "password" id = "password" placeholder="密碼(密碼介於6到12個字元)">
-            <span id="passwordCheck" class="wrongMessage"> 密碼介於6到12個字元</span>
            
-            <input class="creat" type = "password" name = "password2" id = "password2" placeholder="再次輸入密碼"><br>
-            <span id="passwordCheck2" class="wrongMessage"> 與第一次密碼不相符</span>
+            <input class="creat" type = "password" name = "password2" id = "password2" placeholder="再次輸入密碼">
           
             <input class="creat" type = "text" name = "user_name" id="user_name" placeholder="使用者名稱">
              
-            <input class="creat" type = "text" name = "phoneNum" placeholder="電話號碼(長度為10, e.g. 0912345678)">
-            <span id="phoneNumCheck" class="wrongMessage"> 長度為10, e.g. 0912345678</span>
+            <input class="creat" type = "text" name = "phoneNum" id="phoneNum" placeholder="電話號碼(長度為10, e.g. 0912345678)">
 
             <select class="drop_down city" id='city' name="city"> 
             <?php
@@ -111,11 +107,15 @@
             $passwordLength = strlen($password);
 
             $isWrong = 0;
+            $isAccountWrong = 0;
+            $isPasswordWrong = 0;
+            $isPassword2Wrong = 0;
+            $isPhoneNumWrong = 0;
+            $isUserNameWrong = 0;
             if($account_IDLength < 6 || $account_IDLength > 12){
-                echo "<script>document.getElementById('acountCheck').style.display='block';</script>\n\t\t";
-                echo "<script>document.getElementById('acountCheck').innerHTML=' 帳號介於6到12個字元';</script>\n\t\t";
-                echo "<script>document.getElementById('acountCheck').style.color='red';</script>\n\t\t";
+              echo "<script>document.getElementById('account_ID').className += ' wrongMessage';</script>";
               $isWrong = 1;
+              $isAccountWrong = 1;
             }
             else {//判斷是否已存在帳號       
               $id = $account_ID;
@@ -124,28 +124,35 @@
               $error = $stmt->execute(array($id));
               $result = $stmt->fetchALl();
               if(count($result) > 0){
-                echo "<script>document.getElementById('acountCheck').style.display='block';</script>\n\t\t";
-                echo "<script>document.getElementById('acountCheck').value=' 此帳號已存在';</script>\n\t\t";
-                echo "<script>document.getElementById('acountCheck').style.color='red';</script>\n\t\t";
+                echo "<script>document.getElementById('account_ID').placeholder = '帳號已存在(帳號介於6到12個字元)';</script>";
+                echo "<script>document.getElementById('account_ID').className += ' wrongMessage';</script>";
                 $isWrong = 1;
+                $isAccountWrong = 1;
               }
             }
             //echo "<script>console.log(".strcmp($_POST['password'], $_POST['password2']).");</script>";
             if($passwordLength < 6 || $passwordLength > 12){
-              echo "<script>document.getElementById('passwordCheck').style.display='block';</script>\n\t\t";
-              echo "<script>document.getElementById('passwordCheck').style.color='red';</script>\n\t\t";
+              echo "<script>document.getElementById('password').className += ' wrongMessage';</script>";
+              echo "<script>document.getElementById('password2').className += ' wrongMessage';</script>";
               $isWrong = 1;
+              $isPasswordWrong = 1;
+              $isPassword2Wrong = 1;
             }
             else if(strcmp($_POST['password'], $_POST['password2']) != 0) {
-              echo "<script>document.getElementById('passwordCheck2').style.display='block';</script>\n\t\t";
-              echo "<script>document.getElementById('passwordCheck2').style.color='red';</script>\n\t\t";
+              echo "<script>document.getElementById('password2').className += ' wrongMessage';</script>";
               $isWrong = 1;
+              $isPassword2Wrong = 1;
             }
             if(!(is_numeric($phoneNum) && strlen($phoneNum) == 10)){
-              echo "<script>console.log(document.getElementById('phoneNumCheck'));</script>\n\t\t";
-              echo "<script>document.getElementById('phoneNumCheck').style.display='block';</script>\n\t\t";
-              echo "<script>document.getElementById('phoneNumCheck').style.color='red';</script>\n\t\t";
+              echo "<script>document.getElementById('phoneNum').className += ' wrongMessage';</script>";
               $isWrong = 1;
+              $isPhoneNumWrong = 1;
+            }
+            if(strlen($user_name) == 0) {
+              echo "<script>document.getElementById('user_name').placeholder = '使用者名稱不得為空';</script>";
+              echo "<script>document.getElementById('user_name').className += ' wrongMessage';</script>";
+              $isWrong = 1;
+              $isUserNameWrong = 1;
             }
             if($isWrong == 0){//新增使用者
               $query = ("INSERT INTO users VALUES(?,?,?,?,?,?,?)");
@@ -157,12 +164,22 @@
               //$str = "註冊成功!三秒後到登入頁面。<?php header('Refresh:3; url=index.php');
               echo "<script>document.getElementsByTagName('body')[0].innerHTML = '註冊成功!三秒後到登入頁面。';</script>";
             }
-            else{//回填已輸入的值    
-              echo "<script>document.getElementsByName('user_name')[0].value='".$user_name."';</script>";
-              echo "<script>document.getElementsByName('account_ID')[0].value='".$account_ID."';</script>";
-              echo "<script>document.getElementsByName('password')[0].value='".$password."';</script>";
-              echo "<script>document.getElementsByName('password2')[0].value='".$password2."';</script>";
-              echo "<script>document.getElementsByName('phoneNum')[0].value='".$phoneNum."';</script>";
+            else {//回填已輸入的值
+              if ($isUserNameWrong == 0) {
+                echo "<script>document.getElementsByName('user_name')[0].value='".$user_name."';</script>";
+              }
+              if ($isAccountWrong == 0) {
+                echo "<script>document.getElementsByName('account_ID')[0].value='".$account_ID."';</script>";
+              }
+              if ($isPasswordWrong == 0) {
+                echo "<script>document.getElementsByName('password')[0].value='".$password."';</script>";
+              }
+              if ($isPassword2Wrong == 0) {
+                echo "<script>document.getElementsByName('password2')[0].value='".$password2."';</script>";
+              }
+              if ($isPhoneNumWrong == 0) {
+                echo "<script>document.getElementsByName('phoneNum')[0].value='".$phoneNum."';</script>";
+              }
               echo "<script>document.getElementsByName('city')[0].value='".$city."';</script>";
               echo "<script>document.getElementsByName('school_name')[0].value='".$school_name."';</script>";
               echo "<script>document.getElementsByName('department')[0].value='".$department."';</script>";

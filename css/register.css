@@ -1,5 +1,5 @@
-.wrongMessage {
-	display:none;
+.wrongMessage::placeholder {
+	color: red;
 }
 
 html, body {

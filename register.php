@@ -63,7 +63,7 @@
         <span class="subtitle">and enhance your experience</span>
         <form action = "" method = "post" id="inputForm"> 
             <input class="creat" type = "text" name = "account_ID" id = "account_ID" autofocus="" placeholder="帳號(帳號介於6到12個字元)">
-            <span id="acountCheck2" class="wrongMessage"> 此帳號已存在</span>
+            <span id="acountCheck" class="wrongMessage"> 此帳號已存在</span>
           
             <input class="creat" type = "password" name = "password" id = "password" placeholder="密碼(密碼介於6到12個字元)">
             <span id="passwordCheck" class="wrongMessage"> 密碼介於6到12個字元</span>
@@ -112,7 +112,10 @@
 
             $isWrong = 0;
             if($account_IDLength < 6 || $account_IDLength > 12){
-              echo "<script>document.getElementById('acountCheck').style.color='red';</script>";
+                echo "<script>document.getElementById('acountCheck').style.display='block';</script>\n\t\t";
+                echo "<script>document.getElementById('acountCheck').innerHTML=' 帳號介於6到12個字元';</script>\n\t\t";
+                echo "<script>console.log(document.getElementById('acountCheck'));</script>\n\t\t";
+                echo "<script>document.getElementById('acountCheck').style.color='red';</script>\n\t\t";
               $isWrong = 1;
             }
             else {//判斷是否已存在帳號       
@@ -122,10 +125,11 @@
               $error = $stmt->execute(array($id));
               $result = $stmt->fetchALl();
               if(count($result) > 0){
-                echo "<script>console.log(document.getElementById('acountCheck2'));</script>\n\t\t";
-                echo "<script>document.getElementById('acountCheck2').style.display='block';</script>\n\t\t";
-                echo "<script>console.log(document.getElementById('acountCheck2'));</script>\n\t\t";
-                echo "<script>document.getElementById('acountCheck2').style.color='red';</script>\n\t\t";
+                echo "<script>console.log(document.getElementById('acountCheck'));</script>\n\t\t";
+                echo "<script>document.getElementById('acountCheck').style.display='block';</script>\n\t\t";
+                echo "<script>document.getElementById('acountCheck').value=' 此帳號已存在';</script>\n\t\t";
+                echo "<script>console.log(document.getElementById('acountCheck'));</script>\n\t\t";
+                echo "<script>document.getElementById('acountCheck').style.color='red';</script>\n\t\t";
                 $isWrong = 1;
               }
             }

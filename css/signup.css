@@ -210,6 +210,9 @@ html .main .center .c_center .c_form form .submit, body .main .center .c_center 
   margin: 40px auto;
   color: #000;
 }
+html .main .center .c_center .c_form form .submit:hover, body .main .center .c_center .c_form form .submit {
+  cursor: pointer;
+}
 html .main .center .c_center .c_form form .or, body .main .center .c_center .c_form form .or {
   font-family: Arial;
   font-weight: bold;

@@ -53,7 +53,7 @@
         <h2>Sign up for free</h2>
         <span class="subtitle">and enhance your experience</span>
         <form action = "" method = "post" id="inputForm"> 
-            <input class="creat" type = "text" name = "account_ID" id = "account_ID" autofocus="" placeholder="帳號(長度介於6到12個字元)">
+            <input class="creat" type = "text" name = "account_ID" id = "account_ID" placeholder="帳號(長度介於6到12個字元)">
           
             <input class="creat" type = "password" name = "password" id = "password" placeholder="密碼(長度介於6到12個字元)">
            
@@ -90,7 +90,7 @@
         </form>
         <script type="text/javascript" src="js/changeSelect.js" charset="utf-8"></script>
         <?php
-          function register($db) {//傳入$db即不用宣告
+          function signUp($db) {//傳入$db即不用宣告
             $account_ID = $_POST['account_ID'];
             $password = $_POST['password'];
             $password2 = $_POST['password2'];
@@ -186,7 +186,7 @@
             }
           }
           if(isset($_POST["btnsubmit"])) {      
-            register($db);
+            signUp($db);
           }
           else {
             echo "<script>$('#city').change();</script>";

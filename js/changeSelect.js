@@ -1,12 +1,9 @@
 $("#city").change(function() {
 	var city = "";
 	var cmd = "1";
-	console.log(document.getElementById("school_name").selectedIndex);
 	$( "#city option:selected" ).each(function() {
 		city = $( this ).text();
-		console.log(document.getElementsByName("school_name"));
 	});
-	console.log(city);
 	$.ajax({
 		url:"deal.php",
 		type:"POST",
@@ -20,16 +17,12 @@ $("#city").change(function() {
 		}
 	})//end ajax;
 });
-
-//$("#city").change();
-
 $("#school_name").change(function() {
 	var school_name = "";
 	var cmd = "0";
 	$( "#school_name option:selected" ).each(function() {
 		school_name = $( this ).text();
 	});
-	console.log(school_name);
 	$.ajax({
 		url:"deal.php",
 		type:"POST",
@@ -41,11 +34,6 @@ $("#school_name").change(function() {
 			document.getElementById("department").innerHTML = res;
 		}
 	})//end ajax;
-});
-
-$("#login").onClick(function() {
-	console.log(1213);
-	document.location.href="login.php";
 });
 
 function setSchoolName(city, school, department) {

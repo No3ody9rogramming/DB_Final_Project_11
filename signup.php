@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js" charset="utf-8"></script>
   <link rel="stylesheet" type="text/css" href="css//signup.css">
-  <script src="js//changeSelect.js" type="text/javascript" charset="utf-8"></script>
   <meta charset = "utf-8">
   <title>Bookhub Register</title>
 </head>
@@ -89,6 +88,7 @@
 
           <input type="button" class="login" id="login" value="Log In">
         </form>
+        <script type="text/javascript" src="js/changeSelect.js" charset="utf-8"></script>
         <?php
           function register($db) {//傳入$db即不用宣告
             $account_ID = $_POST['account_ID'];
@@ -184,13 +184,12 @@
               echo "<script>document.getElementsByName('city')[0].value='".$city."';</script>";
               echo "<script>setSchoolName('".$city."','".$school_name."','".$department."');</script>";
             }
-
           }
           if(isset($_POST["btnsubmit"])) {      
             register($db);
           }
           else {
-            echo "<script>$('#city').change()</script>";
+            echo "<script>$('#city').change();</script>";
           }
         ?>
       </div>

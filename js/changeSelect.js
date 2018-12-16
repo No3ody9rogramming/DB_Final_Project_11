@@ -43,6 +43,11 @@ $("#school_name").change(function() {
 	})//end ajax;
 });
 
+$("#login").onClick(function() {
+	console.log(1213);
+	document.location.href="login.php";
+});
+
 function setSchoolName(city, school, department) {
 	$.ajax({
 		url:"deal.php",

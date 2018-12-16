@@ -1,12 +1,337 @@
-#wrong {
+/** {
+  border: solid 1px white;
+}*/
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .main, body .main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: black;
+}
+html .main .top, body .main .top {
+  position: relative;
+  top: 0px;
+  width: 100%;
+  height: 20%;
+  padding: 0px 0px 0px 0px;
+  background-color: #1B1B1B;
+}
+html .main .top .title, body .main .top .title {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  width: 250px;
+  height: 50%;
+  margin: 10px 0px 0px 0px;
+  display: inline-block;
+  background-color: #1B1B1B;
+  color: white;
+  font-size: 40px;
+  font-weight:bold;
+}
+html .main .top .title .titlesquare, body .main .top .title .titlesquare{
+  /*position: absolute;
+  top: 10px;
+  left: 15px;
+  width: 30%;
+  height: 50%;
+  margin: 0px 0px 0px 0px;*/
+  display: inline-block;
+  background-color: #FF9901;
+  color: white;
+  font-size: 35px;
+  border-radius:5px;
+  color:black; 
+  padding: 2px;
+  margin: 5px;
+  font-weight:bold;
+}
+html .main .top .user, body .main .top .user {
+  position: absolute;
+  top: 0px;
+  left: 70%;
+  width: 30%;
+  height: 70%;
+  margin: 0px 0px 0px 0px;
+  background-color: #1B1B1B;
+  display: inline-block;
+  position: relative;
+}
+html .main .top .user .account, body .main .top .user .account {
+  position: absolute;
+  top: 30px;
+  right: 7px;
+  width: 80px;
+  height: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1B1B1B;
+}
+html .main .top .user #signIn, body .main .top .user #signIn {
+  position: absolute;
+  bottom: 5px;
+  right: 7px;
+  width: 40px;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  background-color: #FF9901;
+}
+html .main .top .user #logIn, body .main .top .user #logIn {
+  position: absolute;
+  bottom: 5px;
+  right: 49px;
+  width: 40px;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  background-color: #FF9901;
+}
+hr{
+	/*height: 1px;*/
+	border-color:#72706e;
+}
+html .main .top .information, body .main .top .information {
+  position: relative;
+  width: 100%;
+  height: 15%;
+  font-size: 12px;
+  background-color: #1B1B1B;
+}
+.marquee{
+	color:white;
+}
+html .main .center, body .main .center {
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  top: 20%;
+  margin: 0px;
+  padding: 0px;
+}
+html .main .center .c_left, body .main .center .c_left {
+  background-color: #1B1B1B;
+  position: relative;
+  display: inline-block;
+  width: 20%;
+  height: 95%;
+}
+html .main .center .c_left .category_title, body .main .center .c_left .category_title{
+  background-color: #FF9901;
+  position: absolute;
+  top:6px;
+  width: 90%;
+  height: 10%;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 30px;
+  border-radius: 3px; 
+}
+html .main .center .c_left .category_items, body .main .center .c_left .category_items{
+  position: absolute;
+  top:12%;
+  width: 90%;
+  height: 90%;
+  margin: 0px;
+  
+}
+.category_button{
+  position: relative;
+	width: 100%;
+	height: 50px;
+	margin:0px;
+	display: inline-block;
+	background-color: #747474;
+  border-radius: 5px;
+  border-color: rgba(0, 0, 0, 0);
+}
+.category_button:hover{
+  transform: translateX(10px);
+  background-color: #747474;
+  border-radius: 5px;
+  border-color: rgba(0, 0, 0, 0);
+}
+html .main .center .c_center, body .main .center .c_center {
+  display: inline-block;
+  position: relative;
+  width: 76%;
+  height: 100%;
+ /* padding-right: 10px: */
+}
+html .main .center .c_center .c_top, body .main .center .c_center .c_top {
+  position: relative;
+  width: 100%;
+  height: 10%;
+}
+html .main .center .c_center .c_top .search, body .main .center .c_center .c_top .search {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin-top: 0px;
+  width: 33%;
+  height: 60%;
+  border:none;
+  background-color: rgba(0, 0, 0, 0);
+}
+html .main .center .c_center .c_top .search #search_id, body .main .center .c_center .c_top .search #search_id{
+  width:70%;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+}
+html .main .center .c_center .c_top .search #search_button, body .main .center .c_center .c_top .search #search_button{
+  width:20%;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+}
+html .main .center .c_center .c_bottom, body .main .center .c_center .c_bottom {
+  position: relative;
+  width: 100%;
+  height: 87%;
+  background-color: black;
+  overflow: scroll;
+}
+html .main .center .c_center .c_bottom .items, body .main .center .c_center .c_bottom .items{
 	position: relative;
-	display: none;
-	color: red;
-	top: 5px;
+	margin:10px 1px 10px 19px;
+	width:28%;
+	height:30%;
+	display: inline-block;
+	background-color: #444444;
+  border-radius: 5px;
+}
+html .main .center .c_center .c_bottom .items:hover, body .main .center .c_center .c_bottom .items:hover{
+  
+  width:35%;
+  height:40%;
+  transition: box-shadow .25s;
+  box-shadow: 9px 7px 17px 0 rgba(104, 103, 103, 0.5);
+}
+/*.items_b{
+	position: absolute;
+	margin:6px;
+	width:30%;
+	height:30%;
+	display: inline-block;
+	
+	background-color: #fff;
+}*/
+
+html .main .center .c_center .c_bottom .items .i_left, body .main .center .c_center .c_bottom .items .i_left{
+	position: absolute;
+  margin:5px;
+	width:40%;
+	height:90%;
+
+	/*margin:2px;*/
+}
+html .main .center .c_center .c_bottom .items .i_left img, body .main .center .c_center .c_bottom .items .i_left img{
+	/*margin:2px;*/
+  width:98%;
+	height:80%;
+	/*display: inline-block;*/
+  border-radius: 3px;
+}
+html .main .center .c_center .c_bottom .items .i_left .items_b, body .main .center .c_center .c_bottom .items .i_left .items_b{
+	position: absolute;
+	bottom: 0px;
+	left:50%;
+  transform: translateX(-50%);
+	width:90%;
+	height:19%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+	/*margin-left: 3px;
+	margin-top:6px;*/
+	/*display: inline-block;*/
+}
+html .main .center .c_center .c_bottom .items .introduce, body .main .center .c_center .c_bottom .items .introduce{
+	position: absolute;
+	right:1px;
+	width:55%;
+	height:96%;
+	padding: 6px;
+}
+html .main .center .c_center .c_bottom .items .introduce  ul, body .main .center .c_center .c_bottom .items .introduce ul{
+	width: 90%;
+	height:80%;
+	margin:5px 5px 5px 5px;
+	display: inline-block;
+	/*background-color: ;*/
+  /*border:white solid 1px;*/
+	font-size: 15px;
+	font-weight: bold;
+	padding: 0px;
+	
+}
+html .main .center .c_center .c_bottom .items .introduce  ul li, body .main .center .c_center .c_bottom .items .introduce ul li{
+  width: 90%;
+  height:25%;
+  margin:4px 5px 3px 5px;
+  display: inline-block;
+  /*background-color: ;*/
+  /*border:yellow solid 1px;*/
+  font-size: 15px;
+  font-weight: bold;
+  padding: 0px;
+  
+}
+html .main .center .c_center .c_bottom .items .introduce  ul li .label, body .main .center .c_center .c_bottom .items .introduce ul li .label{
+  
+  /*height:25%;
+  width:40%;*/
+  /*border:red solid 1px;*/
+}
+html .main .center .c_center .c_bottom .items .introduce  ul li .input, body .main .center .c_center .c_bottom .items .introduce ul li .input{
+  /*height:25%;
+  width:55%;*/
+  padding:2px 5px;
+  margin-left: 3px;
+  background-color: #2b2a2a;
+  color:#c9c8c7;
+  border-radius: 3px;
+  /*border:red solid 1px;*/
+  overflow: hidden;
+  font-size: 13px;
+}
+html .main .center .c_right, body .main .center .c_right {
+  display: inline-block;
+  width: 2%;
+  height: 95%;
+  margin: 0px;
+  background-color: #3a3a3a;
 }
 
-#account, #password {
-	font-size: 15px;
-	height: 20px;
-	width: 200px;
+#search_id{
+	position: absolute;
+	top: 3px;
+	left: 5px;
+	width:80%;
+	background-color: #747474; 
+}
+#search_button{
+	position: absolute;
+	top:3px;
+	right:1px;
+	width:19%;
+	background-color: #FF9901
 }

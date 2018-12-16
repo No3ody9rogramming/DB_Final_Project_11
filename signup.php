@@ -2,7 +2,8 @@
 <html>
 <head>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="css//register.css">
+  <link rel="stylesheet" type="text/css" href="css//signup.css">
+  <script src="js//changeSelect.js" type="text/javascript" charset="utf-8"></script>
   <meta charset = "utf-8">
   <title>Bookhub Register</title>
 </head>
@@ -82,9 +83,12 @@
 
           <select class="drop_down" id='department' name="department"></select><br>
 
-          <input class="creat" type = "submit" name = "btnsubmit" value = "送出">
+          <input class="submit" type="submit" name = "btnsubmit" value = "Sign Up">
+
+          <span class="or">&nbsp;&nbsp;&nbsp;&nbsp;Or&nbsp;&nbsp;</span>
+
+          <input type="button" class="login" id="login" value="Log In">
         </form>
-        <script src="js//changeSelect.js" type="text/javascript" charset="utf-8"></script>
         <?php
           function register($db) {//傳入$db即不用宣告
             $account_ID = $_POST['account_ID'];

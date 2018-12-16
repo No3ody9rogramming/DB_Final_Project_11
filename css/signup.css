@@ -217,14 +217,17 @@ html .main .center .c_center .c_form form .or, body .main .center .c_center .c_f
   font-size: 22px;
   margin: 40px auto;
 }
-html .main .center .c_center .c_form form .login, body .main .center .c_center .c_form form .login {
+.login {
   font-family: Arial;
   font-weight: bold;
-  border: 0px;
   font-size: 22px;
   margin: 40px auto;
   background: #000;
+  text-decoration: none;
   color: #F90;
+}
+.login:hover {
+  text-decoration: underline;
 }
 html .main .center .c_center .c_form form .drop_down, body .main .center .c_center .c_form form .drop_down {
  /* margin-top: 50px;*/

@@ -9,7 +9,7 @@
 	<form action="" method="post" enctype="multipart/form-data">
 		<p> 帳號 : <input type="text" name="account" id="account" placeholder="請輸入帳號"> </p>
 		<p> 密碼 : <input type="password" name="password" id="password" placeholder="請輸入密碼"> </p>
-		<input type="submit" value="登入" name="btnsubmit"><a href="register.php"><input type="button" value="註冊">
+		<input type="submit" value="登入" name="btnsubmit"><a href="signup.php"><input type="button" value="註冊">
 	</form>	
 	<div id="wrong">輸入帳號密碼錯誤</div>
 	<?php

@@ -86,7 +86,7 @@
 
           <span class="or">&nbsp;&nbsp;&nbsp;&nbsp;Or&nbsp;&nbsp;</span>
 
-          <input type="button" class="login" id="login" value="Log In">
+          <a href="login.php"><input type="button" class="login" id="login" value="Log In"></a>
         </form>
         <script type="text/javascript" src="js/changeSelect.js" charset="utf-8"></script>
         <?php

@@ -160,10 +160,9 @@
               $stmt = $db->prepare($query);
               $result = $stmt->execute(array($account_ID, $password, $user_name, $phoneNum, $school_name, $city, $department));
               $db = null;
-              header('Refresh:3; url=index.php');//自動轉址
               echo "<script>document.getElementsByTagName('body')[0].style.color = 'white';</script>";
               //$str = "註冊成功!三秒後到登入頁面。<?php header('Refresh:3; url=index.php');
-              echo "<script>document.getElementsByTagName('body')[0].innerHTML = '註冊成功!三秒後到登入頁面。';</script>";
+              echo "<script>document.getElementsByTagName('body')[0].innerHTML = '註冊成功!三秒後到登入頁面。';setTimeout(function() {document.location.href='login.php';}, 3000);</script>";
             }
             else {//回填已輸入的值
               if ($isUserNameWrong == 0) {

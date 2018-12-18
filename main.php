@@ -5,9 +5,11 @@
   <link href="css/index.css" rel="stylesheet" type="text/css" />
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <meta charset = "utf-8">
+
   <!-- <style type="text/css">
     
   </style> -->
+
 </head>
 <script type="text/javascript">
   var items_count=16;
@@ -17,7 +19,7 @@
   var address="你心中";
   var condition="販售中";
   var tmp;
-  $(document).ready(function(){ 
+  $(document).ready(function(){
     for(var i=0;i<items_count;i++){
     $( ".c_bottom" ).append( "<div class='items "+i+"''><div class='i_left'><img src="+img_src+"><input class='items_b "+i+"' id = "+i+" type = 'button' value = 'look'></div><div class='introduce'><ul><li class='name'><span class='label'>名字:</span><span class='input' id='input_name'>"+name+"</span></li><li class='address'><span class='label'>地址:</span><span class='input' id='input_address'>"+address+"</span></li><li class='condition'><span class='label'>狀態:</span><span class='input' id='input_condition'>"+condition+"</span></li></ul></div></div>" );
     
@@ -32,8 +34,11 @@
 
 </script>
 <body>
-  
 <div class="main">
+  <?php
+      session_start();
+      echo "<script>console.log('".$_SESSION["account"]."');</script>";
+  ?>
   <div class="top">
     <div class="title">Book<div class="titlesquare">hub</div></div>
     <div class="user">

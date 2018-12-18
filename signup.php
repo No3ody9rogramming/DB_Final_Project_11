@@ -108,7 +108,7 @@
             $isPassword2Wrong = 0;
             $isPhoneNumWrong = 0;
             $isUserNameWrong = 0;
-            if($account_IDLength < 6 || $account_IDLength > 12){
+            if($account_IDLength < 6 || $account_IDLength > 12){              
               echo "<script>document.getElementById('account_ID').className += ' wrongMessage';</script>";
               $isWrong = 1;
               $isAccountWrong = 1;

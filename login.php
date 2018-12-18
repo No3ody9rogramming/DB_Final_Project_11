@@ -7,6 +7,7 @@
 </head>
 <body>
   <?php
+      session_start();
       require_once "dbconnect.php"; //更嚴謹，需要確實加入此PHP  
   ?>
   <div class="main">
@@ -74,7 +75,10 @@
 		  	$error = $stmt->execute();
 		  	$right = $stmt->fetchAll();
 		  	if (count($right) == 1) {
+          $_SESSION['account'] = $_POST['account_ID'];
 		      echo "<script>console.log('right');</script>";
+          echo "<script>console.log('".$_SESSION["account"]."');</script>";
+          header("location:main.php");
 		    }
 		    else if (count($account) == 1) {
               echo "<script>document.getElementById('account_ID').value = '" .$_POST["account_ID"]. "';</script>";

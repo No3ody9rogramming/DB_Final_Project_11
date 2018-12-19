@@ -5,7 +5,7 @@
   <link href="css/index.css" rel="stylesheet" type="text/css" />
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <meta charset = "utf-8">
-
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <!-- <style type="text/css">
     
   </style> -->

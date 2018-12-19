@@ -213,8 +213,9 @@ html .main .center .c_center .c_top .introduce, body .main .center .c_center .c_
   position: relative;
   width: 40%;
   height: 90%;
-  /*border: solid 1px white;*/
+  border-left: solid 1px #9e9c9c;
   padding: 0;
+  margin-bottom: 2%;
   display: inline-block;
   vertical-align: bottom;
 }
@@ -224,7 +225,7 @@ html .main .center .c_center .c_top .introduce ul, body .main .center .c_center 
   width: 100%;
   height: 12%;
   list-style-type: none;
-  color: white;
+  color: #9e9c9c;
   font-size: 4vh;
 }
 html .main .center .c_center .c_top .introduce ul li, body .main .center .c_center .c_top .introduce ul li {
@@ -256,16 +257,17 @@ html .main .center .c_center .c_bottom, body .main .center .c_center .c_bottom {
   width: 100%;
   height: 30%;
   padding:0;
-  margin: 0 auto;
+  
 
   /*border: solid 1px red;*/
 }
 html .main .center .c_center .c_bottom img, body .main .center .c_center .c_bottom img{
   /*position: relative;*/
-  width: 15vh;
-  height:98%;
+  width: 9.45vw;
+  height:15vh;
   margin-top: 5%;
-  margin-left: 5%;
+  margin-left: 2.7vw;
+  transform:translateX(-3vw);
   /*border: solid 1px green;*/
   /*background-color:white;*/
 }

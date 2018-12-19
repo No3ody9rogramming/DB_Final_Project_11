@@ -1,3 +1,11 @@
+img {
+     height: auto;
+     max-width: 100%;
+ }
+@media only screen
+and (min-device-width : 812px) 
+and (max-device-width : 999999px)
+{ 
 html, body {
   width: 100%;
   height: 100%;
@@ -198,14 +206,14 @@ html .main .center .c_center .c_top .book_img .main_img img, body .main .center 
 html .main .center .c_center .c_top .book_img .book_slick, body .main .center .c_center .c_top .book_img .book_slick {
   position: relative;
   width: 90%;
-  height: 20%;
+  height: 25%;
   margin: 3% 5%;
   /*border: solid 1px blue;*/
 }
 html .main .center .c_center .c_top .book_img .book_slick img, body .main .center .c_center .c_top .book_img .book_slick img{
   position: relative;
-  width: 70%;
-  height: 20%;
+  width: 60%;
+  height: 8vh;
   margin: 3% 5%;
   /*border: solid 1px blue;*/
 }
@@ -305,7 +313,7 @@ html .main .center .c_right .ad_b img, body .main .center .c_right .ad_b img{
 
   /*#0c0c0c;*/
 }
-
+}
 @-webkit-keyframes ani {
   0% {
     left: 0;
@@ -462,4 +470,281 @@ html .main .center .c_right .ad_b img, body .main .center .c_right .ad_b img{
           animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
           animation-direction: alternate;
+}
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px)
+ { 
+  html .main, body .main {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+html .main .top, body .main .top {
+  width: 100%;
+  height: 10vh;
+  position: relative;
+  /*background-color: green;*/
+  border-bottom: 1px solid #333231;
+}
+html .main .center, body .main .center {
+position: relative;
+width: 100%;
+height: 80vh;
+background-color: black;
+}
+html .main .top .title, body .main .top .title {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  margin: 0px 0px 0px 0px;
+  display: inline-block;
+  vertical-align:top;
+  background-color: #1B1B1B;
+  color: white;
+  font-weight: bold;
+}
+html .main .top .title ul, body .main .top .title ul {
+  list-style-type: none;
+}
+html .main .top .title ul li .titlename, body .main .top .title ul li .titlename {
+  display: inline-block;
+  margin-left: 15vw;
+  margin-right: 2vw;
+  margin-top: 1vh;
+  padding: 0px;
+  font-size:35px;
+}
+html .main .top .title ul li .titlesquare, body .main .top .title ul li .titlesquare {
+  width:13vw;
+  height: 90%;
+  display: inline-block;
+  background-color: #FF9901;
+  font-size: 33px;
+  border-radius: 1vw;
+  color: black;
+  padding: 2px;
+  margin-left: 0px;
+  font-weight: bold;
+  -webkit-transform: translateX(-15%);
+          transform: translateX(-15%);
+}
+html .main .top .user, body .main .top .user {
+  position: relative;
+  width: 17%;
+  height: 100%;
+  margin: 0 0px 0px 0px;
+  background-color: #1B1B1B;
+  /*border: solid 1px white;*/
+  display: inline-block;
+  vertical-align: top;
+}
+html .main .top .user .account, body .main .top .user .account {
+  
+  width: 20%;
+  height: 20px;
+  color: white;
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/
+  background-color: #1B1B1B;
+}
+html .main .top .user #signIn, body .main .top .user #signIn {
+  
+  display: none;
+}
+html .main .top .user #logIn, body .main .top .user #logIn {
+  -webkit-appearance:none;
+  margin-top: 50%;
+  width: 80%;
+  height: 20%;
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/
+  border-color: rgba(0, 0, 0, 0);
+  /*border-radius: 1%;*/
+  background-color: #FF9901;
+}
+html .main .center .c_left, body .main .center .c_left {
+  width: 25vw;
+  height: 100%;
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  /*border: solid 1px white;*/
+  background-color: #1B1B1B;
+}
+html .main .center .c_left .category_title, body .main .center .c_left .category_title{
+  background-color: #FF9901;
+  position: absolute;
+  top:6px;
+  width: 90%;
+  height: 5%;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 5vw;
+  border-radius: 3px; 
+}
+html .main .center .c_left .category_items, body .main .center .c_left .category_items{
+  position: absolute;
+  top:6%;
+  width: 90%;
+  height: 90%;
+  margin: 0px;
+  
+}
+.category_button{
+  -webkit-appearance:none;
+  position: relative;
+  width: 100%;
+  height: 4.5vh;
+  margin:0px;
+  display: inline-block;
+  background-color: #747474;
+  border-radius: 5%;
+  border-color: rgba(0, 0, 0, 0);
+}
+html .main .center .c_center, body .main .center .c_center {
+  position: relative;
+  background-color: #0c0c0c;
+  /*border: solid 1px white;*/
+  display: inline-block;
+  vertical-align: bottom;
+  width: 70vw;
+  height: 100%;
+  /*background-color: yellow;*/
+}
+html .main .center .c_center .c_top, body .main .center .c_center .c_top {
+  position: relative;
+  width: 96%;
+  height: 40%;
+  /*border: solid 1px white;*/
+  margin:2%;
+  background-color: #1B1B1B;
+  border-radius: 2%;
+}
+html .main .center .c_center .c_top .book_img , body .main .center .c_center .c_top .book_img  {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /*margin:2%;*/
+  /*border:solid 1px red;*/
+}
+html .main .center .c_center .c_top .book_img .main_img, body .main .center .c_center .c_top .book_img .main_img {
+  position: relative;
+  width: 80%;
+  margin-left: 10%;
+  height: 60%;
+   border-radius:5%;
+  /*border: solid 1px yellow;*/
+}
+html .main .center .c_center .c_top .book_img .main_img img, body .main .center .c_center .c_top .book_img .main_img img{
+  position: relative;
+  width: 100%;
+  height: 100%;
+ 
+  /*margin-left:13%;
+  margin-right: 13%;*/
+  /*border: solid 1px yellow;*/
+}
+html .main .center .c_center .c_top .book_img .book_slick, body .main .center .c_center .c_top .book_img .book_slick {
+  position: relative;
+  width: 90%;
+  height: 40%;
+  margin-top: 2%;
+  margin-left:5%;
+  /*padding-top: 2%;*/
+  /*border: solid 1px blue;*/
+}
+html .main .center .c_center .c_top .book_img .book_slick img, body .main .center .c_center .c_top .book_img .book_slick img{
+  position: relative;
+  width: 70%;
+  height: 10vh;
+  margin-top: 10%;
+
+    /*border: solid 1px blue;*/
+}
+html .main .center .c_center .c_top .introduce, body .main .center .c_center .c_top .introduce {
+  position: relative;
+  width:100%;
+  height: 80%;
+  padding: 0;
+  margin-bottom: 2%;
+  
+}
+html .main .center .c_center .c_top .introduce ul, body .main .center .c_center .c_top .introduce ul {
+  -webkit-transform: translateX(-5%);
+          transform: translateX(-5%);
+  width: 100%;
+  height: 12%;
+  list-style-type: none;
+  color: #9e9c9c;
+  font-size: 2vh;
+}
+html .main .center .c_center .c_top .introduce ul li, body .main .center .c_center .c_top .introduce ul li {
+  width: 85%;
+  height: 100%;
+  /*border: solid 1px white;*/
+  /*margin-top: 1%;*/
+}
+
+html .main .center .c_center .c_top .introduce ul li .introduce_b, body .main .center .c_center .c_top .introduce ul li .introduce_b{
+  width: 40%;
+  height: 100%;
+  position: absolute;
+  right:5vw;
+  /*border: solid 1px white;*/
+  /*margin-top: 2%;*/
+}
+html .main .center .c_center .c_top .introduce ul li .introduce_b .ask,.buy, body .main .center .c_center .c_top .introduce ul li .introduce_b .ask,.buy{
+  width:45%;
+  height:90%;
+  display: inline-block;
+  border-radius: 5%;
+  border: solid 1px #5e5a5a;
+  background-color: black;
+  color:#cec6c6;
+}
+html .main .center .c_center .c_bottom, body .main .center .c_center .c_bottom {
+  /*position: relative;*/
+  margin-top:65%;
+  width: 100%;
+  height: 18%;
+  padding:0;
+  
+
+  /*border: solid 1px red;*/
+}
+html .main .center .c_center .c_bottom img, body .main .center .c_center .c_bottom img{
+  /*position: relative;*/
+  width: 15vw;
+  height:8vh;
+  margin-top: 5%;
+  margin-left: 2.7vw;
+  transform:translateX(-3vw);
+  /*border: solid 1px green;*/
+  /*background-color:white;*/
+}
+html .main .center .c_right, body .main .center .c_right {
+  
+  display: none;
+  
+}
+html .main .center .c_right .ad_b, body .main .center .c_right .ad_b{
+ 
+display: none;
+  /*#0c0c0c;*/
+}
+html .main .center .c_right .ad_b img, body .main .center .c_right .ad_b img{
+ 
+display: none;
+  /*#0c0c0c;*/
+}
+img{
+  width:1%;
+  height:1%;
+}
 }

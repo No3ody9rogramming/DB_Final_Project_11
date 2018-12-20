@@ -40,7 +40,14 @@
       echo "<script>console.log('".$_SESSION["account"]."');</script>";
   ?>
   <div class="top">
-    <div class="title">Book<div class="titlesquare">hub</div></div>
+    <div class="title">
+      <ul>
+        <li> 
+          <div class="titlename">Book</div>
+          <div class="titlesquare">hub</div>
+        </li>
+      </ul>
+    </div>
     <div class="user">
       <div class="account">hi, willchiu</div>
       <input id = "signIn" type = "button" value = "signIn">

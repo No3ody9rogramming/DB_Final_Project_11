@@ -5,6 +5,11 @@
      height: auto;
      max-width: 100%;
  }*/
+
+@font-face {
+  font-family: song;
+  src: url("cwfs.ttf");
+}
 @media only screen
 and (min-device-width : 812px) 
 and (max-device-width : 999999px)
@@ -164,7 +169,7 @@ html .main .center .c_left .category_items, body .main .center .c_left .category
 }
 .category_button{
   position: relative;
-  font-family: DFKai-sb; 
+  font-family: song; 
   font-size: 31px;
   border: 2px black double;
   width: 100%;
@@ -172,7 +177,7 @@ html .main .center .c_left .category_items, body .main .center .c_left .category
   margin:5px;
   display: inline-block;
   background-color: #747474;
-  border-radius: 5px;
+  border-radius: 5%;
   border-color: rgba(0, 0, 0, 0);
 }
 .category_button:hover{

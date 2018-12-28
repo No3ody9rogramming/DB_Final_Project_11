@@ -93,14 +93,13 @@
             <li class="bookISBN"> <span id="bookISBN_label">ISBN：</span></li>
             <li class="author"> <span id="author_label">作者：</span></li>
             <li class="pulisher"> <span id="publisher_label">出版社：</span></li>
-            <li class="owner"><span class="owner_label">賣家：</span></li>
-            <li class="city"><span class="city_label">城市：</span></li>
-            <li class="school"><span class="school_label">學校：</span></li>
-            <li class="dept"><span class="dept_label">科系：</span></li>
-            <li class="condition"><span class="condition_label">狀況：</span></li>
-            <li class="sell">
-              <span class="sell_label">售價：</span>
-            </li>
+            <li class="owner"><span id="owner_label">賣家：</span></li>
+            <li class="owner"><span id="phone_label">手機：</span></li>
+            <li class="city"><span id="city_label">城市：</span></li>
+            <li class="school"><span id="school_label">學校：</span></li>
+            <li class="dept"><span id="dept_label">科系：</span></li>
+            <li class="condition"><span id="condition_label">狀況：</span></li>
+            <li class="sell"><span id="sell_label">售價：</span></li>
             <li>
               <div class="introduce_b">
                 <button class="ask">詢問</button>
@@ -127,6 +126,22 @@
 </div>
 <?php
   function loadPage($db) {
+    $query = "SELECT account_ID, name, ISBN, author, publisher, user_name, phoneNum, city, school_name, department, isSelled, price FROM makes NATURAL JOIN bookOrder NATURAL JOIN users WHERE makes.order_ID = ".$_POST["bookID"].";";
+    $stmt = $db->prepare($query);
+    $error = $stmt->execute();
+    $result = $stmt->fetchAll();
+
+    echo "<script>document.getElementById('bookname_label').innerHTML += '".$result[0]["name"]."'</script>";
+    echo "<script>document.getElementById('bookISBN_label').innerHTML += '".$result[0]["ISBN"]."'</script>";
+    echo "<script>document.getElementById('author_label').innerHTML += '".$result[0]["author"]."'</script>";
+    echo "<script>document.getElementById('publisher_label').innerHTML += '".$result[0]["publisher"]."'</script>";
+    echo "<script>document.getElementById('owner_label').innerHTML += '".$result[0]["user_name"]."'</script>";
+    echo "<script>document.getElementById('phone_label').innerHTML += '".$result[0]["phoneNum"]."'</script>";
+    echo "<script>document.getElementById('city_label').innerHTML += '".$result[0]["city"]."'</script>";
+    echo "<script>document.getElementById('school_label').innerHTML += '".$result[0]["school_name"]."'</script>";
+    echo "<script>document.getElementById('dept_label').innerHTML += '".$result[0]["department"]."'</script>";
+    echo "<script>document.getElementById('condition_label').innerHTML += '".$result[0]["isSelled"]."'</script>";
+    echo "<script>document.getElementById('sell_label').innerHTML += '".$result[0]["price"]."'</script>";
   }
 
   if (isset($_POST["btnsubmit"])) {

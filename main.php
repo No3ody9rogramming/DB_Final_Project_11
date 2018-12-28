@@ -61,14 +61,18 @@
         <input class='category_button' id = "category_button5" type = "button" value = "">
         <input class='category_button' id = "category_button6" type = "button" value = ""> -->
         <?php  
-          $query = ("SELECT * FROM category ORDER BY category.category DESC;");
+          $query = ("SELECT category, COUNT(order_ID) AS total FROM bookOrder GROUP BY category ORDER BY category DESC;");
           $stmt = $db->prepare($query);
           $error = $stmt->execute();
           $result = $stmt->fetchAll();
+
           $categorycount=0;
+
           foreach ($result as $rows) {
             $str = $rows['category'];
-            echo "<input class='category_button' id='category_button".$categorycount."' type = 'button' value='$str'></input>";
+            $str1 = $rows['total'];
+           
+            echo "<input class='category_button' id='category_button".$categorycount."' type = 'button' value='".$str."(".$str1.")'></input>";
             $categorycount++;
           }
         ?>
@@ -92,11 +96,12 @@
             $bookname[$bookcount]=$rows['name'];
             $bookprice[$bookcount]=$rows['price'];
             $booksell[$bookcount]=$rows['isSelled'];
+            $order_ID[$bookcount]=$rows['order_ID'];
             echo "<div class='items ".$bookcount."'>";
             echo "<div class='i_left'>";
             echo "<img src='大頭.jpg'>";
             echo "<form action='detail.php' method='post'>";
-            echo "<input type='hidden' name='bookID' value='1'>";
+            echo "<input type='hidden' name='bookID' value='".$order_ID[$bookcount]."'>";
             echo "<input class='items_b ".$bookcount."' name='btnsubmit' id = '".$bookcount."' type='submit' value='look'>";
             echo "</form></div>";
             echo "<div class='introduce'><ul><li class='name'><span class='label'>名字:</span><span class='input' id='input_name'>".$bookname[$bookcount]."</span></li>";

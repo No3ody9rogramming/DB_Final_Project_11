@@ -104,23 +104,23 @@
                   }
 
                   function getBookInfo($db, $newImageName){
-                    $query = ("SELECT count(ID) FROM bookOrder;");
+                    $query = ("SELECT count(order_ID) AS t FROM bookOrder;");
                     $stmt = $db->prepare($query);
                     $error = $stmt->execute();
                     $result = $stmt->fetchAll();
 
-                    printf("%d\n", $result);
-                    $ID = 2; //數目前有幾本書
+                    $ID = $result[0]['t'] + 1; //數目前有幾本書
 
                     $name = $_POST["name"];
                     $author = $_POST["publisher"];
                     $ISBN = $_POST["ISBN"];
                     $publisher = $_POST["publisher"];
                     $price = $_POST["price"];
+                    $category = "其它";
 
-                    $query = ("INSERT INTO bookOrder VALUES(?,?,?,?,?,?,?, ?)");
+                    $query = ("INSERT INTO bookOrder VALUES(?,?,?,?,?,?,?, ?, ?)");
                     $stmt = $db->prepare($query);
-                    $result = $stmt->execute(array($ID, $ISBN, $name, $author, $publisher, $newImageName, $newImageName, 0));
+                    $result = $stmt->execute(array($ID, $ISBN, $name, $author, $publisher, $newImageName, $price, $category, 0));
                     $db = null;
                   }
 

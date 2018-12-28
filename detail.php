@@ -89,7 +89,8 @@
         </div>
         <div class="introduce">
           <ul>
-            <li class="bookname"> <span class="bookname_label">書名：</span><span class="bookname_value"></span></li>
+            <li class="bookname"> <span id="bookname_label">書名：</span><span class="bookname_value"></span></li>
+            <li class="bookISBN"> <span id="bookISBN_label">ISBN：</span><span class="bookname_value"></span></li>
             <li class="owner"><span class="owner_label">持有者：</span><span class="owner_value"></span></li>
             <li class="sell"><span class="sell_label">售價：</span><span class="sell_value"></span></li>
             <li class="address"><span class="address_label">地址：</span><span class="address_value"></span></li>

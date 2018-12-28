@@ -52,7 +52,7 @@
   </div>
   <div class="center">
     <div class="c_left">
-      <div class="category_title">category</div>
+      <div class="category_title" id="category_title"><a href="main.php" style="text-decoration: none; color: black;">category</a></div>
       <div class="category_items">
         <!-- <input class="category_button" id = "category_button1" type = "button" value = "">
         <input class='category_button' id = "category_button2" type = "button" value = "">
@@ -72,7 +72,7 @@
             $str = $rows['category'];
             $str1 = $rows['total'];
            
-            echo "<input class='category_button' id='category_button".$categorycount."' type = 'button' value='".$str."(".$str1.")'></input>";
+            echo "<form action='' method='post'><input type='hidden' name='category' value='".$str."'><input class='category_button' id='category_button".$categorycount."' type = 'submit' value='".$str."(".$str1.")' name='categorySubmit'></input></form>";
             $categorycount++;
           }
         ?>
@@ -87,8 +87,8 @@
       </div>
       <div class="c_bottom" id="c_bottom">
         <?php
-        $t=0;
-        if(false) {
+        if(isset($_POST["categorySubmit"])) {
+          $category = $_POST["category"];
           $query = ("SELECT * FROM bookOrder WHERE category='".$category."';");
           $stmt = $db->prepare($query);
           $error = $stmt->execute();

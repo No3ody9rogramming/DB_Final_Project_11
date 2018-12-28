@@ -89,11 +89,14 @@
         </div>
         <div class="introduce">
           <ul>
-            <li class="bookname"> <span class="bookname_label">書名：</span><span class="bookname_value"></span></li>
-            <li class="owner"><span class="owner_label">持有者：</span><span class="owner_value"></span></li>
-            <li class="sell"><span class="sell_label">售價：</span><span class="sell_value"></span></li>
-            <li class="address"><span class="address_label">地址：</span><span class="address_value"></span></li>
+            <li class="bookname"> <span id="bookname_label">書名：</span><span class="bookname_value"></span></li>
+            <li class="bookISBN"> <span id="bookISBN_label">ISBN：</span><span class="bookname_value"></span></li>
+            <li class="owner"><span class="owner_label">賣家：</span><span class="owner_value"></span></li>
+            <li class="city"><span class="city_label">城市：</span><span class="address_value"></span></li>
+            <li class="school"><span class="school_label">學校：</span><span class="address_value"></span></li>
+            <li class="dept"><span class="dept_label">科系：</span><span class="address_value"></span></li>
             <li class="condition">狀況：<span class="condition_label"></span><span class="condition_value"></span></li>
+            <li class="sell"><span class="sell_label">售價：</span><span class="sell_value"></span></li>
             <li>
               <div class="introduce_b">
                 <button class="ask">詢問</button>
@@ -127,7 +130,7 @@
     echo "<script>console.log(111)</script>";
   }
   else {
-    header("Location: main.php");
+    echo "<script>document.location.href = 'main.php'</script>";
     echo "<script>console.log('test')</script>";
   }
 ?>

@@ -39,13 +39,14 @@
       slidesToShow: 3,
       slidesToScroll: 3
     }); 
-   for(var i=0;i<category_count;i++){
-      $(".category_items").append("<input class='category_button' id = '"+i+"' type = 'button' value = ''>");
-     }
   
 });
 </script>
 <body>
+  <?php
+      session_start();
+      require_once "dbconnect.php"; //更嚴謹，需要確實加入此PHP  
+  ?>
   <div class="main">
   <div class="top">
     <div class="title"> 
@@ -65,8 +66,19 @@
   <div class="center">
     <div class="c_left">
       <div class="category_title">category</div>
-      <div class="category_items">
-        
+      <div class="category_items" id="category_items">
+        <?php
+          $query = ("SELECT * FROM category ORDER BY category.category DESC;");
+          $stmt = $db->prepare($query);
+          $error = $stmt->execute();
+          $result = $stmt->fetchAll();
+          $categorycount=0;
+          foreach ($result as $rows) {
+            $str = $rows['category'];
+            echo "<input class='category_button' id='category_button".$categorycount."' type = 'button' value='".$str."'>";
+            $categorycount++;
+          }
+        ?>
       </div>
     </div>
     <div class="c_center">
@@ -106,5 +118,18 @@
   </div>
   <div class="bottom"></div>
 </div>
+<?php
+  function loadPage($db) {
+  }
+
+  if (isset($_POST["btnsubmit"])) {
+    loadPage($db);
+    echo "<script>console.log(111)</script>";
+  }
+  else {
+    header("Location: main.php");
+    echo "<script>console.log('test')</script>";
+  }
+?>
 </body>
 </html>

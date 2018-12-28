@@ -40,6 +40,13 @@
       slidesToScroll: 3
     }); 
   
+  $(".titlename").click(function() {
+    document.location.href = "https://www.pornhub.com";
+  });
+  
+  $(".titlesquare").click(function() {
+    document.location.href = "main.php";
+  });
 });
 </script>
 <body>
@@ -102,8 +109,7 @@
             <li class="sell"><span id="sell_label">售價：</span></li>
             <li>
               <div class="introduce_b">
-                <button class="ask">詢問</button>
-                <button class="buy">購買</button>
+                <button class="ask">留言</button>
               </div> 
             </li>
           </ul>

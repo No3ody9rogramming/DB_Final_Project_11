@@ -83,6 +83,22 @@
                   <li class="sell">出版：<input name="publisher" type="text" ></li>
                   <li class="address">ISBN：<input name="ISBN" type="text" ></li>
                   <li>價格:<input name="price" type="number"></li>
+                  <li>書籍分類:
+                    <select class="drop_down category" id='category' name="category"> 
+                    <?php
+                    require_once "dbconnect.php";
+                    $query = ("SELECT category FROM category;");
+                    $stmt = $db->prepare($query);
+                    $error = $stmt->execute(); 
+                    $result = $stmt->fetchAll();
+                    $categorycount=0;
+                    foreach ($result as $rows) {
+                      $name[$categorycount] = $rows['category'];
+                      echo "<option id='idx".$categorycount."'>".$rows['category']."</option>";
+                      $categorycount++;
+                    }
+                    ?>
+                  </select></li>
                   <li>選擇圖片: <input  type="file" name="image" class="buy"></li>
                   <li><input type="submit" name="submitP" class="ask" value="新增書籍"></li>
                 </ul>
@@ -104,23 +120,23 @@
                   }
 
                   function getBookInfo($db, $newImageName){
-                    $query = ("SELECT count(ID) FROM bookOrder;");
+                    $query = ("SELECT count(order_ID) AS t FROM bookOrder;");
                     $stmt = $db->prepare($query);
                     $error = $stmt->execute();
                     $result = $stmt->fetchAll();
 
-                    printf("%d\n", $result);
-                    $ID = 2; //數目前有幾本書
+                    $ID = $result[0]['t'] + 1; //數目前有幾本書
 
                     $name = $_POST["name"];
                     $author = $_POST["publisher"];
                     $ISBN = $_POST["ISBN"];
                     $publisher = $_POST["publisher"];
                     $price = $_POST["price"];
+                    $category = $_POST["category"];
 
-                    $query = ("INSERT INTO bookOrder VALUES(?,?,?,?,?,?,?, ?)");
+                    $query = ("INSERT INTO bookOrder VALUES(?,?,?,?,?,?,?, ?, ?)");
                     $stmt = $db->prepare($query);
-                    $result = $stmt->execute(array($ID, $ISBN, $name, $author, $publisher, $newImageName, $newImageName, 0));
+                    $result = $stmt->execute(array($ID, $ISBN, $name, $author, $publisher, $newImageName, $price, $category, 0));
                     $db = null;
                   }
 

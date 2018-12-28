@@ -75,14 +75,18 @@
       <div class="category_title">category</div>
       <div class="category_items" id="category_items">
         <?php
-          $query = ("SELECT * FROM category ORDER BY category.category DESC;");
+          $query = ("SELECT category, COUNT(order_ID) AS total FROM bookOrder GROUP BY category ORDER BY category DESC;");
           $stmt = $db->prepare($query);
           $error = $stmt->execute();
           $result = $stmt->fetchAll();
+
           $categorycount=0;
+
           foreach ($result as $rows) {
             $str = $rows['category'];
-            echo "<input class='category_button' id='category_button".$categorycount."' type = 'button' value='".$str."'>";
+            $str1 = $rows['total'];
+           
+            echo "<form action='main.php' method='post'><input type='hidden' name='category' value='".$str."'><input class='category_button' id='category_button".$categorycount."' type = 'submit' value='".$str."(".$str1.")' name='categorySubmit'></input></form>";
             $categorycount++;
           }
         ?>
@@ -155,6 +159,7 @@
     echo "<script>console.log(111)</script>";
   }
   else {
+    loadPage($db);
     echo "<script>document.location.href = 'main.php'</script>";
     echo "<script>console.log('test')</script>";
   }

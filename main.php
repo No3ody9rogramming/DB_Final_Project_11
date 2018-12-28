@@ -87,6 +87,32 @@
       </div>
       <div class="c_bottom" id="c_bottom">
         <?php
+        $t=0;
+        if(false) {
+          $query = ("SELECT * FROM bookOrder WHERE category='".$category."';");
+          $stmt = $db->prepare($query);
+          $error = $stmt->execute();
+          $result = $stmt->fetchAll();
+          $bookcount=0;
+          foreach ($result as $rows) {
+            $bookname[$bookcount]=$rows['name'];
+            $bookprice[$bookcount]=$rows['price'];
+            $booksell[$bookcount]=$rows['isSelled'];
+            $order_ID[$bookcount]=$rows['order_ID'];
+            echo "<div class='items ".$bookcount."'>";
+            echo "<div class='i_left'>";
+            echo "<img src='大頭.jpg'>";
+            echo "<form action='detail.php' method='post'>";
+            echo "<input type='hidden' name='bookID' value='".$order_ID[$bookcount]."'>";
+            echo "<input class='items_b ".$bookcount."' name='btnsubmit' id = '".$bookcount."' type='submit' value='look'>";
+            echo "</form></div>";
+            echo "<div class='introduce'><ul><li class='name'><span class='label'>名字:</span><span class='input' id='input_name'>".$bookname[$bookcount]."</span></li>";
+            echo "<li class='address'><span class='label'>價格:</span><span class='input' id='input_address'>".$bookprice[$bookcount]."</span></li>";
+            echo "<li class='condition'><span class='label'>狀態:</span><span class='input' id='input_condition'>".$booksell[$bookcount]."</span></li></ul></div></div>";
+            $bookcount++;
+          }
+        }
+        else {
           $query = ("SELECT * FROM bookOrder;");
           $stmt = $db->prepare($query);
           $error = $stmt->execute();
@@ -109,6 +135,7 @@
             echo "<li class='condition'><span class='label'>狀態:</span><span class='input' id='input_condition'>".$booksell[$bookcount]."</span></li></ul></div></div>";
             $bookcount++;
           }
+        }
         ?>
       </div>
     </div>

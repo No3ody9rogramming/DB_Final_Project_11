@@ -83,6 +83,22 @@
                   <li class="sell">出版：<input name="publisher" type="text" ></li>
                   <li class="address">ISBN：<input name="ISBN" type="text" ></li>
                   <li>價格:<input name="price" type="number"></li>
+                  <li>書籍分類:
+                    <select class="drop_down category" id='category' name="category"> 
+                    <?php
+                    require_once "dbconnect.php";
+                    $query = ("SELECT category FROM category;");
+                    $stmt = $db->prepare($query);
+                    $error = $stmt->execute(); 
+                    $result = $stmt->fetchAll();
+                    $categorycount=0;
+                    foreach ($result as $rows) {
+                      $name[$categorycount] = $rows['category'];
+                      echo "<option id='idx".$categorycount."'>".$rows['category']."</option>";
+                      $categorycount++;
+                    }
+                    ?>
+                  </select></li>
                   <li>選擇圖片: <input  type="file" name="image" class="buy"></li>
                   <li><input type="submit" name="submitP" class="ask" value="新增書籍"></li>
                 </ul>
@@ -116,7 +132,7 @@
                     $ISBN = $_POST["ISBN"];
                     $publisher = $_POST["publisher"];
                     $price = $_POST["price"];
-                    $category = "其它";
+                    $category = $_POST["category"];
 
                     $query = ("INSERT INTO bookOrder VALUES(?,?,?,?,?,?,?, ?, ?)");
                     $stmt = $db->prepare($query);

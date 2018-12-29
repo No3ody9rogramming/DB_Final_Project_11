@@ -99,7 +99,9 @@
                     }
                     ?>
                   </select></li>
-                  <li>選擇圖片: <input  type="file" name="image" class="buy"></li>
+                  <li>
+                    選擇圖片 <input style="display:none;" accept="image/jpg,image/png,image/jpeg,image/bmp" type="file" name="image" class="buy">
+                  </li>
                   <li><input type="submit" name="submitP" class="ask" value="新增書籍"></li>
                 </ul>
               </form>
@@ -120,7 +122,7 @@
                   }
 
                   function getBookInfo($db, $newImageName){
-                    $query = ("SELECT count(order_ID) AS t FROM bookOrder;");
+                    $query = ("SELECT max(order_ID) AS t FROM bookOrder;");
                     $stmt = $db->prepare($query);
                     $error = $stmt->execute();
                     $result = $stmt->fetchAll();

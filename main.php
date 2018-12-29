@@ -44,8 +44,12 @@
     </div>
     <div class="user">
       <div class="account">hi, willchiu</div>
-      <input id = "signIn" type = "button" value = "signIn">
-      <input id = "logIn" type = "button" value = "logIn">
+      <form action="signup.php">
+        <input id = "signIn" type = "submit" value = "signIn">
+      </form>
+      <form action="login.php">
+        <input id = "logIn" type = "submit" value = "logIn">
+      </form>  
     </div>
     <hr>
     <div class="information"><marquee class="marquee">這裡放要跑的文字</marquee></div>

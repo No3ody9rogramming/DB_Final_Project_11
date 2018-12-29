@@ -23,28 +23,40 @@
       <ul class="l_buttons">
         <li class="l_button">
           <img src="src/my-icons-collection/png/001-home.png" class="b_img">
-          <input id = "Home_button" type = "button" value = "Home" class="button">
+          <form action="main.php">
+            <input id = "Home_button" type = "submit" value = "Home" class="button">
+          </form>
           <!-- <div class="button">Home</div> -->
         </li>
         <li class="l_button">
           <img src="src/my-icons-collection/png/002-book.png" class="b_img">
-          <input id = "Books_button" type = "button" value = "Books" class="button">
+          <form action="main.php">
+            <input id = "Books_button" type = "submit" value = "Books" class="button">
+          </form>
         </li>
         <li class="l_button">
           <img src="src/my-icons-collection/png/003-search.png" class="b_img">
-          <input id = "Search_button" type = "button" value = "Search" class="button">
+          <form action="main.php">
+            <input id = "Search_button" type = "submit" value = "Search" class="button">
+          </form>        
         </li>
         <li class="l_button">
           <img src="src/my-icons-collection/png/004-mechanic.png" class="b_img">
-          <input id = "Mechanic_button" type = "button" value = "Mechanic" class="button">
+          <form action="main.php">
+            <input id = "Mechanic_button" type = "submit" value = "Mechanic" class="button">
+          </form>
         </li>
         <li class="l_button">
           <img src="src/my-icons-collection/png/005-mail.png" class="b_img">
-          <input id = "Mail_button" type = "button" value = "Mail" class="button">
+          <form action="mailto:someone@gmail.com">
+            <input id = "Mail_button" type = "submit" value = "Mail" class="button">
+          </form>
         </li>
         <li class="l_button">
           <img src="src/my-icons-collection/png/006-star.png" class="b_img">
-          <input id = "Star_button" type = "button" value = "Star" class="button">
+          <form action="main.php">
+            <input id = "Star_button" type = "submit" value = "Star" class="button">
+          </form>
         </li>
       </ul>
     </div>
@@ -67,7 +79,7 @@
             <?php
               $query = ("SELECT DISTINCT city FROM school;");
               $stmt = $db->prepare($query);
-              $error = $stmt->execute();
+              $error = $stmt->execute(); 
               $result = $stmt->fetchAll();
               $citycount=0;
               foreach ($result as $rows) {

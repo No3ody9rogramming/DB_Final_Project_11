@@ -51,6 +51,7 @@
 </script>
 <body>
   <?php
+      session_cache_limiter('private');
       session_start();
       require_once "dbconnect.php"; //更嚴謹，需要確實加入此PHP  
   ?>

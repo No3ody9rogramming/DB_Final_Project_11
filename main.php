@@ -30,6 +30,7 @@
 <div class="main">
   <?php
       require_once "dbconnect.php";
+      session_cache_limiter(‘private’);
       session_start();
       echo "<script>console.log('".$_SESSION["account"]."');</script>";
   ?>

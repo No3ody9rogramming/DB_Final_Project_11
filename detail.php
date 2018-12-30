@@ -24,21 +24,21 @@
   $(document).ready(function(){
   
   for(var i=0;i<another_items_count;i++){
-    $( ".c_bottom" ).append( "<a href=''><img src="+img_src+"></a>");
-     }
-     $('.c_bottom').slick({
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 3
-    });
-   for(var i=0;i<books_items_count;i++){
+    $( ".c_bottom" ).append( "<a href=''><img src="+img_src+"><div>書籍</div></a>");
+  }
+  $('.c_bottom').slick({
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 1
+  });
+  for(var i=0;i<1;i++){
     $( ".book_slick" ).append( "<a href=''><img src="+book_slick_img+"></a>");
-     }
-    $('.book_slick').slick({
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 3
-    }); 
+  }
+  $('.book_slick').slick({
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 1
+  }); 
   
   $(".titlename").click(function() {
     document.location.href = "https://www.pornhub.com";

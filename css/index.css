@@ -32,49 +32,57 @@ html .main .top, body .main .top {
   position: relative;
   top: 0px;
   width: 100%;
-  height: 20%;
+  height: 18%;
   padding: 0px 0px 0px 0px;
   background-color: #1B1B1B;
 }
 html .main .top .title, body .main .top .title {
   position: absolute;
-  top: 10px;
-  left: 15px;
-  width: 250px;
-  height: 50%;
-  margin: 10px 0px 0px 0px;
-  display: inline-block;
+  left:3px;
+  width: 300px;
+  height: 7vw;
+  margin: 0px 0px 0px 0px;
+ /* display: inline-block;
+  vertical-align:top;*/
   background-color: #1B1B1B;
   color: white;
-  font-size: 40px;
-  font-weight:bold;
+  font-weight: bold;
 }
-html .main .top .title .titlesquare, body .main .top .title .titlesquare{
-  /*position: absolute;
-  top: 10px;
-  left: 15px;
-  width: 30%;
-  height: 50%;
-  margin: 0px 0px 0px 0px;*/
+.titlename:hover, .titlesquare:hover {
+  cursor: pointer;
+}
+html .main .top .title ul, body .main .top .title ul {
+  list-style-type: none;
+}
+html .main .top .title ul li .titlename, body .main .top .title ul li .titlename {
+  display: inline-block;
+  margin-right: 9px;
+  padding: 0px;
+  font-size: 40px;
+}
+html .main .top .title ul li .titlesquare, body .main .top .title ul li .titlesquare {
+  width: 70px;
+  height: 90%;
   display: inline-block;
   background-color: #FF9901;
-  color: white;
-  font-size: 35px;
-  border-radius:5px;
-  color:black; 
+  font-size: 40px;
+  border-radius: 1vw;
+  color: black;
   padding: 2px;
-  margin: 5px;
-  font-weight:bold;
+  margin-left: 0px;
+  font-weight: bold;
+  -webkit-transform: translateX(-15%);
+          transform: translateX(-15%);
 }
 html .main .top .user, body .main .top .user {
-  position: absolute;
-  top: 0px;
-  left: 70%;
-  width: 30%;
+  position: fixed;
+  right: -90%;
+  width: 100px;
   height: 70%;
   margin: 0px 0px 0px 0px;
   background-color: #1B1B1B;
-  display: inline-block;
+ /* display: inline-block;
+  vertical-align:top;*/
   position: relative;
 }
 html .main .top .user .account, body .main .top .user .account {
@@ -141,27 +149,24 @@ html .main .center .c_left, body .main .center .c_left {
   background-color: #1B1B1B;
   position: relative;
   display: inline-block;
+  vertical-align:top;
   width: 20%;
   height: 95%;
 }
 html .main .center .c_left .category_title, body .main .center .c_left .category_title{
  /* background-color: #FF9901;*/
-  background-color: red;
-  position: absolute;
-  top:6px;
+  background-color: #FF9901;
+  
   width: 90%;
   height: 10%;
-  margin: 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin:5px;
+  text-align:center; 
   font-weight: bolder;
   font-size: 30px;
   border-radius: 3px; 
 }
 html .main .center .c_left .category_items, body .main .center .c_left .category_items{
-  position: absolute;
-  top:12%;
+  
   width: 90%;
   height: 90%;
   margin: 0px;
@@ -170,14 +175,17 @@ html .main .center .c_left .category_items, body .main .center .c_left .category
 .category_button{
   position: relative;
   font-family: song; 
-  font-size: 31px;
+  font-size: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   border: 2px black double;
   width: 100%;
   height: 5vh;
   margin:5px;
-  display: inline-block;
+  text-align:left; 
   background-color: #747474;
-  border-radius: 5%;
+  border-radius: 5px;
   border-color: rgba(0, 0, 0, 0);
 }
 .category_button:hover{
@@ -223,23 +231,26 @@ html .main .center .c_center .c_bottom, body .main .center .c_center .c_bottom {
   width: 100%;
   height: 87%;
   background-color: black;
-  overflow: scroll;
+  overflow-x:auto;
 }
 html .main .center .c_center .c_bottom .items, body .main .center .c_center .c_bottom .items{
   position: relative;
   margin:10px 1px 10px 19px;
   width:28%;
   height:30%;
+  max-width:30%;
+  max-height:38%;
   display: inline-block;
-  background-color: #444444;
+  background-color: #1B1B1B;
   border-radius: 5px;
 }
 html .main .center .c_center .c_bottom .items:hover, body .main .center .c_center .c_bottom .items:hover{
   
-  width:35%;
-  height:40%;
-  transition: box-shadow .25s;
-  box-shadow: 9px 7px 17px 0 rgba(104, 103, 103, 0.5);
+  transition: box-shadow .95s;
+  box-shadow: 5px 5px 0px 0 rgba(104, 103, 103, 0.4);
+  transform: scale(1.1);
+  transform-origin: center center 0;
+  transition: all 0.5s ease-out 0s;
 }
 /*.items_b{
   position: absolute;
@@ -254,7 +265,7 @@ html .main .center .c_center .c_bottom .items:hover, body .main .center .c_cente
 html .main .center .c_center .c_bottom .items .i_left, body .main .center .c_center .c_bottom .items .i_left{
   position: absolute;
   margin:5px;
-  width:40%;
+  width:35%;
   height:90%;
 
   /*margin:2px;*/
@@ -269,21 +280,24 @@ html .main .center .c_center .c_bottom .items .i_left img, body .main .center .c
 html .main .center .c_center .c_bottom .items .i_left .items_b, body .main .center .c_center .c_bottom .items .i_left .items_b{
   position: absolute;
   bottom: 0px;
-  left:50%;
-  transform: translateX(-50%);
+  align-content: center;
+  transform: translateY(5px);
   width:90%;
   height:19%;
   display: flex;
   justify-content: center;
   text-align: center;
+  background-color: #747474;
+  border-radius: 5px;
+  border: 0px ;
   /*margin-left: 3px;
-  margin-top:6px;*/
+  
   /*display: inline-block;*/
 }
 html .main .center .c_center .c_bottom .items .introduce, body .main .center .c_center .c_bottom .items .introduce{
   position: absolute;
   right:1px;
-  width:55%;
+  width:63%;
   height:96%;
   padding: 6px;
 }
@@ -306,7 +320,11 @@ html .main .center .c_center .c_bottom .items .introduce  ul li, body .main .cen
   display: inline-block;
   /*background-color: ;*/
   /*border:yellow solid 1px;*/
+  color:#747474;
   font-size: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font-weight: bold;
   padding: 0px;
   
@@ -321,8 +339,8 @@ html .main .center .c_center .c_bottom .items .introduce  ul li .input, body .ma
   width:55%;*/
   padding:2px 5px;
   margin-left: 3px;
-  background-color: #2b2a2a;
-  color:#c9c8c7;
+  
+  color:#747474;
   border-radius: 3px;
   /*border:red solid 1px;*/
   overflow: hidden;
@@ -352,6 +370,135 @@ html .main .center .c_right, body .main .center .c_right {
 }
 }
 
+@-webkit-keyframes ani_titlesquare {
+  10% {
+    background-color: #ffaf02;
+  }
+  15% {
+    background-color: #ffd402;
+  }
+  20% {
+    background-color: #faff02;
+  }
+  25% {
+    background-color: #e9ff02;
+  }
+  30% {
+    background-color: #c4ff02;
+  }
+  35% {
+    background-color: #67ff02;
+  }
+  40% {
+    background-color: #02ff84;
+  }
+  45% {
+    background-color: #02ffbf;
+  }
+  50% {
+    background-color: #02e9ff;
+  }
+  55% {
+    background-color: #02d4ff;
+  }
+  60% {
+    background-color: #02c8ff;
+  }
+  65% {
+    background-color: #02a2ff;
+  }
+  70% {
+    background-color: #0280ff;
+  }
+  75% {
+    background-color: #0263ff;
+  }
+  80% {
+    background-color: #0235ff;
+  }
+  85% {
+    background-color: #4502ff;
+  }
+  90% {
+    background-color: #5f02ff;
+  }
+  95% {
+    background-color: #5f02ff;
+  }
+  100% {
+    background-color: #5f02ff;
+  }
+}
+
+@keyframes ani_titlesquare {
+  10% {
+    background-color: #ffaf02;
+  }
+  15% {
+    background-color: #ffd402;
+  }
+  20% {
+    background-color: #faff02;
+  }
+  25% {
+    background-color: #e9ff02;
+  }
+  30% {
+    background-color: #c4ff02;
+  }
+  35% {
+    background-color: #67ff02;
+  }
+  40% {
+    background-color: #02ff84;
+  }
+  45% {
+    background-color: #02ffbf;
+  }
+  50% {
+    background-color: #02e9ff;
+  }
+  55% {
+    background-color: #02d4ff;
+  }
+  60% {
+    background-color: #02c8ff;
+  }
+  65% {
+    background-color: #02a2ff;
+  }
+  70% {
+    background-color: #0280ff;
+  }
+  75% {
+    background-color: #0263ff;
+  }
+  80% {
+    background-color: #0235ff;
+  }
+  85% {
+    background-color: #4502ff;
+  }
+  90% {
+    background-color: #5f02ff;
+  }
+  95% {
+    background-color: #5f02ff;
+  }
+  100% {
+    background-color: #5f02ff;
+  }
+}
+.titlesquare {
+  -webkit-animation-name: ani_titlesquare;
+          animation-name: ani_titlesquare;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
 
 @media only screen 
 and (min-device-width : 1px) 

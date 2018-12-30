@@ -24,19 +24,21 @@ html .main, body .main {
   background-color: black;
 }
 html .main .top, body .main .top {
-  width: 100%;
-  height: 8vw;
   position: relative;
+  top: 0px;
+  width: 100%;
+  height: 18%;
+  padding: 0px 0px 0px 0px;
   background-color: #1B1B1B;
-  border-bottom: 1px solid #333231;
 }
 html .main .top .title, body .main .top .title {
-  position: relative;
-  width: 50%;
+  position: absolute;
+  left:3px;
+  width: 300px;
   height: 7vw;
   margin: 0px 0px 0px 0px;
-  display: inline-block;
-  vertical-align:top;
+ /* display: inline-block;
+  vertical-align:top;*/
   background-color: #1B1B1B;
   color: white;
   font-weight: bold;
@@ -49,16 +51,16 @@ html .main .top .title ul, body .main .top .title ul {
 }
 html .main .top .title ul li .titlename, body .main .top .title ul li .titlename {
   display: inline-block;
-  margin-right: 1.5vw;
+  margin-right: 9px;
   padding: 0px;
-  font-size: 3.5vw;
+  font-size: 40px;
 }
 html .main .top .title ul li .titlesquare, body .main .top .title ul li .titlesquare {
-  width: 7vw;
+  width: 70px;
   height: 90%;
   display: inline-block;
   background-color: #FF9901;
-  font-size: 3.8vw;
+  font-size: 40px;
   border-radius: 1vw;
   color: black;
   padding: 2px;
@@ -68,15 +70,15 @@ html .main .top .title ul li .titlesquare, body .main .top .title ul li .titlesq
           transform: translateX(-15%);
 }
 html .main .top .user, body .main .top .user {
+  position: fixed;
+  right: -90%;
+  width: 100px;
+  height: 70%;
+  margin: 0px 0px 0px 0px;
+  background-color: #1B1B1B;
+ /* display: inline-block;
+  vertical-align:top;*/
   position: relative;
-  /*top: 0px;
-  left: 70%;*/
-  width: 30%;
-  height: 100%;
-  margin: 0 0px 0px 0px;
-  /*background-color: #1B1B1B;*/
-  display: inline-block;
-  vertical-align: bottom;
 }
 html .main .top .user .account, body .main .top .user .account {
   position: absolute;
@@ -93,8 +95,8 @@ html .main .top .user .account, body .main .top .user .account {
 html .main .top .user #signIn, body .main .top .user #signIn {
   position: absolute;
   bottom: 5px;
-  right: 2%;
-  width: 10%;
+  right: 7px;
+  width: 40px;
   height: 20%;
   display: flex;
   justify-content: center;
@@ -107,7 +109,7 @@ html .main .top .user #logIn, body .main .top .user #logIn {
   position: absolute;
   bottom: 5px;
   right: 49px;
-  width: 10%;
+  width: 40px;
   height: 20%;
   display: flex;
   justify-content: center;
@@ -116,53 +118,69 @@ html .main .top .user #logIn, body .main .top .user #logIn {
   border-radius: 5px;
   background-color: #FF9901;
 }
-html .main .center, body .main .center {
+hr{
+  /*height: 1px;*/
+  border-color:#72706e;
+}
+html .main .top .information, body .main .top .information {
   position: relative;
   width: 100%;
-  height: 80vh;
-}
-html .main .center .c_left, body .main .center .c_left {
-  width: 15%;
-  height: 100%;
-  position: relative;
-  display: inline-block;
-  vertical-align: bottom;
-  /*border: solid 1px white;*/
+  height: 15%;
+  font-size: 12px;
   background-color: #1B1B1B;
 }
-html .main .center .c_left .category_title, body .main .center .c_left .category_title{
-  background-color: #FF9901;
+.marquee{
+  color:white;
+}
+html .main .center, body .main .center {
+  width: 100%;
+  height: 70%;
   position: absolute;
-  top:6px;
+  top: 20%;
+  margin: 0px;
+  padding: 0px;
+}
+html .main .center .c_left, body .main .center .c_left {
+  background-color: #1B1B1B;
+  position: relative;
+  display: inline-block;
+  vertical-align:top;
+  width: 20%;
+  height: 95%;
+}
+html .main .center .c_left .category_title, body .main .center .c_left .category_title{
+ /* background-color: #FF9901;*/
+  background-color: #FF9901;
+  
   width: 90%;
   height: 10%;
-  margin: 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin:5px;
+  text-align:center; 
   font-weight: bolder;
   font-size: 30px;
   border-radius: 3px; 
 }
 html .main .center .c_left .category_items, body .main .center .c_left .category_items{
-  position: absolute;
-  top:12%;
+  
   width: 90%;
   height: 90%;
   margin: 0px;
   
 }
 .category_button{
-  font-family: song; 
-  font-size: 31px;
   position: relative;
+  font-family: song; 
+  font-size: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   border: 2px black double;
   width: 100%;
   height: 5vh;
-  margin: 5px;
-  display: inline-block;
+  margin:5px;
+  text-align:left; 
   background-color: #747474;
-  border-radius: 5%;
+  border-radius: 5px;
   border-color: rgba(0, 0, 0, 0);
 }
 .category_button:hover{
@@ -171,6 +189,7 @@ html .main .center .c_left .category_items, body .main .center .c_left .category
   border-radius: 5px;
   border-color: rgba(0, 0, 0, 0);
 }
+
 html .main .center .c_center, body .main .center .c_center {
   position: relative;
   background-color: #0c0c0c;

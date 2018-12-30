@@ -100,7 +100,7 @@
                     ?>
                   </select></li>
                   <li>
-                    選擇圖片 <input style="display:none;" accept="image/jpg,image/png,image/jpeg,image/bmp" type="file" name="image" class="buy">
+                    選擇圖片 <input accept="image/jpg,image/png,image/jpeg,image/bmp" type="file" name="image" class="buy">
                   </li>
                   <li><input type="submit" name="submitP" class="ask" value="新增書籍"></li>
                 </ul>

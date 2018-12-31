@@ -1,3 +1,7 @@
+/** {
+  border: solid 1px white;
+}
+*/
 @font-face {
   font-family: song;
   src: url("cwfs.ttf");
@@ -7,7 +11,7 @@ img {
      max-width: 100%;
  }
 @media only screen
-and (min-device-width : 812px) 
+and (min-width : 600px) 
 and (max-device-width : 999999px)
 { 
 html, body {
@@ -25,95 +29,101 @@ html .main, body .main {
 }
 html .main .top, body .main .top {
   position: relative;
-  top: 0px;
   width: 100%;
-  height: 18%;
+  height: 10%;
   padding: 0px 0px 0px 0px;
   background-color: #1B1B1B;
 }
 html .main .top .title, body .main .top .title {
-  position: absolute;
-  left:3px;
-  width: 300px;
-  height: 7vw;
+  width: 40vw;
+  height:100%;
   margin: 0px 0px 0px 0px;
- /* display: inline-block;
-  vertical-align:top;*/
-  background-color: #1B1B1B;
+  display: inline-block;
+  vertical-align:top;
   color: white;
   font-weight: bold;
 }
 .titlename:hover, .titlesquare:hover {
   cursor: pointer;
 }
-html .main .top .title ul, body .main .top .title ul {
-  list-style-type: none;
-}
-html .main .top .title ul li .titlename, body .main .top .title ul li .titlename {
+html .main .top .title  .titlename, body .main .top .title  .titlename {
   display: inline-block;
+  vertical-align:top;
+  width:auto;
   margin-right: 9px;
   padding: 0px;
-  font-size: 40px;
+  font-size: 45px;
 }
-html .main .top .title ul li .titlesquare, body .main .top .title ul li .titlesquare {
-  width: 70px;
-  height: 90%;
+html .main .top .title  .titlesquare, body .main .top .title  .titlesquare {
+  width:auto;
+  height:auto;
   display: inline-block;
+  vertical-align:top;
   background-color: #FF9901;
-  font-size: 40px;
+  font-size: 45px;
   border-radius: 1vw;
   color: black;
-  padding: 2px;
   margin-left: 0px;
   font-weight: bold;
   -webkit-transform: translateX(-15%);
           transform: translateX(-15%);
 }
-html .main .top .user, body .main .top .user {
-  position: fixed;
-  right: -90%;
-  width: 100px;
-  height: 70%;
+html .main .top .none, body .main .top .none {
+  width: 5vw;
+  height: 100%;
   margin: 0px 0px 0px 0px;
   background-color: #1B1B1B;
- /* display: inline-block;
-  vertical-align:top;*/
+  display: inline-block;
+  vertical-align:top;
   position: relative;
 }
-html .main .top .user .account, body .main .top .user .account {
+html .main .top .user, body .main .top .user {
   position: absolute;
-  top: 30px;
-  right: 7px;
-  width: 80px;
-  height: 20px;
+  top:0;
+  right:1px;
+  width: 20vw;
+  height: 100%;
+  margin: 0px 0px 0px 0px;
+  background-color: #1B1B1B;
+  
+  
+}
+html .main .top .user .account, body .main .top .user .account {
+  width: auto;
+  height: 48%;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #1B1B1B;
 }
-html .main .top .user #signIn, body .main .top .user #signIn {
-  position: absolute;
-  bottom: 5px;
-  right: 7px;
-  width: 40px;
-  height: 20%;
+html .main .top .user .account_b, body .main .top .user .account_b {
+  width: auto;
+  height: 48%;
+  color: white;
+  background-color: #1B1B1B;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+html .main .top .user #signIn, body .main .top .user #signIn {
+ 
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  vertical-align:bottom;
   border-color: rgba(0, 0, 0, 0);
   border-radius: 5px;
   background-color: #FF9901;
+  margin-right: 5px;
+
 }
 html .main .top .user #logIn, body .main .top .user #logIn {
-  position: absolute;
-  bottom: 5px;
-  right: 49px;
-  width: 40px;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  vertical-align:bottom;
   border-color: rgba(0, 0, 0, 0);
   border-radius: 5px;
   background-color: #FF9901;
@@ -134,9 +144,8 @@ html .main .top .information, body .main .top .information {
 }
 html .main .center, body .main .center {
   width: 100%;
-  height: 70%;
-  position: absolute;
-  top: 20%;
+  height: 80%;
+  
   margin: 0px;
   padding: 0px;
 }
@@ -248,19 +257,16 @@ html .main .center .c_center .c_top .book_img .book_slick img, body .main .cente
 }
 html .main .center .c_center .c_top .introduce, body .main .center .c_center .c_top .introduce {
   position: relative;
-  width: 40%;
-  height: 90%;
+  width: 45%;
+  height: 98%;
   border-left: solid 1px #9e9c9c;
   padding: 0;
-  margin-bottom: 2%;
   display: inline-block;
   vertical-align: bottom;
 }
 html .main .center .c_center .c_top .introduce ul, body .main .center .c_center .c_top .introduce ul {
-  -webkit-transform: translateX(-5%);
-          transform: translateX(-5%);
-  width: 100%;
-  height: 7.1%;
+ 
+  width: 85%;
   list-style-type: none;
   color: #9e9c9c;
   font-size: 120%;
@@ -269,25 +275,29 @@ html .main .center .c_center .c_top .introduce ul li, body .main .center .c_cent
   width: 85%;
   height: 100%;
   /*border: solid 1px white;*/
-  margin-top: 2%;
+ 
 }
 
-html .main .center .c_center .c_top .introduce ul li .introduce_b, body .main .center .c_center .c_top .introduce ul li .introduce_b{
-  width: 40%;
-  height: 100%;
-  position: absolute;
-  right:2%;
+html .main .center .c_center .c_top .introduce .introduce_b, body .main .center .c_center .c_top .introduce .introduce_b{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-25%);
   /*border: solid 1px white;*/
   /*margin-top: 2%;*/
 }
-html .main .center .c_center .c_top .introduce ul li .introduce_b .ask,.buy, body .main .center .c_center .c_top .introduce ul li .introduce_b .ask,.buy{
+html .main .center .c_center .c_top .introduce  .introduce_b .ask,.buy, body .main .center .c_center .c_top .introduce .introduce_b .ask,.buy{
   width:45%;
   height:90%;
+
   display: inline-block;
   border-radius: 5%;
   border: solid 1px #5e5a5a;
   background-color: black;
   color:#cec6c6;
+
 }
 html .main .center .c_center .c_bottom, body .main .center .c_center .c_bottom {
   /*position: relative;*/
@@ -501,9 +511,23 @@ html .main .center .c_right .ad_b img, body .main .center .c_right .ad_b img{
           animation-direction: alternate;
 }
 @media only screen 
-and (min-device-width : 375px) 
-and (max-device-width : 812px)
+and (min-device-width : 0px) 
+and (max-width : 1100px)
  { 
+  html .main .center .c_right, body .main .center .c_right{
+  display: none;
+  }
+  html .main .center .c_center, body .main .center .c_center{
+  width:78%;
+  }
+ }
+@media only screen 
+and (min-device-width : 310px) 
+and (max-width : 600px)
+ { 
+  body{
+    background-color: black;
+  }
   html .main, body .main {
   width: 100%;
   height: 100%;
@@ -513,7 +537,7 @@ html .main .top, body .main .top {
   width: 100%;
   height: 10vh;
   position: relative;
-  /*background-color: green;*/
+  background-color: #1B1B1B;
   border-bottom: 1px solid #333231;
 }
 html .main .center, body .main .center {
@@ -523,79 +547,100 @@ height: 80vh;
 background-color: black;
 }
 html .main .top .title, body .main .top .title {
-  position: relative;
-  width: 80%;
-  height: 100%;
-  margin: 0px 0px 0px 0px;
+  width: 240px;
+  height:100%;
+  margin-top:2px;
   display: inline-block;
-  vertical-align:top;
-  background-color: #1B1B1B;
+  vertical-align:bottom;
   color: white;
   font-weight: bold;
 }
-html .main .top .title ul, body .main .top .title ul {
-  list-style-type: none;
+.titlename:hover, .titlesquare:hover {
+  cursor: pointer;
 }
-html .main .top .title ul li .titlename, body .main .top .title ul li .titlename {
+html .main .top .title  .titlename, body .main .top .title  .titlename {
   display: inline-block;
-  margin-left: 15vw;
-  margin-right: 2vw;
-  margin-top: 1vh;
+  vertical-align:top;
+  width:auto;
+  margin-right: 9px;
   padding: 0px;
-  font-size:35px;
+  font-size: 45px;
 }
-html .main .top .title ul li .titlesquare, body .main .top .title ul li .titlesquare {
-  width:13vw;
-  height: 90%;
+html .main .top .title  .titlesquare, body .main .top .title  .titlesquare {
+  width:auto;
+  height:auto;
   display: inline-block;
+  vertical-align:top;
   background-color: #FF9901;
-  font-size: 33px;
-  border-radius: 1vw;
+  font-size: 45px;
+  border-radius: 10px;
   color: black;
-  padding: 2px;
   margin-left: 0px;
   font-weight: bold;
   -webkit-transform: translateX(-15%);
           transform: translateX(-15%);
 }
-html .main .top .user, body .main .top .user {
-  position: relative;
-  width: 17%;
+html .main .top .none, body .main .top .none {
+  width: 0vw;
   height: 100%;
-  margin: 0 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
   background-color: #1B1B1B;
-  /*border: solid 1px white;*/
   display: inline-block;
-  vertical-align: top;
+  vertical-align:top;
+  position: relative;
+}
+html .main .top .user, body .main .top .user {
+  position: absolute;
+  top:0;
+  right:10px;
+  width: 20vw;
+  height: 100%;
+  margin: 0px 0px 0px 0px;
+  
+  
 }
 html .main .top .user .account, body .main .top .user .account {
-  
-  width: 20%;
-  height: 20px;
+  width: auto;
+  height: 48%;
   color: white;
-  /*display: flex;
+  display: flex;
   justify-content: center;
-  align-items: center;*/
+  align-items: center;
   background-color: #1B1B1B;
 }
+html .main .top .user .account_b, body .main .top .user .account_b {
+  width: auto;
+  height: 48%;
+  color: white;
+  background-color: #1B1B1B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 html .main .top .user #signIn, body .main .top .user #signIn {
-  
-  display: none;
+ 
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  vertical-align:bottom;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  background-color: #FF9901;
+  margin-right: 5px;
+
 }
 html .main .top .user #logIn, body .main .top .user #logIn {
-  -webkit-appearance:none;
-  margin-top: 50%;
-  width: 80%;
-  height: 20%;
-  /*display: flex;
-  justify-content: center;
-  align-items: center;*/
+  
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  vertical-align:bottom;
   border-color: rgba(0, 0, 0, 0);
-  /*border-radius: 1%;*/
+  border-radius: 5px;
   background-color: #FF9901;
 }
 html .main .center .c_left, body .main .center .c_left {
-  width: 25vw;
+  width: 30vw;
   height: 100%;
   position: relative;
   display: inline-block;
@@ -608,7 +653,7 @@ html .main .center .c_left .category_title, body .main .center .c_left .category
   background-color: #FF9901;
   position: absolute;
   top:6px;
-  width: 90%;
+  width: 100%;
   height: 5%;
   margin: 0px;
   display: flex;
@@ -616,15 +661,33 @@ html .main .center .c_left .category_title, body .main .center .c_left .category
   align-items: center;
   font-weight: bolder;
   font-size: 5vw;
-  border-radius: 3px; 
+  border-radius: 5px; 
 }
 html .main .center .c_left .category_items, body .main .center .c_left .category_items{
+   -webkit-appearance:none;
   position: absolute;
   top:6%;
-  width: 90%;
+  width: 100%;
   height: 90%;
   margin: 0px;
   
+}
+.category_button{
+  -webkit-appearance:none;
+  position: relative;
+  font-family: song; 
+  font-size: 17px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border: 2px black double;
+  width: 100%;
+  height: 3.5vh;
+  margin-top:5px;
+  text-align:left; 
+  background-color: #747474;
+  border-radius: 7px;
+  border-color: rgba(0, 0, 0, 0);
 }
 html .main .center .c_center, body .main .center .c_center {
   position: relative;
@@ -632,7 +695,7 @@ html .main .center .c_center, body .main .center .c_center {
   /*border: solid 1px white;*/
   display: inline-block;
   vertical-align: bottom;
-  width: 70vw;
+  width: 64.5vw;
   height: 100%;
   margin: 0px;
   /*background-color: yellow;*/
@@ -640,16 +703,17 @@ html .main .center .c_center, body .main .center .c_center {
 html .main .center .c_center .c_top, body .main .center .c_center .c_top {
   position: relative;
   width: 96%;
-  height: 40%;
+  height: 82%;
   /*border: solid 1px white;*/
   margin:2%;
-  background-color: #1B1B1B;
   border-radius: 2%;
+  /*background-color: white;*/
+  
 }
 html .main .center .c_center .c_top .book_img , body .main .center .c_center .c_top .book_img  {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 50%;
   /*margin:2%;*/
   /*border:solid 1px red;*/
 }
@@ -658,14 +722,11 @@ html .main .center .c_center .c_top .book_img .main_img, body .main .center .c_c
   width: 80%;
   margin-left: 10%;
   height: 60%;
-   border-radius:5%;
+   border-radius:5px;
   /*border: solid 1px yellow;*/
 }
 html .main .center .c_center .c_top .book_img .main_img img, body .main .center .c_center .c_top .book_img .main_img img{
-  position: relative;
-  width: 100%;
-  height: 100%;
- 
+  
   /*margin-left:13%;
   margin-right: 13%;*/
   /*border: solid 1px yellow;*/
@@ -673,7 +734,7 @@ html .main .center .c_center .c_top .book_img .main_img img, body .main .center 
 html .main .center .c_center .c_top .book_img .book_slick, body .main .center .c_center .c_top .book_img .book_slick {
   position: relative;
   width: 90%;
-  height: 40%;
+  height: 30%;
   margin-top: 2%;
   margin-left:5%;
   /*padding-top: 2%;*/
@@ -688,41 +749,40 @@ html .main .center .c_center .c_top .book_img .book_slick img, body .main .cente
     /*border: solid 1px blue;*/
 }
 html .main .center .c_center .c_top .introduce, body .main .center .c_center .c_top .introduce {
+  transform: translateY(-8%);
   position: relative;
   width:100%;
-  height: 80%;
+  height: 100%;
   padding: 0;
-  margin-bottom: 2%;
+  margin-bottom: 0px;
   
 }
 html .main .center .c_center .c_top .introduce ul, body .main .center .c_center .c_top .introduce ul {
   -webkit-transform: translateX(-5%);
           transform: translateX(-5%);
   width: 100%;
-  height: 12%;
   list-style-type: none;
   color: #9e9c9c;
   font-size: 2vh;
 }
 html .main .center .c_center .c_top .introduce ul li, body .main .center .c_center .c_top .introduce ul li {
   width: 85%;
-  height: 100%;
+  /*height: 100%;*/
   /*border: solid 1px white;*/
   /*margin-top: 1%;*/
 }
 
-html .main .center .c_center .c_top .introduce ul li .introduce_b, body .main .center .c_center .c_top .introduce ul li .introduce_b{
+html .main .center .c_center .c_top .introduce  .introduce_b, body .main .center .c_center .c_top .introduce  .introduce_b{
+  transform: translateY(-10px);
   width: 40%;
-  height: 100%;
-  position: absolute;
-  right:5vw;
+  height: 5%;
   /*border: solid 1px white;*/
   /*margin-top: 2%;*/
 }
-html .main .center .c_center .c_top .introduce ul li .introduce_b .ask,.buy, body .main .center .c_center .c_top .introduce ul li .introduce_b .ask,.buy{
+html .main .center .c_center .c_top .introduce .introduce_b .ask,.buy, body .main .center .c_center .c_top .introduce  .introduce_b .ask,.buy{
   width:45%;
   height:90%;
-  display: inline-block;
+  
   border-radius: 5%;
   border: solid 1px #5e5a5a;
   background-color: black;
@@ -730,7 +790,7 @@ html .main .center .c_center .c_top .introduce ul li .introduce_b .ask,.buy, bod
 }
 html .main .center .c_center .c_bottom, body .main .center .c_center .c_bottom {
   /*position: relative;*/
-  margin-top:65%;
+  
   width: 100%;
   height: 18%;
   padding:0;
@@ -767,3 +827,70 @@ img{
   height:1%;
 }
 }
+@media only screen 
+and (min-device-width : 0px) 
+and (max-width : 390px)
+ { 
+  html .main .center .c_left, body .main .center .c_left {
+  display:none;
+}
+  html .main .center .c_center, body .main .center .c_center{
+  width: 100%;
+}
+ }
+@media only screen 
+and (min-device-width : 0px) 
+and (max-width : 310px)
+ { 
+  html .main .top .user, body .main .top .user {
+    display:none;
+  position: absolute;
+  top:0;
+  right:10px;
+  width: 20vw;
+  height: 100%;
+  margin: 0px 0px 0px 0px;
+  
+  
+}
+html .main .top .user .account, body .main .top .user .account {
+  width: auto;
+  height: 48%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1B1B1B;
+}
+html .main .top .user .account_b, body .main .top .user .account_b {
+  width: auto;
+  height: 48%;
+  color: white;
+  background-color: #1B1B1B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .main .top .user #signIn, body .main .top .user #signIn {
+ 
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  vertical-align:bottom;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  background-color: #FF9901;
+  margin-right: 5px;
+
+}
+html .main .top .user #logIn, body .main .top .user #logIn {
+  
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  vertical-align:bottom;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  background-color: #FF9901;
+}
+  }

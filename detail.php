@@ -22,13 +22,12 @@
   var condition="販售中";
   var category_count=7;
   $(document).ready(function(){
-  
   for(var i=0;i<another_items_count;i++){
     $( ".c_bottom" ).append( "<a href=''><img src="+img_src+"><div>書籍</div></a>");
   }
   $('.c_bottom').slick({
     infinite: false,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1
   });
   for(var i=0;i<1;i++){
@@ -58,17 +57,18 @@
   <div class="main">
   <div class="top">
     <div class="title"> 
-      <ul>
-        <li> 
           <div class="titlename">Book</div>
           <div class="titlesquare">hub</div>
-        </li>
-      </ul>
+    </div>
+    <div class="none">
+      
     </div>
     <div class="user">
       <div class="account">hi, willchiu</div>
-      <input id = "signIn" type = "button" value = "signIn">
-      <input id = "logIn" type = "button" value = "logIn">
+      <div class="account_b">
+        <input id = "signIn" type = "button" value = "signIn">
+        <input id = "logIn" type = "button" value = "logIn">
+      </div> 
     </div>
   </div>
   <div class="center">
@@ -112,13 +112,10 @@
             <li class="dept"><span id="dept_label">科系：</span></li>
             <li class="condition"><span id="condition_label">狀況：</span></li>
             <li class="sell"><span id="sell_label">售價：</span></li>
-            <li>
-              <div class="introduce_b">
-                <button class="ask">留言</button>
-              </div> 
-            </li>
           </ul>
-          
+          <div class="introduce_b">
+            <button class="ask">留言</button>
+          </div> 
         </div>
       </div>
       <div class="c_bottom">

@@ -12,8 +12,9 @@
   ?>
   <div class="main">
   <div class="top">
-    <div class="title">Book
-      <div class="titlesquare">hub</div>
+    <div class="title"> 
+        <div class="titlename">Book</div>
+        <div class="titlesquare">hub</div>
     </div>
   </div>
   <div class="center">

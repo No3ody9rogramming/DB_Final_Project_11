@@ -35,25 +35,20 @@
       echo "<script>console.log('".$_SESSION["account"]."');</script>";
   ?>
   <div class="top">
-    <div class="title">
-      <ul>
-        <li> 
+    <div class="title"> 
           <div class="titlename">Book</div>
           <div class="titlesquare">hub</div>
-        </li>
-      </ul>
+    </div>
+    <div class="none">
+      
     </div>
     <div class="user">
       <div class="account">hi, willchiu</div>
-      <form action="signup.php">
-        <input id = "signIn" type = "submit" value = "signIn">
-      </form>
-      <form action="login.php">
-        <input id = "logIn" type = "submit" value = "logIn">
-      </form>  
+      <div class="account_b">
+        <input id = "signIn" type = "button" value = "signIn">
+        <input id = "logIn" type = "button" value = "logIn">
+      </div> 
     </div>
-    <hr>
-    <div class="information"><marquee class="marquee">這裡放要跑的文字</marquee></div>
   </div>
   <div class="center">
     <div class="c_left">

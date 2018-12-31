@@ -30,95 +30,102 @@ html .main, body .main {
 }
 html .main .top, body .main .top {
   position: relative;
-  top: 0px;
   width: 100%;
-  height: 18%;
+  height: 10%;
   padding: 0px 0px 0px 0px;
   background-color: #1B1B1B;
+  border: 1px solid #313131;
 }
 html .main .top .title, body .main .top .title {
-  position: absolute;
-  left:3px;
-  width: 300px;
-  height: 7vw;
+  width: 40vw;
+  height:100%;
   margin: 0px 0px 0px 0px;
- /* display: inline-block;
-  vertical-align:top;*/
-  background-color: #1B1B1B;
+  display: inline-block;
+  vertical-align:top;
   color: white;
   font-weight: bold;
 }
 .titlename:hover, .titlesquare:hover {
   cursor: pointer;
 }
-html .main .top .title ul, body .main .top .title ul {
-  list-style-type: none;
-}
-html .main .top .title ul li .titlename, body .main .top .title ul li .titlename {
+html .main .top .title  .titlename, body .main .top .title  .titlename {
   display: inline-block;
+  vertical-align:top;
+  width:auto;
   margin-right: 9px;
   padding: 0px;
-  font-size: 40px;
+  font-size: 45px;
 }
-html .main .top .title ul li .titlesquare, body .main .top .title ul li .titlesquare {
-  width: 70px;
-  height: 90%;
+html .main .top .title  .titlesquare, body .main .top .title  .titlesquare {
+  width:auto;
+  height:auto;
   display: inline-block;
+  vertical-align:top;
   background-color: #FF9901;
-  font-size: 40px;
+  font-size: 45px;
   border-radius: 1vw;
   color: black;
-  padding: 2px;
   margin-left: 0px;
   font-weight: bold;
   -webkit-transform: translateX(-15%);
           transform: translateX(-15%);
 }
-html .main .top .user, body .main .top .user {
-  position: fixed;
-  right: -90%;
-  width: 100px;
-  height: 70%;
+html .main .top .none, body .main .top .none {
+  width: 5vw;
+  height: 100%;
   margin: 0px 0px 0px 0px;
   background-color: #1B1B1B;
- /* display: inline-block;
-  vertical-align:top;*/
+  display: inline-block;
+  vertical-align:top;
   position: relative;
 }
-html .main .top .user .account, body .main .top .user .account {
+html .main .top .user, body .main .top .user {
   position: absolute;
-  top: 30px;
-  right: 7px;
-  width: 80px;
-  height: 20px;
+  top:0;
+  right:1px;
+  width: 20vw;
+  height: 100%;
+  margin: 0px 0px 0px 0px;
+  background-color: #1B1B1B;
+  
+  
+}
+html .main .top .user .account, body .main .top .user .account {
+  width: auto;
+  height: 48%;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #1B1B1B;
 }
-html .main .top .user #signIn, body .main .top .user #signIn {
-  position: absolute;
-  bottom: 5px;
-  right: 7px;
-  width: 40px;
-  height: 20%;
+html .main .top .user .account_b, body .main .top .user .account_b {
+  width: auto;
+  height: 48%;
+  color: white;
+  background-color: #1B1B1B;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+html .main .top .user #signIn, body .main .top .user #signIn {
+ 
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  vertical-align:bottom;
   border-color: rgba(0, 0, 0, 0);
   border-radius: 5px;
   background-color: #FF9901;
+  margin-right: 5px;
+
 }
 html .main .top .user #logIn, body .main .top .user #logIn {
-  position: absolute;
-  bottom: 5px;
-  right: 49px;
-  width: 40px;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  vertical-align:bottom;
   border-color: rgba(0, 0, 0, 0);
   border-radius: 5px;
   background-color: #FF9901;
@@ -127,21 +134,13 @@ hr{
   /*height: 1px;*/
   border-color:#72706e;
 }
-html .main .top .information, body .main .top .information {
-  position: relative;
-  width: 100%;
-  height: 15%;
-  font-size: 12px;
-  background-color: #1B1B1B;
-}
 .marquee{
   color:white;
 }
 html .main .center, body .main .center {
   width: 100%;
-  height: 70%;
-  position: absolute;
-  top: 20%;
+  height: 80%;
+  
   margin: 0px;
   padding: 0px;
 }
@@ -149,16 +148,19 @@ html .main .center .c_left, body .main .center .c_left {
   background-color: #1B1B1B;
   position: relative;
   display: inline-block;
-  vertical-align:top;
-  width: 20%;
+  vertical-align:bottom;
+  transform: translateY(-20px);
+  width: 18%;
   height: 95%;
+  border: 1px solid #313131;
+  border-radius: 5px;
 }
 html .main .center .c_left .category_title, body .main .center .c_left .category_title{
  /* background-color: #FF9901;*/
   background-color: #FF9901;
   
   width: 90%;
-  height: 10%;
+  height: 9%;
   margin:5px;
   text-align:center; 
   font-weight: bolder;
@@ -243,6 +245,7 @@ html .main .center .c_center .c_bottom .items, body .main .center .c_center .c_b
   display: inline-block;
   background-color: #1B1B1B;
   border-radius: 5px;
+  border: 1px solid #313131;
 }
 html .main .center .c_center .c_bottom .items:hover, body .main .center .c_center .c_bottom .items:hover{
   

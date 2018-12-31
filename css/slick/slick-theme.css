@@ -27,12 +27,12 @@
     /*left:95%;*/
     display: block;
 
-    width: 20px;
+    width: 0;
     height: 20px;
     padding: 0;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
+    -webkit-transform: translate(-50%, -70%);
+    -ms-transform: translate(-50%, -70%);
+    transform: translate(-50%, -70%);
 
     cursor: pointer;
 
@@ -79,8 +79,14 @@
 
 .slick-prev
 {
-    left: 2%;
+    left: -20px;
     z-index: 999;
+}
+html .main .center .c_center .c_bottom .slick-prev, body .main .center .c_center .c_bottom .slick-prev{
+  /*position: relative;*/
+  left:-25px;
+
+  /*border: solid 1px red;*/
 }
 [dir='rtl'] .slick-prev
 {
@@ -100,6 +106,12 @@
 {
     right: 2%;
     z-index: 999;
+}
+html .main .center .c_center .c_bottom .slick-next, body .main .center .c_center .c_bottom .slick-next{
+  /*position: relative;*/
+  right:-10px;
+
+  /*border: solid 1px red;*/
 }
 [dir='rtl'] .slick-next
 {

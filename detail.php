@@ -16,21 +16,21 @@
   var another_items_count=10
   var books_items_count=10
   var img_src="src/Books.jpg";
-  var book_slick_img="src/test.jpg";
+  var book_slick_img="src/Books.jpg";
   var name="邱吉";
   var address="你心中";
   var condition="販售中";
   var category_count=7;
   $(document).ready(function(){
   for(var i=0;i<another_items_count;i++){
-    $( ".c_bottom" ).append( "<a href=''><img src="+img_src+"><div>書籍</div></a>");
+    $( ".c_bottom" ).append( "<a href=''><img src="+img_src+"><div class='another_book_name'>書</div></a>");
   }
   $('.c_bottom').slick({
     infinite: false,
     slidesToShow: 4,
     slidesToScroll: 1
   });
-  for(var i=0;i<1;i++){
+  for(var i=0;i<12;i++){
     $( ".book_slick" ).append( "<a href=''><img src="+book_slick_img+"></a>");
   }
   $('.book_slick').slick({

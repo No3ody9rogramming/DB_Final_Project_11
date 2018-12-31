@@ -16,7 +16,7 @@
   var another_items_count=10
   var books_items_count=10
   var img_src="src/Books.jpg";
-  var book_slick_img="src/Books.jpg";
+  var book_slick_img=["src/test.jpg","src/t1.jpg","src/t2.jpg","src/t3.jpg","src/t4.jpg","src/t5.jpg"];
   var name="邱吉";
   var address="你心中";
   var condition="販售中";
@@ -31,9 +31,12 @@
     slidesToScroll: 1
   });
   
-  for(var i=0;i<12;i++){
-    $( ".book_slick" ).append( "<a href=''><img src="+book_slick_img+"></a>");
+  for(var i=0;i<6;i++){
+    $( ".book_slick" ).append( "<button type='button' onclick='a_callback("+i+")'  class='a'> <img src="+book_slick_img[i]+"></button>");
+     // $(".a").click(a_callback());
+    // return false;
   }
+
   $('.book_slick').slick({
     infinite: false,
     slidesToShow: 3,
@@ -48,6 +51,11 @@
     document.location.href = "main.php";
   });
 });
+  function a_callback(i){
+  
+    $(".main_img").attr("src",book_slick_img[i]);
+}
+
 </script>
 <body>
   <?php

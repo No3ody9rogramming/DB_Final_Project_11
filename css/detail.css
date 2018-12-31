@@ -26,10 +26,11 @@ html .main, body .main {
   width: 100%;
   height: 100%;
   background-color: black;
+  overflow-y: hidden;
 }
 html .main .top, body .main .top {
   position: relative;
-  width: 100%;
+  width: %;
   height: 10%;
   padding: 0px 0px 0px 0px;
   background-color: #1B1B1B;
@@ -156,7 +157,7 @@ html .main .center .c_left, body .main .center .c_left {
   display: inline-block;
   vertical-align:bottom;
   transform: translateY(-20px);
-  width: 18%;
+  width: 17%;
   height: 95%;
   border: 1px solid #313131;
   border-radius: 5px;
@@ -271,6 +272,12 @@ html .main .center .c_center .c_top .book_img .book_slick, body .main .center .c
   margin: 3% 5%;
   /*border: solid 1px blue;*/
 }
+html .main .center .c_center .c_top .book_img .book_slick .a, body .main .center .c_center .c_top .book_img .book_slick .a{
+  -webkit-appearance:none;
+  background-color: #1B1B1B;
+  border-color: #1B1B1B;
+  /*border: solid 1px blue;*/
+}
 html .main .center .c_center .c_top .book_img .book_slick img, body .main .center .c_center .c_top .book_img .book_slick img{
   position: relative;
   width: 80%;
@@ -370,7 +377,7 @@ html .main .center .c_center .c_bottom .another_book_name, body .main .center .c
 }
 
 html .main .center .c_right, body .main .center .c_right {
-  width: 19%;
+  width: 18%;
   height: 100%;
   position: relative;
   display: inline-block;

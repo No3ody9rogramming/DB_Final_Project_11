@@ -30,6 +30,7 @@
     slidesToShow: 4,
     slidesToScroll: 1
   });
+  
   for(var i=0;i<12;i++){
     $( ".book_slick" ).append( "<a href=''><img src="+book_slick_img+"></a>");
   }
@@ -37,7 +38,7 @@
     infinite: false,
     slidesToShow: 3,
     slidesToScroll: 1
-  }); 
+  });
   
   $(".titlename").click(function() {
     document.location.href = "https://www.pornhub.com";
@@ -134,7 +135,7 @@
 </div>
 <?php
   function loadPage($db) {
-    $query = "SELECT account_ID, name, ISBN, author, publisher, user_name, phoneNum, city, school_name, department, isSelled, price FROM makes NATURAL JOIN bookOrder NATURAL JOIN users WHERE makes.order_ID = ".$_POST["bookID"].";";
+    $query = "SELECT account_ID, name, ISBN, author, publisher, user_name, phoneNum, city, school_name, department, isSelled, price, image FROM makes NATURAL JOIN bookOrder NATURAL JOIN users WHERE makes.order_ID = ".$_POST["bookID"].";";
     $stmt = $db->prepare($query);
     $error = $stmt->execute();
     $result = $stmt->fetchAll();
@@ -150,6 +151,10 @@
     echo "<script>document.getElementById('dept_label').innerHTML += '".$result[0]["department"]."'</script>";
     echo "<script>document.getElementById('condition_label').innerHTML += '".$result[0]["isSelled"]."'</script>";
     echo "<script>document.getElementById('sell_label').innerHTML += '".$result[0]["price"]."'</script>";
+    echo "<script>console.log(\"<a href=''><img src='/DB_Final_Project_11/".$result[0]["image"]."'></a>\");</script>";/*
+    echo "<script>$(\".book_slick\").append(\"<a href=''><img src='/DB_Final_Project_11/".$result[0]["image"]."'></a>\");</script>";
+    echo "<script>$('.book_slick').slick({infinite: false,slidesToShow: 3,slidesToScroll: 1});</script>";*/
+      
   }
 
   if (isset($_POST["btnsubmit"])) {

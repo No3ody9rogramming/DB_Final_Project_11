@@ -1,7 +1,7 @@
 /** {
   border: solid 1px white;
-}
-*/
+}*/
+
 @font-face {
   font-family: song;
   src: url("cwfs.ttf");
@@ -228,7 +228,8 @@ html .main .center .c_center .c_top .book_img , body .main .center .c_center .c_
   width: 48%;
   height: 90%;
   margin:2%;
-  /*border:solid 1px red;*/
+ /* border:solid 1px red;*/
+ 
 }
 html .main .center .c_center .c_top .book_img .main_img, body .main .center .c_center .c_top .book_img .main_img {
   position: relative;
@@ -245,6 +246,23 @@ html .main .center .c_center .c_top .book_img .main_img img, body .main .center 
   /*margin-left:13%;
   margin-right: 13%;*/
   /*border: solid 1px yellow;*/
+}
+html .main .center .c_center .c_top .book_img .image_select, body .main .center .c_center .c_top .book_img .image_select{
+  color: #9e9c9c;
+  display: inline-block;
+}
+html .main .center .c_center .c_top .book_img .image_select ul li, body .main .center .c_center .c_top .book_img .image_select ul li{
+  color: #9e9c9c;
+  display: inline-block;
+  width: auto;
+}
+html .main .center .c_center .c_top .book_img .image_select .buy, body .main .center .c_center .c_top .book_img .image_select .buy{
+  color: #9e9c9c;
+  display: inline-block;
+  /*margin-left:13%;
+  margin-right: 13%;*/
+  /*border: solid 1px yellow;*/
+  
 }
 html .main .center .c_center .c_top .book_img .book_slick, body .main .center .c_center .c_top .book_img .book_slick {
   position: relative;
@@ -269,20 +287,41 @@ html .main .center .c_center .c_top .introduce, body .main .center .c_center .c_
   display: inline-block;
   vertical-align: bottom;
 }
-html .main .center .c_center .c_top .introduce ul, body .main .center .c_center .c_top .introduce ul {
- 
+html .main .center .c_center .c_top .introduce ul, body .main .center .c_center .c_top .introduce ul{
   width: 85%;
   list-style-type: none;
   color: #9e9c9c;
   font-size: 120%;
+  margin-top:0;
+  margin-bottom:0;
 }
+
+
+
 html .main .center .c_center .c_top .introduce ul li, body .main .center .c_center .c_top .introduce ul li {
   width: 85%;
   height: 100%;
   /*border: solid 1px white;*/
  
 }
-
+html .main .center .c_center .c_top .introduce .creat_title, body .main .center .c_center .c_top .introduce .creat_title{
+  display: inline-block;
+  width:auto;
+  color: #ccc;
+}
+html .main .center .c_center .c_top .introduce .creat, body .main .center .c_center .c_top .introduce .creat{
+   -webkit-appearance:none;
+  width: 50%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background: rgba(0,0,0,.9);
+  padding: 5px 15px;
+  font-size: 16px;
+  margin: 7px auto;
+  color: #ccc;
+  display: inline-block;
+}
 html .main .center .c_center .c_top .introduce .introduce_b, body .main .center .c_center .c_top .introduce .introduce_b{
   width: 100%;
   height: 10%;
@@ -293,7 +332,7 @@ html .main .center .c_center .c_top .introduce .introduce_b, body .main .center 
   /*border: solid 1px white;*/
   /*margin-top: 2%;*/
 }
-html .main .center .c_center .c_top .introduce  .introduce_b .ask,.buy, body .main .center .c_center .c_top .introduce .introduce_b .ask,.buy{
+html .main .center .c_center .c_top .introduce  .introduce_b .ask, body .main .center .c_center .c_top .introduce .introduce_b .ask{
   width:45%;
   height:90%;
 
@@ -741,6 +780,13 @@ html .main .center .c_center .c_top .book_img .main_img img, body .main .center 
   margin-right: 13%;*/
   /*border: solid 1px yellow;*/
 }
+html .main .center .c_center .c_top .book_img .image_select, body .main .center .c_center .c_top .book_img .image_select{
+  color: #9e9c9c;
+  /*margin-left:13%;
+  margin-right: 13%;*/
+  /*border: solid 1px yellow;*/
+}
+
 html .main .center .c_center .c_top .book_img .book_slick, body .main .center .c_center .c_top .book_img .book_slick {
   position: relative;
   width: 90%;
@@ -758,8 +804,25 @@ html .main .center .c_center .c_top .book_img .book_slick img, body .main .cente
 
     /*border: solid 1px blue;*/
 }
+html .main .center .c_center .c_top .image_select ul , body .main .center .c_center .c_top .image_select ul {
+  width: 85%;
+  list-style-type: none;
+  color: #9e9c9c;
+  font-size: 10px;
+  margin-top:0;
+  margin-bottom:0;
+}
+html .main .center .c_center .c_top .image_select ul li, body .main .center .c_center .c_top .image_select ul li{
+  width: auto;
+  height: 100%;
+  display: inline-block;
+}
+html .main .center .c_center .c_top .image_select .select, body .main .center .c_center .c_top .image_select .select{
+ display: inline-block;
+  width: 80%;
+}
 html .main .center .c_center .c_top .introduce, body .main .center .c_center .c_top .introduce {
-  transform: translateY(-8%);
+  transform: translateY(-13%);
   position: relative;
   width:100%;
   height: 100%;
@@ -767,20 +830,41 @@ html .main .center .c_center .c_top .introduce, body .main .center .c_center .c_
   margin-bottom: 0px;
   
 }
-html .main .center .c_center .c_top .introduce ul, body .main .center .c_center .c_top .introduce ul {
-  -webkit-transform: translateX(-5%);
-          transform: translateX(-5%);
-  width: 100%;
+
+html .main .center .c_center .c_top .introduce ul, body .main .center .c_center .c_top .introduce ul{
+  width: 85%;
   list-style-type: none;
   color: #9e9c9c;
-  font-size: 2vh;
+  font-size: 120%;
+  margin-top:0;
+  margin-bottom:0;
 }
+
+
+
 html .main .center .c_center .c_top .introduce ul li, body .main .center .c_center .c_top .introduce ul li {
   width: 85%;
-  /*height: 100%;*/
+  height: 100%;
   /*border: solid 1px white;*/
-  /*margin-top: 1%;*/
+ 
 }
+html .main .center .c_center .c_top .introduce .creat_title, body .main .center .c_center .c_top .introduce .creat_title{
+  display: inline-block;
+  width:auto;
+  color: #ccc;
+}
+html .main .center .c_center .c_top .introduce .creat, body .main .center .c_center .c_top .introduce .creat{
+   -webkit-appearance:none;
+  width: 50%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background: rgba(0,0,0,.9);
+  padding: 5px 15px;
+  font-size: 16px;
+  margin: 7px auto;
+  color: #ccc;
+  display: inline-block;
 
 html .main .center .c_center .c_top .introduce  .introduce_b, body .main .center .c_center .c_top .introduce  .introduce_b{
   transform: translateY(-10px);

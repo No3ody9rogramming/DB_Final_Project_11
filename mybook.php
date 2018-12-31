@@ -31,14 +31,7 @@
       slidesToShow: 3,
       slidesToScroll: 3
     });
-   for(var i=0;i<books_items_count;i++){
-    $( ".book_slick" ).append( "<a href=''><img src="+book_slick_img+"></a>");
-     }
-    $('.book_slick').slick({
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 3
-    }); 
+   
    for(var i=0;i<category_count;i++){
       $(".category_items").append("<input class='category_button' id = '"+i+"' type = 'button' value = ''>");
      }
@@ -49,17 +42,18 @@
     <div class="main">
       <div class="top">
         <div class="title"> 
-          <ul>
-            <li> 
               <div class="titlename">Book</div>
               <div class="titlesquare">hub</div>
-            </li>
-          </ul>
+        </div>
+        <div class="none">
+          
         </div>
         <div class="user">
           <div class="account">hi, willchiu</div>
-          <input id = "signIn" type = "button" value = "signIn">
-          <input id = "logIn" type = "button" value = "logIn">
+          <div class="account_b">
+            <input id = "signIn" type = "button" value = "signIn">
+            <input id = "logIn" type = "button" value = "logIn">
+          </div> 
         </div>
       </div>
       <div class="center">
@@ -73,17 +67,33 @@
           <div class="c_top">
             <div class="book_img">
               <img class="main_img" src="src/Books.jpg">
-              <div class="book_slick"></div>
+              <div class="image_select"><ul><li>選擇圖片</li><input accept="image/jpg,image/png,image/jpeg,image/bmp" type="file" name="image" class="select"></ul> </div>
             </div>
             <div class="introduce">
               <form action="" method="post" enctype="multipart/form-data">
                 <ul>
-                  <li class="bookname">書名：<input name="name" type="text" ></li>
-                  <li class="owner">作者：<input name="author" type="text" ></li>
-                  <li class="sell">出版：<input name="publisher" type="text" ></li>
-                  <li class="address">ISBN：<input name="ISBN" type="text" ></li>
-                  <li>價格:<input name="price" type="number"></li>
-                  <li>書籍分類:
+                  <li class="creat_title bookname">書名：</li>
+                  <input name="name" type="text" class='creat'>
+                </ul>
+                <ul>
+                  <li class="creat_title owner">作者：</li>
+                  <input name="author" type="text" class='creat'>
+                </ul>
+                <ul>
+                  <li class="creat_title sell">出版：</li>
+                  <input name="publisher" type="text" class='creat'>
+                </ul>
+                <ul>
+                  <li class="creat_title address">ISBN：</li>
+                  <input name="ISBN" type="text" class='creat'>
+                </ul>
+                <ul>
+                  <li class="creat_title">價格:</li>
+                  <input name="price" type="number" class='creat'>
+                </ul>
+                <ul>
+                  <li class="creat_title">書籍分類:</li>
+                  
                     <select class="drop_down category" id='category' name="category"> 
                     <?php
                     require_once "dbconnect.php";
@@ -98,10 +108,9 @@
                       $categorycount++;
                     }
                     ?>
-                  </select></li>
-                  <li>
-                    選擇圖片 <input accept="image/jpg,image/png,image/jpeg,image/bmp" type="file" name="image" class="buy">
-                  </li>
+                  </select>
+                </ul>
+                <ul>
                   <li><input type="submit" name="submitP" class="ask" value="新增書籍"></li>
                 </ul>
               </form>

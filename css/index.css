@@ -504,9 +504,12 @@ html .main .center .c_right, body .main .center .c_right {
 }
 
 @media only screen 
-and (min-device-width : 1px) 
-and (max-device-width : 812px)
+and (min-width : 512px) 
+and (max-width : 812px)
 { 
+  body{
+    background-color: black;
+  }
   html .main, body .main {
   width: 100%;
   height: 100%;
@@ -514,9 +517,9 @@ and (max-device-width : 812px)
 }
 html .main .top, body .main .top {
   width: 100%;
-  height: 15vh;
+  height: 10vh;
   position: relative;
-  
+  background-color: #1B1B1B;
   border-bottom: 1px solid #333231;
 }
 html .main .center, body .main .center {
@@ -526,124 +529,147 @@ height: 80vh;
 background-color: black;
 }
 html .main .top .title, body .main .top .title {
-  position: relative;
-  width: 80%;
-  height: 60%;
-  margin: 0px 0px 0px 0px;
+  width: 240px;
+  height:100%;
+  margin-top:2px;
   display: inline-block;
-  vertical-align:top;
-  background-color: #1B1B1B;
+  vertical-align:bottom;
   color: white;
   font-weight: bold;
 }
-html .main .top .title ul, body .main .top .title ul {
-  list-style-type: none;
+.titlename:hover, .titlesquare:hover {
+  cursor: pointer;
 }
-html .main .top .title ul li .titlename, body .main .top .title ul li .titlename {
+html .main .top .title  .titlename, body .main .top .title  .titlename {
   display: inline-block;
-  margin-left: 15vw;
-  margin-right: 2vw;
-  margin-top: 0vh;
+  vertical-align:top;
+  width:auto;
+  margin-right: 9px;
   padding: 0px;
-  font-size:45px;
+  font-size: 45px;
 }
-html .main .top .title ul li .titlesquare, body .main .top .title ul li .titlesquare {
-  width:16vw;
-  height: 90%;
+html .main .top .title  .titlesquare, body .main .top .title  .titlesquare {
+  width:auto;
+  height:auto;
   display: inline-block;
+  vertical-align:top;
   background-color: #FF9901;
-  font-size: 40px;
-  border-radius: 1vw;
+  font-size: 45px;
+  border-radius: 10px;
   color: black;
-  padding: 2px;
   margin-left: 0px;
   font-weight: bold;
   -webkit-transform: translateX(-15%);
           transform: translateX(-15%);
 }
-html .main .top .user, body .main .top .user {
-  position: relative;
-  width: 17%;
-  height: 60%;
-  margin: 0 0px 0px 0px;
+html .main .top .none, body .main .top .none {
+  width: 0vw;
+  height: 100%;
+  margin: 0px 0px 0px 0px;
   background-color: #1B1B1B;
-  /*border: solid 1px white;*/
   display: inline-block;
-  vertical-align: top;
+  vertical-align:top;
+  position: relative;
+}
+html .main .top .user, body .main .top .user {
+  position: absolute;
+  top:0;
+  right:10px;
+  width: 20vw;
+  height: 100%;
+  margin: 0px 0px 0px 0px;
+  
+  
 }
 html .main .top .user .account, body .main .top .user .account {
-  
-  width: 20%;
-  height: 20px;
+  width: auto;
+  height: 48%;
   color: white;
-  /*display: flex;
+  display: flex;
   justify-content: center;
-  align-items: center;*/
+  align-items: center;
   background-color: #1B1B1B;
+}
+html .main .top .user .account_b, body .main .top .user .account_b {
+  width: auto;
+  height: 48%;
+  color: white;
+  background-color: #1B1B1B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 html .main .top .user #signIn, body .main .top .user #signIn {
-  
-  display: none;
+ 
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  vertical-align:bottom;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  background-color: #FF9901;
+  margin-right: 5px;
+
 }
 html .main .top .user #logIn, body .main .top .user #logIn {
-  -webkit-appearance:none;
-  margin-top: 40%;
-  width: 80%;
-  height: 30%;
-  /*display: flex;
-  justify-content: center;
-  align-items: center;*/
+  
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  vertical-align:bottom;
   border-color: rgba(0, 0, 0, 0);
-  /*border-radius: 1%;*/
+  border-radius: 5px;
   background-color: #FF9901;
 }
-hr{
-  /*height: 1px;*/
-  border-color:#72706e;
-}
-html .main .top .information, body .main .top .information {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  font-size: 20px;
-  /*margin:50px;*/
-  background-color: #1B1B1B;
-}
-.marquee{
-  color:white;
-}
-
 html .main .center .c_left, body .main .center .c_left {
-  width: 25vw;
+  width: 30vw;
   height: 100%;
   position: relative;
   display: inline-block;
   vertical-align: bottom;
   /*border: solid 1px white;*/
   background-color: #1B1B1B;
+  margin: 0px;
 }
 html .main .center .c_left .category_title, body .main .center .c_left .category_title{
   background-color: #FF9901;
-  /*background-color: red;*/
   position: absolute;
   top:6px;
-  width: 90%;
-  height: 8%;
+  width: 100%;
+  height: 5%;
   margin: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bolder;
   font-size: 5vw;
-  border-radius: 3px; 
+  border-radius: 5px; 
 }
 html .main .center .c_left .category_items, body .main .center .c_left .category_items{
+   -webkit-appearance:none;
   position: absolute;
-  top:9%;
-  width: 90%;
+  top:6%;
+  width: 100%;
   height: 90%;
   margin: 0px;
   
+}
+.category_button{
+  -webkit-appearance:none;
+  position: relative;
+  font-family: song; 
+  font-size: 17px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border: 2px black double;
+  width: 100%;
+  height: 3.5vh;
+  margin-top:5px;
+  text-align:left; 
+  background-color: #747474;
+  border-radius: 7px;
+  border-color: rgba(0, 0, 0, 0);
 }
 
 html .main .center .c_center, body .main .center .c_center {
@@ -821,4 +847,70 @@ img{
   height:1%;
 }
 }
+@media only screen 
+and (min-device-width : 0px) 
+and (max-width : 390px)
+ { 
+  html .main .center .c_left, body .main .center .c_left {
+  display:none;
+}
+  html .main .center .c_center, body .main .center .c_center{
+  width: 100%;
+}
+ }
+@media only screen 
+and (min-device-width : 0px) 
+and (max-width : 510px)
+ { 
+  html .main .top .user, body .main .top .user {
+    display:none;
+  position: absolute;
+  top:0;
+  right:10px;
+  width: 20vw;
+  height: 100%;
+  margin: 0px 0px 0px 0px;
+  
+  
+}
+html .main .top .user .account, body .main .top .user .account {
+  width: auto;
+  height: 48%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1B1B1B;
+}
+html .main .top .user .account_b, body .main .top .user .account_b {
+  width: auto;
+  height: 48%;
+  color: white;
+  background-color: #1B1B1B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .main .top .user #signIn, body .main .top .user #signIn {
+ 
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  vertical-align:bottom;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  background-color: #FF9901;
+  margin-right: 5px;
 
+}
+html .main .top .user #logIn, body .main .top .user #logIn {
+  
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  vertical-align:bottom;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  background-color: #FF9901;
+}
+  }

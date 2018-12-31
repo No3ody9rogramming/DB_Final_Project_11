@@ -532,7 +532,7 @@ and (max-width : 1100px)
   }
  }
 @media only screen 
-and (min-device-width : 310px) 
+and (min-width : 0px) 
 and (max-width : 600px)
  { 
   body{
@@ -548,7 +548,7 @@ html .main .top, body .main .top {
   height: 10vh;
   position: relative;
   background-color: #1B1B1B;
-  border-bottom: 1px solid #333231;
+  border: 1px solid #313131;
 }
 html .main .center, body .main .center {
 position: relative;
@@ -655,7 +655,7 @@ html .main .center .c_left, body .main .center .c_left {
   position: relative;
   display: inline-block;
   vertical-align: bottom;
-  /*border: solid 1px white;*/
+  border: 1px solid #313131;
   background-color: #1B1B1B;
   margin: 0px;
 }
@@ -702,7 +702,7 @@ html .main .center .c_left .category_items, body .main .center .c_left .category
 html .main .center .c_center, body .main .center .c_center {
   position: relative;
   background-color: #0c0c0c;
-  /*border: solid 1px white;*/
+  border: 1px solid #313131;
   display: inline-block;
   vertical-align: bottom;
   width: 64.5vw;
@@ -723,15 +723,15 @@ html .main .center .c_center .c_top, body .main .center .c_center .c_top {
 html .main .center .c_center .c_top .book_img , body .main .center .c_center .c_top .book_img  {
   position: relative;
   width: 100%;
-  height: 40%;
+  height: 50%;
   /*margin:2%;*/
   /*border:solid 1px red;*/
 }
 html .main .center .c_center .c_top .book_img .main_img, body .main .center .c_center .c_top .book_img .main_img {
   position: relative;
-  width: 80%;
-  margin-left: 10%;
-  height: 30%;
+  width: 60%;
+  margin-left: 20%;
+  height: 60%;
    border-radius:5px;
   /*border: solid 1px yellow;*/
 }
@@ -838,8 +838,7 @@ img{
 }
 }
 @media only screen 
-and (min-device-width : 0px) 
-and (max-width : 390px)
+and (max-width : 460px)
  { 
   html .main .center .c_left, body .main .center .c_left {
   display:none;
@@ -849,8 +848,8 @@ and (max-width : 390px)
 }
  }
 @media only screen 
-and (min-device-width : 0px) 
-and (max-width : 310px)
+and (min-width : 0px) 
+and (max-width : 460px)
  { 
   html .main .top .user, body .main .top .user {
     display:none;

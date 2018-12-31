@@ -1,6 +1,10 @@
 .wrongMessage::placeholder {
 	color: red;
 }
+@media only screen
+and (min-width : 0px) 
+and (max-device-width : 999999px)
+{ 
 html, body {
   width: 100%;
   height: 100%;
@@ -25,28 +29,39 @@ html .main .top, body .main .top {
   border-bottom: 1px solid #333231;
 }
 html .main .top .title, body .main .top .title {
-  position: absolute;
-  top: 10px;
-  left: 15px;
-  width: 180px;
-  height: 70%;
-  margin: 10px 0px 0px 0px;
-  padding-left: 2px;
+  width: 240px;
+  height:100%;
+  margin-top:12px;
+  margin-left:5px;
   display: inline-block;
-  background-color: #1B1B1B;
+  vertical-align:bottom;
   color: white;
-  font-size: 40px;
   font-weight: bold;
 }
-html .main .top .title .titlesquare, body .main .top .title .titlesquare {
+.titlename:hover, .titlesquare:hover {
+  cursor: pointer;
+}
+html .main .top .title  .titlename, body .main .top .title  .titlename {
   display: inline-block;
+  vertical-align:top;
+  width:auto;
+  margin-right: 9px;
+  padding: 0px;
+  font-size: 45px;
+}
+html .main .top .title  .titlesquare, body .main .top .title  .titlesquare {
+  width:auto;
+  height:auto;
+  display: inline-block;
+  vertical-align:top;
   background-color: #FF9901;
-  font-size: 35px;
-  border-radius: 5px;
+  font-size: 45px;
+  border-radius: 10px;
   color: black;
-  padding: 2px;
-  margin: 0px;
+  margin-left: 0px;
   font-weight: bold;
+  -webkit-transform: translateX(-15%);
+          transform: translateX(-15%);
 }
 html .main .center, body .main .center {
   width: 100%;
@@ -240,8 +255,26 @@ html .main .center .c_right, body .main .center .c_right {
   height: 100%;
   background: rgba(0, 0, 0, 0);
 }
-
-
+}
+@media only screen
+and (min-width : 0px) 
+and (max-width : 730px)
+{ 
+  html .main .center .c_left, body .main .center .c_left {
+  display: none;
+}
+html .main .center .c_center, body .main .center .c_center {
+  position: absolute;
+  margin: 0;
+  left: 10%;
+  display: inline-block;
+  /*padding: 20px;*/
+  background-color: #0c0c0c;
+  width: 80%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+}
+}
 @-webkit-keyframes ani {
   0% {
     left: 0;

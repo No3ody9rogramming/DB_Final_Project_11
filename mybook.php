@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <?php
+    require_once "dbconnect.php";
+    session_start();
+    if(!isset($_SESSION['account']))
+      header("Location: login.php");
+  ?>
   <link href="css/detail.css" rel="stylesheet" type="text/css" />
   <link href="css/slick/slick-theme.css" rel="stylesheet" type="text/css" />
   <link href="css/slick/slick.css" rel="stylesheet" type="text/css" />
@@ -173,6 +179,12 @@
                     }
                   }
 
+                  function editMakes($db, $ID){
+                    $query = ("INSERT INTO makes VALUES(?,?)");
+                    $stmt = $db->prepare($query);
+                    $result = $stmt->execute(array($ID, $_SESSION['account']));
+                  }
+
                   function getBookInfo($db, $ID, &$AllImages){          
 
                     $name = $_POST["name"];
@@ -185,7 +197,6 @@
                     $query = ("INSERT INTO bookOrder VALUES(?,?,?,?,?,?,?, ?, ?)");
                     $stmt = $db->prepare($query);
                     $result = $stmt->execute(array($ID, $ISBN, $name, $author, $publisher, $AllImages, $price, $category, 0));
-                    $db = null;
                   }
 
                   if(isset($_POST["submitP"])) {
@@ -199,7 +210,8 @@
 
                     $AllImages = "";//準備拿來存全部的圖片名字
                     if(getImage($db, $ID, $AllImages)){ //get 到 image 後 加入bookOrder db
-                       getBookInfo($db, $ID, $AllImages);
+                       getBookInfo($db, $ID, $AllImages); //修改bookOrder
+                       editMakes($db, $ID); //修改makes
                     }
                     else {
                       echo "Invalid book!";
@@ -210,7 +222,7 @@
               </div>
             </div> 
           </div>
-          <div class="c_bottom" style="display:none;">
+          <div class="c_bottom">
           </div>
         </div>
         <div class="c_right">

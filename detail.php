@@ -190,7 +190,7 @@ function b_callback(i){
     $stmt = $db->prepare($query);
     $error = $stmt->execute();
     $relation = $stmt->fetchAll();
-    
+
     for (; $i < count($relation); $i++) {
       if ($i >= 10) {
         break;
@@ -200,6 +200,7 @@ function b_callback(i){
     }
 
     echo "$('.c_bottom').slick({infinite: false,slidesToShow: 4,slidesToScroll: 1});});</script>";
+
   }
 
   if (isset($_POST["bookID"])) {

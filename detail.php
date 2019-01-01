@@ -16,7 +16,7 @@
   var another_items_count=10
   var books_items_count=10
   var img_src="src/Books.jpg";
-  var book_slick_img=["src/test.jpg","src/t1.jpg","src/t2.jpg","src/t3.jpg","src/t4.jpg","src/t5.jpg"];
+  var book_slick_img=[];
   var name="邱吉";
   var address="你心中";
   var condition="販售中";
@@ -30,18 +30,6 @@
     slidesToShow: 4,
     slidesToScroll: 1
   });
-  /*
-  for(var i=0;i<4;i++){
-    $( ".book_slick" ).append( "<button type='button' onclick='a_callback("+i+")'  class='a'> <img src="+book_slick_img[i]+"></button>");
-     // $(".a").click(a_callback());
-    // return false;
-  }
-    
-  $('.book_slick').slick({
-    infinite: false,
-    slidesToShow: 3,
-    slidesToScroll: 1
-  });*/
   
   $(".titlename").click(function() {
     document.location.href = "https://www.pornhub.com";
@@ -105,7 +93,7 @@ function a_callback(i){
     <div class="c_center">
       <div class="c_top">
         <div class="book_img">
-          <img class="main_img" src="/DB_Final_Project_11/book_images/chuyu.jpg">
+          <img class="main_img" src="">
           <div class="book_slick"></div>
         </div>
         <div class="introduce">
@@ -148,6 +136,7 @@ function a_callback(i){
     $error = $stmt->execute();
     $result = $stmt->fetchAll();
 
+    echo "<label>";
     echo "<script>document.getElementById('bookname_label').innerHTML += '".$result[0]["name"]."'</script>";
     echo "<script>document.getElementById('bookISBN_label').innerHTML += '".$result[0]["ISBN"]."'</script>";
     echo "<script>document.getElementById('author_label').innerHTML += '".$result[0]["author"]."'</script>";
@@ -159,9 +148,17 @@ function a_callback(i){
     echo "<script>document.getElementById('dept_label').innerHTML += '".$result[0]["department"]."'</script>";
     echo "<script>document.getElementById('condition_label').innerHTML += '".$result[0]["isSelled"]."'</script>";
     echo "<script>document.getElementById('sell_label').innerHTML += '".$result[0]["price"]."'</script>";
-    echo "<script>console.log(\"<button type='button' onclick='a_callback(0)'  class='a'> <img src='".$result[0]["image"]."'></button>\");</script>";
-    
-    echo "<script>$(document).ready(function() { $(\".book_slick\").append(\"<button type='button' onclick='a_callback(0)'  class='a'> <img src='".$result[0]["image"]."'></button>\");$('.book_slick').slick({infinite: false,slidesToShow: 3,slidesToScroll: 1});});</script>";
+    echo "<script>console.log('".$result[0]["image"]."');</script>";
+
+    $img_arr = mb_split(",",$result[0]["image"]);
+    print_r($img_arr);
+    echo "<script>$(document).ready(function() { ";
+    for ($i = 0; $i < count($img_arr) - 1; $i++) {
+      echo "book_slick_img.push('/DB_Final_Project_11/book_images/".$_POST["bookID"]."/".$img_arr[$i]."'); ";
+      echo "$(\".book_slick\").append(\"<button type='button' onclick='a_callback(".$i.")'  class='a'> <img src='/DB_Final_Project_11/book_images/".$_POST["bookID"]."/".$img_arr[$i]."'></button>\"); ";
+    }
+    echo "$(\".main_img\").attr(\"src\",book_slick_img[0]); ";
+    echo "$('.book_slick').slick({infinite: false,slidesToShow: 3,slidesToScroll: 1});});</script>";
   }
 
   if (isset($_POST["btnsubmit"])) {

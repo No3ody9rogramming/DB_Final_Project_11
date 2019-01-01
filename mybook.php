@@ -105,7 +105,7 @@
                   
                     <select class="drop_down category" id='category' name="category"> 
                     <?php
-                    require_once "dbconnect.php";
+                    //require_once "dbconnect.php";
                     $query = ("SELECT category FROM category;");
                     $stmt = $db->prepare($query);
                     $error = $stmt->execute(); 
@@ -126,7 +126,7 @@
               <div>
                 <?php
 
-                  require_once "dbconnect.php";
+                  //require_once "dbconnect.php";
 
                   function validUpload(){//出錯回傳false
                     $valid = true;
@@ -170,7 +170,7 @@
                       mkdir("./book_images/" . $ID);//先創建資料夾才能放東西
                       $fileCount = 0;
                       foreach($_FILES['images']['name'] as $imageName){
-                        $newImageName = "./book_images/" . $ID . "/" . $imageName; //還要再加上userID
+                        $newImageName = "./book_images/$ID/$imageName";
                         $AllImages = $AllImages . $imageName . ",";
                         move_uploaded_file($_FILES['images']["tmp_name"][$fileCount], $newImageName);
                         $fileCount++;

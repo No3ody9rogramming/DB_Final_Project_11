@@ -17,19 +17,21 @@
   var books_items_count=10
   var img_src="src/Books.jpg";
   var book_slick_img=[];
+  var book_order_id=[];
   var name="邱吉";
   var address="你心中";
   var condition="販售中";
   var category_count=7;
   $(document).ready(function(){
+    /*
   for(var i=0;i<another_items_count;i++){
-    $( ".c_bottom" ).append( "<a href=''><img src="+img_src+"><div class='another_book_name'>書</div></a>");
+    $( ".c_bottom" ).append( "<button type='button' onclick='b_callback(" + i +")' class='a'><img src="+img_src+"><div class='another_book_name'>書</div></button>");
   }
   $('.c_bottom').slick({
     infinite: false,
     slidesToShow: 4,
     slidesToScroll: 1
-  });
+  });*/
   
   $(".titlename").click(function() {
     document.location.href = "https://www.pornhub.com";
@@ -44,8 +46,16 @@ function a_callback(i){
   $(".main_img").attr("src",book_slick_img[i]);
 }
 
+function b_callback(i){
+  $("#otherBookInput").attr("value", i);
+  $("#otherBookForm").submit();
+}
+
 </script>
 <body>
+  <form id="otherBookForm" action='detail.php' method='post'>
+    <input type='hidden' name='bookID' value='7' id="otherBookInput">
+  </form>
   <?php
       session_cache_limiter('private');
       session_start();
@@ -131,10 +141,11 @@ function a_callback(i){
 </div>
 <?php
   function loadPage($db) {
-    $query = "SELECT account_ID, name, ISBN, author, publisher, user_name, phoneNum, city, school_name, department, isSelled, price, image FROM makes NATURAL JOIN bookOrder NATURAL JOIN users WHERE makes.order_ID = ".$_POST["bookID"].";";
+    $query = "SELECT account_ID, name, ISBN, author, publisher, user_name, phoneNum, city, school_name, department, isSelled, price, image, category FROM makes NATURAL JOIN bookOrder NATURAL JOIN users WHERE makes.order_ID = ".$_POST["bookID"].";";
     $stmt = $db->prepare($query);
     $error = $stmt->execute();
     $result = $stmt->fetchAll();
+    $category = $result[0]["category"];
 
     echo "<label>";
     echo "<script>document.getElementById('bookname_label').innerHTML += '".$result[0]["name"]."'</script>";
@@ -149,9 +160,9 @@ function a_callback(i){
     echo "<script>document.getElementById('condition_label').innerHTML += '".$result[0]["isSelled"]."'</script>";
     echo "<script>document.getElementById('sell_label').innerHTML += '".$result[0]["price"]."'</script>";
     echo "<script>console.log('".$result[0]["image"]."');</script>";
+    echo "</label>";
 
     $img_arr = mb_split(",",$result[0]["image"]);
-    print_r($img_arr);
     echo "<script>$(document).ready(function() { ";
     for ($i = 0; $i < count($img_arr) - 1; $i++) {
       echo "book_slick_img.push('/DB_Final_Project_11/book_images/".$_POST["bookID"]."/".$img_arr[$i]."'); ";
@@ -159,9 +170,39 @@ function a_callback(i){
     }
     echo "$(\".main_img\").attr(\"src\",book_slick_img[0]); ";
     echo "$('.book_slick').slick({infinite: false,slidesToShow: 3,slidesToScroll: 1});});</script>";
+
+    $query = "SELECT order_ID, name, image, category FROM bookOrder WHERE category = '".$category."' AND order_ID != ".$_POST["bookID"].";";
+    $stmt = $db->prepare($query);
+    $error = $stmt->execute();
+    $relation = $stmt->fetchAll();
+
+    echo "<script>$(document).ready(function() { ";
+    $i = 0;
+    for (; $i < count($relation); $i++) {
+      if ($i >= 10) {
+        break;
+      }
+      $img = mb_split(",",$relation[0]["image"])[0];
+      echo "$(\".c_bottom\").append(\"<button type='button' onclick='b_callback(".$relation[$i]["order_ID"].")'  class='a'> <img src='/DB_Final_Project_11/book_images/".$relation[$i]["order_ID"]."/".$img."'><div class='another_book_name'>".$relation[$i]["name"]."</div></button>\"); ";
+    }
+
+    $query = "SELECT order_ID, name, image, category FROM bookOrder WHERE category != '".$category."';";
+    $stmt = $db->prepare($query);
+    $error = $stmt->execute();
+    $relation = $stmt->fetchAll();
+    
+    for (; $i < count($relation); $i++) {
+      if ($i >= 10) {
+        break;
+      }
+      $img = mb_split(",",$relation[0]["image"])[0];
+      echo "$(\".c_bottom\").append(\"<button type='button' onclick='b_callback(".$relation[$i]["order_ID"].")'  class='a'> <img src='/DB_Final_Project_11/book_images/".$relation[$i]["order_ID"]."/".$img."'><div class='another_book_name'>".$relation[$i]["name"]."</div></button>\"); ";
+    }
+
+    echo "$('.c_bottom').slick({infinite: false,slidesToShow: 4,slidesToScroll: 1});});</script>";
   }
 
-  if (isset($_POST["btnsubmit"])) {
+  if (isset($_POST["bookID"])) {
     loadPage($db);
     echo "<script>console.log(111)</script>";
   }

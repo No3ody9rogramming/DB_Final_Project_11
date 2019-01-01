@@ -276,6 +276,8 @@ html .main .center .c_center .c_top .book_img .book_slick .a, body .main .center
   -webkit-appearance:none;
   background-color: #1B1B1B;
   border-color: #1B1B1B;
+  border: 0px;
+  position: relative;
   /*border: solid 1px blue;*/
 }
 html .main .center .c_center .c_top .book_img .book_slick img, body .main .center .c_center .c_top .book_img .book_slick img{
@@ -359,12 +361,19 @@ html .main .center .c_center .c_bottom, body .main .center .c_center .c_bottom {
 
   /*border: solid 1px red;*/
 }
+html .main .center .c_center .c_bottom .a, body .main .center .c_center .c_bottom .a{
+  -webkit-appearance:none;
+  background-color: #1B1B1B;
+  border-color: #1B1B1B;
+  border: 0px;
+  /*border: solid 1px blue;*/
+}
 html .main .center .c_center .c_bottom img, body .main .center .c_center .c_bottom img{
   /*position: relative;*/
-  width: 9.45vw;
+  width: 80%;
   height:13vh;
   margin-top: 5%;
-  margin-left: 2.7vw;
+  margin-left: 32%;
   transform:translateX(-3vw);
   /*border: solid 1px green;*/
   /*background-color:white;*/

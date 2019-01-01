@@ -30,18 +30,18 @@
     slidesToShow: 4,
     slidesToScroll: 1
   });
-  
-  for(var i=0;i<6;i++){
+  /*
+  for(var i=0;i<4;i++){
     $( ".book_slick" ).append( "<button type='button' onclick='a_callback("+i+")'  class='a'> <img src="+book_slick_img[i]+"></button>");
      // $(".a").click(a_callback());
     // return false;
   }
-
+    
   $('.book_slick').slick({
     infinite: false,
     slidesToShow: 3,
     slidesToScroll: 1
-  });
+  });*/
   
   $(".titlename").click(function() {
     document.location.href = "https://www.pornhub.com";
@@ -51,9 +51,9 @@
     document.location.href = "main.php";
   });
 });
-  function a_callback(i){
-  
-    $(".main_img").attr("src",book_slick_img[i]);
+
+function a_callback(i){
+  $(".main_img").attr("src",book_slick_img[i]);
 }
 
 </script>
@@ -105,7 +105,7 @@
     <div class="c_center">
       <div class="c_top">
         <div class="book_img">
-          <img class="main_img" src="src/Books.jpg">
+          <img class="main_img" src="/DB_Final_Project_11/book_images/chuyu.jpg">
           <div class="book_slick"></div>
         </div>
         <div class="introduce">
@@ -159,10 +159,9 @@
     echo "<script>document.getElementById('dept_label').innerHTML += '".$result[0]["department"]."'</script>";
     echo "<script>document.getElementById('condition_label').innerHTML += '".$result[0]["isSelled"]."'</script>";
     echo "<script>document.getElementById('sell_label').innerHTML += '".$result[0]["price"]."'</script>";
-    echo "<script>console.log(\"<a href=''><img src='/DB_Final_Project_11/".$result[0]["image"]."'></a>\");</script>";/*
-    echo "<script>$(\".book_slick\").append(\"<a href=''><img src='/DB_Final_Project_11/".$result[0]["image"]."'></a>\");</script>";
-    echo "<script>$('.book_slick').slick({infinite: false,slidesToShow: 3,slidesToScroll: 1});</script>";*/
-      
+    echo "<script>console.log(\"<button type='button' onclick='a_callback(0)'  class='a'> <img src='".$result[0]["image"]."'></button>\");</script>";
+    
+    echo "<script>$(document).ready(function() { $(\".book_slick\").append(\"<button type='button' onclick='a_callback(0)'  class='a'> <img src='".$result[0]["image"]."'></button>\");$('.book_slick').slick({infinite: false,slidesToShow: 3,slidesToScroll: 1});});</script>";
   }
 
   if (isset($_POST["btnsubmit"])) {
@@ -170,7 +169,6 @@
     echo "<script>console.log(111)</script>";
   }
   else {
-    loadPage($db);
     echo "<script>document.location.href = 'main.php'</script>";
     echo "<script>console.log('test')</script>";
   }

@@ -67,7 +67,7 @@
           <div class="c_top">
             <div class="book_img">
               <img class="main_img" src="src/Books.jpg">
-              <div class="image_select"><ul><li>選擇圖片</li><input accept="image/jpg,image/png,image/jpeg,image/bmp" type="file" name="image" class="select"></ul> </div>
+              <div class="image_select"> </div>
             </div>
             <div class="introduce">
               <form action="" method="post" enctype="multipart/form-data">
@@ -90,6 +90,9 @@
                 <ul>
                   <li class="creat_title">價格:</li>
                   <input name="price" type="number" class='creat'>
+                </ul>
+                <ul>
+                  <li>選擇圖片</li><input accept="image/jpg,image/png,image/jpeg,image/bmp" type="file" name="images[]" class="select" multiple>
                 </ul>
                 <ul>
                   <li class="creat_title">書籍分類:</li>
@@ -119,24 +122,58 @@
 
                   require_once "dbconnect.php";
 
-                  function getImage($db, $newImageName) {
-                    if($_FILES['image']["error"] > 0) { //出錯 > 0
-                      printf("%d\n", $_FILES['image']["error"]);
-                    } 
-                    else {                      
-                      move_uploaded_file($_FILES['image']["tmp_name"], $newImageName);
-                      return true;
+                  function validUpload(){//出錯回傳false
+                    $valid = true;
+                    foreach($_FILES['images']['error'] as $uploadError){
+                      if($uploadError > 0){
+                        $valid = false;
+                        switch($uploadError){
+                          case 1:
+                            echo "上傳的檔案太大了!\n";
+                            break;
+                          case 2:
+                            echo "上傳的檔案太大了!\n";
+                            break;
+                          case 3:
+                            echo "只上傳部分檔案\n";
+                            break;
+                          case 4:
+                            echo "未上傳檔案\n";
+                            break;
+                          case 6:
+                            echo "伺服器temp檔案遺失\n";
+                            break;
+                          case 7:
+                            echo "不能寫入伺服器硬碟\n";
+                            break;
+                          case 8:
+                            echo "php的外掛終止檔案上傳\n";
+                            break;
+                        }
+                      }
                     }
-                    return false;
+                    return $valid;
                   }
 
-                  function getBookInfo($db, $newImageName){
-                    $query = ("SELECT max(order_ID) AS t FROM bookOrder;");
-                    $stmt = $db->prepare($query);
-                    $error = $stmt->execute();
-                    $result = $stmt->fetchAll();
+                  function getImage($db, $ID, &$AllImages) { //資料庫, OrderID, 全部上傳圖片的名字(用,分開); //出錯回傳false
 
-                    $ID = $result[0]['t'] + 1; //數目前有幾本書
+                    if(!validUpload())//出錯回傳false
+                      return false;
+
+                    else {
+                      mkdir("./book_images/" . $ID);//先創建資料夾才能放東西
+                      $fileCount = 0;
+                      foreach($_FILES['images']['name'] as $imageName){
+                        $newImageName = "./book_images/" . $ID . "/" . $imageName; //還要再加上userID
+                        $AllImages = $AllImages . $imageName . ",";
+                        move_uploaded_file($_FILES['images']["tmp_name"][$fileCount], $newImageName);
+                        $fileCount++;
+                      }
+                      return true;
+                    }
+                  }
+
+                  function getBookInfo($db, $ID, &$AllImages){          
 
                     $name = $_POST["name"];
                     $author = $_POST["publisher"];
@@ -147,14 +184,22 @@
 
                     $query = ("INSERT INTO bookOrder VALUES(?,?,?,?,?,?,?, ?, ?)");
                     $stmt = $db->prepare($query);
-                    $result = $stmt->execute(array($ID, $ISBN, $name, $author, $publisher, $newImageName, $price, $category, 0));
+                    $result = $stmt->execute(array($ID, $ISBN, $name, $author, $publisher, $AllImages, $price, $category, 0));
                     $db = null;
                   }
 
                   if(isset($_POST["submitP"])) {
-                    $newImageName = "book_images/" . $_FILES['image']["name"]; //還要再加上userID
-                    if(getImage($db, $newImageName)){ //get 到 image 後 加入bookOrder db
-                       getBookInfo($db, $newImageName);
+
+                    //拿Order_ID
+                    $query = ("SELECT max(order_ID) AS t FROM bookOrder;");
+                    $stmt = $db->prepare($query);
+                    $error = $stmt->execute();
+                    $result = $stmt->fetchAll();
+                    $ID = $result[0]['t'] + 1; //最大Order+1為新Order
+
+                    $AllImages = "";//準備拿來存全部的圖片名字
+                    if(getImage($db, $ID, $AllImages)){ //get 到 image 後 加入bookOrder db
+                       getBookInfo($db, $ID, $AllImages);
                     }
                     else {
                       echo "Invalid book!";
@@ -165,7 +210,7 @@
               </div>
             </div> 
           </div>
-          <div class="c_bottom">
+          <div class="c_bottom" style="display:none;">
           </div>
         </div>
         <div class="c_right">

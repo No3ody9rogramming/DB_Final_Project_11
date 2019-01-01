@@ -195,7 +195,7 @@ function b_callback(i){
       if ($i >= 10) {
         break;
       }
-      $img = mb_split(",",$relation[0]["image"])[0];
+      $img = mb_split(",",$relation[$i]["image"])[0];
       echo "$(\".c_bottom\").append(\"<button type='button' onclick='b_callback(".$relation[$i]["order_ID"].")'  class='a'> <img src='/DB_Final_Project_11/book_images/".$relation[$i]["order_ID"]."/".$img."'><div class='another_book_name'>".$relation[$i]["name"]."</div></button>\"); ";
     }
 

@@ -24,26 +24,26 @@
       <ul class="l_buttons">
         <li class="l_button">
           <img src="src/my-icons-collection/png/001-home.png" class="b_img">
-          <form action="main.php">
+          <form action="index.php">
             <input id = "Home_button" type = "submit" value = "Home" class="button">
           </form>
           <!-- <div class="button">Home</div> -->
         </li>
         <li class="l_button">
           <img src="src/my-icons-collection/png/002-book.png" class="b_img">
-          <form action="main.php">
+          <form action="index.php">
             <input id = "Books_button" type = "submit" value = "Books" class="button">
           </form>
         </li>
         <li class="l_button">
           <img src="src/my-icons-collection/png/003-search.png" class="b_img">
-          <form action="main.php">
+          <form action="index.php">
             <input id = "Search_button" type = "submit" value = "Search" class="button">
           </form>        
         </li>
         <li class="l_button">
           <img src="src/my-icons-collection/png/004-mechanic.png" class="b_img">
-          <form action="main.php">
+          <form action="index.php">
             <input id = "Mechanic_button" type = "submit" value = "Mechanic" class="button">
           </form>
         </li>
@@ -55,7 +55,7 @@
         </li>
         <li class="l_button">
           <img src="src/my-icons-collection/png/006-star.png" class="b_img">
-          <form action="main.php">
+          <form action="index.php">
             <input id = "Star_button" type = "submit" value = "Star" class="button">
           </form>
         </li>
@@ -91,7 +91,7 @@
           $_SESSION['account'] = $_POST['account_ID'];
 		      echo "<script>console.log('right');</script>";
           echo "<script>console.log('".$_SESSION["account"]."');</script>";
-          header("location:main.php");
+          header("location:index.php");
 		    }
 		    else if (count($account) == 1) {
               echo "<script>document.getElementById('account_ID').value = '" .$_POST["account_ID"]. "';</script>";

@@ -22,6 +22,7 @@
   var address="你心中";
   var condition="販售中";
   var category_count=7;
+  var logIn = false;
   $(document).ready(function(){
     /*
   for(var i=0;i<another_items_count;i++){
@@ -58,6 +59,14 @@ function a_callback(i){
 function b_callback(i){
   $("#otherBookInput").attr("value", i);
   $("#otherBookForm").submit();
+}
+
+function toSignUp() {
+  if (logIn == false)
+    document.location.href = "login.php";
+  else {
+    document.location.href = "logout.php";
+  }
 }
 
 </script>
@@ -99,14 +108,18 @@ function b_callback(i){
     <div class="user">
       <div class="account">hi, willchiu</div>
       <div class="account_b">
-        <input id = "signIn" type = "button" value = "signIn">
-        <input id = "logIn" type = "button" value = "logIn">
+        <a href="signup.php">
+          <input id = "signIn" type = "submit" value = "Sign Up">
+        </a>
+        <a href="#" onclick="toSignUp()">
+          <input id = "logIn" type = "button" value = "Log In">
+        </a>
       </div> 
     </div>
   </div>
   <div class="center">
     <div class="c_left">
-      <div class="category_title">category</div>
+      <div class="category_title"><a href="index.php" style="text-decoration: none; color: black;">category</a></div>
       <div class="category_items" id="category_items">
         <?php
           $query = ("SELECT category, COUNT(order_ID) AS total FROM bookOrder GROUP BY category ORDER BY category DESC;");
@@ -236,6 +249,11 @@ function b_callback(i){
   else {
     echo "<script>document.location.href = 'index.php'</script>";
     echo "<script>console.log('test')</script>";
+  }
+  if (isset($_SESSION["account"])) {
+    echo "<script>logIn = true</script>";
+    echo "<script>document.getElementById('logIn').value = 'Log Out';</script>";
+    echo "<script>document.getElementById('signIn').style.display = 'none';</script>";
   }
 ?>
 </body>

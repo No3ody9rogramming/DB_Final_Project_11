@@ -64,7 +64,7 @@ function toSignUp() {
   </div>
   <div class="center">
     <div class="c_left">
-      <div class="category_title">Home</div>
+      <div class="category_title" id="category_title"><a href="index.php" style="text-decoration: none; color: black;">category</a></div>
       <div class="category_items">
         <?php
           $query = ("SELECT category, COUNT(order_ID) AS total FROM bookOrder GROUP BY category ORDER BY category DESC;");

@@ -6,6 +6,26 @@
   <meta charset = "utf-8">
   <title>Bookhub Register</title>
 </head>
+<script type="text/javascript">
+    var logIn = false;
+ $(document).ready(function(){
+  $(".titlename").click(function() {
+    document.location.href = "https://www.pornhub.com";
+  });
+  
+  $(".titlesquare").click(function() {
+    document.location.href = "index.php";
+  });
+});
+
+function toSignUp() {
+  if (logIn == false)
+    document.location.href = "login.php";
+  else {
+    document.location.href = "logout.php";
+  }
+}
+</script>
 <body>
   <?php
       require_once "dbconnect.php"; //更嚴謹，需要確實加入此PHP  

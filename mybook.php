@@ -55,10 +55,14 @@
           
         </div>
         <div class="user">
-          <div class="account">hi, willchiu</div>
+          <div class="account" id="account">hi, willchiu</div>
           <div class="account_b">
-            <input id = "signIn" type = "button" value = "signIn">
-            <input id = "logIn" type = "button" value = "logIn">
+            <a href="signup.php">
+              <input id = "signIn" type = "submit" value = "Sign Up">
+            </a>
+            <a href="#" onclick="toSignUp()">
+              <input id = "logIn" type = "button" value = "Log In">
+            </a>
           </div> 
         </div>
       </div>
@@ -322,5 +326,13 @@
       </div>
     </div>
     <div class="bottom"></div>
+    <?php
+      if (isset($_SESSION["account"])) {
+        echo "<script>document.getElementById('account').innerHTML = 'hi, <a href=\"mybook.php\" style=\"color:#02e9ff\">".$_SESSION["account"]."</a><a href=\"account.php\">修改帳戶</a>'</script>";
+        echo "<script>logIn = true</script>";
+        echo "<script>document.getElementById('logIn').value = 'Log Out';</script>";
+        echo "<script>document.getElementById('signIn').style.display = 'none';</script>";
+      }
+    ?>
   </body>
 </html>

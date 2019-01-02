@@ -105,7 +105,7 @@
           </div>
         </div>
         <div class="c_center">
-          <div class="c_top">
+          <div class="c_top creat">
             <div class="book_img">
               <img class="main_img" src="src/Books.jpg">
               <div class="image_select"> </div>

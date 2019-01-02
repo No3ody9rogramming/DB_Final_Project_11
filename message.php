@@ -44,6 +44,13 @@
 // });
 });
 
+function toSignUp() {
+  if (logIn == false)
+    document.location.href = "login.php";
+  else {
+    document.location.href = "logout.php";
+  }
+}
 </script>
 <body>
   <?php
@@ -61,7 +68,7 @@
       
     </div>
     <div class="user">
-      <div class="account">hi, willchiu</div>
+      <div class="account" id="account">hi, willchiu</div>
       <div class="account_b">
         <a href="signup.php">
           <input id = "signIn" type = "submit" value = "Sign Up">

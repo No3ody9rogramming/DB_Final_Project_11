@@ -160,7 +160,10 @@ function toSignUp() {
             <li class="sell"><span id="sell_label">售價：</span></li>
           </ul>
           <div class="introduce_b">
-            <button class="ask">留言</button>
+            <form action="message.php" method="post">
+              <!--<button class="ask" onclick="toMessage()">留言</button>-->
+              <input class="ask" type="submit" name="messageSubmit" value="留言">
+            </form>
           </div> 
         </div>
       </div>

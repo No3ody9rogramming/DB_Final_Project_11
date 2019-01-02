@@ -106,7 +106,7 @@ function toSignUp() {
       
     </div>
     <div class="user">
-      <div class="account">hi, willchiu</div>
+      <div class="account" id="account">hi, willchiu</div>
       <div class="account_b">
         <a href="signup.php">
           <input id = "signIn" type = "submit" value = "Sign Up">
@@ -251,6 +251,7 @@ function toSignUp() {
     echo "<script>console.log('test')</script>";
   }
   if (isset($_SESSION["account"])) {
+    echo "<script>document.getElementById('account').innerHTML = 'hi, <a href=\"mybook.php\" style=\"color:#02e9ff\">".$_SESSION["account"]."</a>'</script>";
     echo "<script>logIn = true</script>";
     echo "<script>document.getElementById('logIn').value = 'Log Out';</script>";
     echo "<script>document.getElementById('signIn').style.display = 'none';</script>";

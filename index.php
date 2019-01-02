@@ -172,7 +172,7 @@ function toSignUp() {
           }
         }
         if (isset($_SESSION["account"])) {
-          echo $_SESSION["account"];
+          echo "<script>document.getElementById('account').innerHTML = 'hi, <a href=\"mybook.php\" style=\"color:#02e9ff\">".$_SESSION["account"]."</a>'</script>";
           echo "<script>logIn = true</script>";
           echo "<script>document.getElementById('logIn').value = 'Log Out';</script>";
           echo "<script>document.getElementById('signIn').style.display = 'none';</script>";

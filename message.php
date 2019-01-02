@@ -20,6 +20,16 @@
   var address="你心中";
   var condition="販售中";
   var category_count=7;
+  var logIn = false;
+ $(document).ready(function(){
+  $(".titlename").click(function() {
+    document.location.href = "https://www.pornhub.com";
+  });
+  
+  $(".titlesquare").click(function() {
+    document.location.href = "index.php";
+  });
+});
 
 function toSignUp() {
   if (logIn == false)

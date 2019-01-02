@@ -43,6 +43,24 @@
      }
   
 });
+    var logIn = false;
+ $(document).ready(function(){
+  $(".titlename").click(function() {
+    document.location.href = "https://www.pornhub.com";
+  });
+  
+  $(".titlesquare").click(function() {
+    document.location.href = "index.php";
+  });
+});
+
+function toSignUp() {
+  if (logIn == false)
+    document.location.href = "login.php";
+  else {
+    document.location.href = "logout.php";
+  }
+}
 </script>
   <body>
     <div class="main">
@@ -175,16 +193,20 @@
                     ?>
                   </select>
                 </ul>
-                
+                <ul>
+                  <li>
                     <input id="orderID" type="hidden" name="orderID">
                     <input id="submitP" type="submit" name="submitP" class="ask" value="新增書籍"> 
-                  
+                  </li>
+                </ul>
               </form>
               <form action="" method="post">
-                
+                <ul>
+                  <li>
                     <input id="orderIDDelete" type="hidden" name="orderID">
-                    <input type="submit" name="deleteB" id="deleteB"  class="delete" style="display:none;" value="刪除此書">
-                 
+                    <input type="submit" name="deleteB" id="deleteB" style="display:none;" value="刪除此書">
+                  </li>
+                </ul>
               </form>
               <div>
                 <?php

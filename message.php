@@ -21,11 +21,6 @@
   var condition="販售中";
   var category_count=7;
   $(document).ready(function(){
-
-   for(var i=0;i<category_count;i++){
-      $(".category_items").append("<input class='category_button' id = '"+i+"' type = 'button' value = ''>");
-      console.log("a");
-     }
    $("#send").click(function(){
       var dt = new Date();
       var div= $(".c_bottom");
@@ -35,7 +30,7 @@
       if(text!="")
       {
         var now = (dt.getMonth()+1)+"/"+dt.getDate()+" "+ dt.getHours() + ":" + dt.getMinutes() ;
-        $( ".c_bottom" ).append( "<div class='message' id='message"+i+"'>"+text+"</div><div class='time'>"+now+"</div>");
+        $( ".c_bottom" ).append( "<div class='message' id='message0'>"+text+"</div><div class='time'>"+now+"</div>");
         div[0].scrollTop=div[0].scrollHeight;
       }
     });
@@ -57,6 +52,9 @@ function toSignUp() {
       session_cache_limiter('private');
       session_start();
       require_once "dbconnect.php"; //更嚴謹，需要確實加入此PHP  
+      if (!isset($_POST["messageSubmit"])) {
+        echo "<script>history.go(-1)</script>";
+      }
   ?>
   <div class="main">
   <div class="top">
@@ -83,7 +81,22 @@ function toSignUp() {
     <div class="c_left">
       <div class="category_title">Home</div>
       <div class="category_items">
-        
+        <?php
+          $query = ("SELECT category, COUNT(order_ID) AS total FROM bookOrder GROUP BY category ORDER BY category DESC;");
+          $stmt = $db->prepare($query);
+          $error = $stmt->execute();
+          $result = $stmt->fetchAll();
+
+          $categorycount=0;
+
+          foreach ($result as $rows) {
+            $str = $rows['category'];
+            $str1 = $rows['total'];
+           
+            echo "<form action='index.php' method='post'><input type='hidden' name='category' value='".$str."'><input class='category_button' id='category_button".$categorycount."' type = 'submit' value='".$str."(".$str1.")' name='categorySubmit'></input></form>";
+            $categorycount++;
+          }
+        ?>
       </div>
     </div>
     <div class="c_center">
@@ -92,16 +105,16 @@ function toSignUp() {
           <ul>
             <li class="bookname"> 
               <span class="label bookname_label">書名：</span>
-              <span class="value bookname_value">列車上的女孩</span>
-            </li>
-            <li class="sell">
-              <span class="label sell_label">售價：</span>
-              <span class="value sell_value">250</span>
+              <span class="value bookname_value" id="bookName"></span>
             </li>
             <li class="condition">
-              <span class="label condition_label">狀況：</span>
-              <span class="value condition_value">待售</span>   
-            </li>          
+              <span class="label condition_label">&nbsp;&nbsp;&nbsp;&nbsp;ISBN：</span>
+              <span class="value condition_value" id="ISBN"></span>   
+            </li>
+            <li class="sell">
+              <span class="label sell_label">&nbsp;&nbsp;&nbsp;&nbsp;售價：</span>
+              <span class="value sell_value" id="price"></span>
+            </li>
           </ul>         
         </div>
       </div> 
@@ -109,8 +122,10 @@ function toSignUp() {
         
       </div>
       <div class="input_message">
-        <input type="text" id="input_message_id" class="input_message_text">
-        <input type="button" id="send"  class="send" value="send">
+        <form action="message.php" method="post">
+          <input type="text" id="input_message_id" class="input_message_text">
+          <input type="button" id="send"  class="send" value="send">
+        </form>
       </div>
     </div>
   <!-- </div> -->
@@ -128,6 +143,15 @@ function toSignUp() {
     echo "<script>logIn = true</script>";
     echo "<script>document.getElementById('logIn').value = 'Log Out';</script>";
     echo "<script>document.getElementById('signIn').style.display = 'none';</script>";
+
+    $query = ("SELECT name, price, ISBN FROM bookOrder WHERE order_ID = ".$_POST["bookID"].";");
+    $stmt = $db->prepare($query);
+    $error = $stmt->execute();
+    $result = $stmt->fetchAll();
+
+    echo "<script>document.getElementById('bookName').innerHTML = \"".$result[0]["name"]."\"</script>";
+    echo "<script>document.getElementById('price').innerHTML = \"".$result[0]["price"]."\"</script>";
+    echo "<script>document.getElementById('ISBN').innerHTML = \"".$result[0]["ISBN"]."\"</script>";
   }
 ?>
 </body>

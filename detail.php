@@ -162,6 +162,7 @@ function toSignUp() {
           <div class="introduce_b">
             <form action="message.php" method="post">
               <!--<button class="ask" onclick="toMessage()">留言</button>-->
+              <input type="hidden" name="bookID" id="bookID">
               <input class="ask" type="submit" name="messageSubmit" value="留言">
             </form>
           </div> 
@@ -183,13 +184,13 @@ function toSignUp() {
 </div>
 <?php
   function loadPage($db) {
+    echo "<script>document.getElementById('bookID').value += '".$_POST["bookID"]."'</script>";
     $query = "SELECT account_ID, name, ISBN, author, publisher, user_name, phoneNum, city, school_name, department, isSelled, price, image, category FROM makes NATURAL JOIN bookOrder NATURAL JOIN users WHERE makes.order_ID = ".$_POST["bookID"].";";
     $stmt = $db->prepare($query);
     $error = $stmt->execute();
     $result = $stmt->fetchAll();
     $category = $result[0]["category"];
 
-    echo "<label>";
     echo "<script>document.getElementById('bookname_label').innerHTML += '".$result[0]["name"]."'</script>";
     echo "<script>document.getElementById('bookISBN_label').innerHTML += '".$result[0]["ISBN"]."'</script>";
     echo "<script>document.getElementById('author_label').innerHTML += '".$result[0]["author"]."'</script>";
@@ -202,7 +203,6 @@ function toSignUp() {
     echo "<script>document.getElementById('condition_label').innerHTML += '".$result[0]["isSelled"]."'</script>";
     echo "<script>document.getElementById('sell_label').innerHTML += '".$result[0]["price"]."'</script>";
     echo "<script>console.log('".$result[0]["image"]."');</script>";
-    echo "</label>";
 
     $img_arr = mb_split(",",$result[0]["image"]);
     echo "<script>$(document).ready(function() { ";

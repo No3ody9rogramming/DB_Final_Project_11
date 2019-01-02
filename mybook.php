@@ -39,7 +39,7 @@
     });
    
    for(var i=0;i<category_count;i++){
-      $(".category_items").append("<input class='category_button' id = '"+i+"' type = 'button' value = ''>");
+      //$(".category_items").append("<input class='category_button' id = '"+i+"' type = 'button' value = ''>");
      }
   
 });
@@ -66,7 +66,27 @@
         <div class="c_left">
           <div class="category_title">新增</div>
           <div class="category_items">
-            
+            <?php
+
+              if(isset($_POST['categorySubmit'])){
+                echo "$"
+              }
+
+              $query = "SELECT account_ID, order_ID, name, ISBN, author, publisher, user_name, phoneNum, city, school_name, department, isSelled, price, image, category FROM makes NATURAL JOIN bookOrder NATURAL JOIN users WHERE account_ID = '".$_SESSION["account"]."';";
+              $stmt = $db->prepare($query);
+              $error = $stmt->execute();
+              $result = $stmt->fetchAll();
+
+              $categorycount=0;
+
+              foreach ($result as $rows) {
+                $bookname = $rows['name'];
+                $orderID = $rows['order_ID'];
+               
+                echo "<form action='' method='post'><input type='hidden' name='category' value='".$orderID."'><input class='category_button' id='category_button".$categorycount."' type = 'submit' value='".$bookname."' name='categorySubmit'></input></form>";
+                $categorycount++;
+              }
+            ?>
           </div>
         </div>
         <div class="c_center">

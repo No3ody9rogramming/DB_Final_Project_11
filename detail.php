@@ -42,7 +42,13 @@
   });
   $(".cancel_button").click(function(){
     $(".adv").css("display","none");
-  })
+  });
+  $(".remove_button").click(function(){
+    $(".adv_img").attr("src","src/hung2.jpg");
+    $(".adv_img").css("transform","rotate(90deg)");
+    $(".adv_img").css("weight","100%");
+    $(".cancel_button").text("喂！喂！請問你在按什麼")
+  });
 });
 
 function a_callback(i){
@@ -72,8 +78,9 @@ function b_callback(i){
     </div>
     </div>
     <div class="inner_adv">
+      <button type="button" class="remove_button" >x</button>
       <div class="button_adv">
-        <a href="https://www.facebook.com/profile.php?id=100001277294511"><img src="src/hung.jpg"></a>
+        <a href="https://www.facebook.com/profile.php?id=100001277294511"><img class="adv_img"src="src/hung.jpg"></a>
       </div>
       <div class="cancel_adv">
         <button type="button" class="cancel_button" >Continue to look</button>

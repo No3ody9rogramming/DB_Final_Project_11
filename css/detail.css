@@ -93,6 +93,18 @@ html .adv .inner_adv, body .inner_adv {
   border: 1px solid #313131;
   
 }
+html .adv .inner_adv .remove_button, body .inner_adv .remove_button{
+  position: absolute;
+  top: 7%;
+  left:100%;
+  transform: translateX(-255%);
+  width: 30px;
+  height: 30px;
+  border: 2px solid white;
+  border-radius: 50%;
+  font-weight: bolder;
+  z-index: 999;
+}
 html .adv .inner_adv .button_adv, body .inner_adv .button_adv{
   position: absolute;
   top: 10%;
@@ -101,10 +113,13 @@ html .adv .inner_adv .button_adv, body .inner_adv .button_adv{
   width: 80%;
   height: 60%;
   border: 1px solid #313131;
+  overflow: hidden;
 }
 html .adv .inner_adv .button_adv a img, body .inner_adv .button_adv a img{
   width: 100%;
-  height: 100%;
+  height: 50vw;
+  position: absolute;
+  top:-30%;
 }
 html .adv .inner_adv .cancel_adv, body .inner_adv .cancel_adv{
   position: absolute;

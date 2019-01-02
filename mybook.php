@@ -69,7 +69,7 @@
             <?php
 
               if(isset($_POST['categorySubmit'])){
-                echo "$"
+                echo "$";
               }
 
               $query = "SELECT account_ID, order_ID, name, ISBN, author, publisher, user_name, phoneNum, city, school_name, department, isSelled, price, image, category FROM makes NATURAL JOIN bookOrder NATURAL JOIN users WHERE account_ID = '".$_SESSION["account"]."';";

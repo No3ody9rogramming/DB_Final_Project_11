@@ -25,6 +25,16 @@
     $( ".c_bottom" ).append( "<div class='items "+i+"''><div class='i_left'><img src="+img_src+"><form action='detail.php' method='post'><input type='hidden' name='bookID' value='1'><input class='items_b "+i+"' name='btnsubmit' id = "+i+" type = 'submit' value = 'look'></form></div><div class='introduce'><ul><li class='name'><span class='label'>名字:</span><span class='input' id='input_name'>"+name+"</span></li><li class='address'><span class='label'>地址:</span><span class='input' id='input_address'>"+address+"</span></li><li class='condition'><span class='label'>狀態:</span><span class='input' id='input_condition'>"+condition+"</span></li></ul></div></div>" );
      }
   });*/
+ $(document).ready(function(){
+  $(".titlename").click(function() {
+    document.location.href = "https://www.pornhub.com";
+  });
+  
+  $(".titlesquare").click(function() {
+    document.location.href = "main.php";
+  });
+});
+
 </script>
 <body>
 <div class="main">
@@ -99,17 +109,23 @@
             $bookprice[$bookcount]=$rows['price'];
             $booksell[$bookcount]=$rows['isSelled'];
             $order_ID[$bookcount]=$rows['order_ID'];
+            $orderpic[$bookcount]=$rows['image'];
+
+            $img_arr = mb_split(",",$orderpic[$bookcount]);
+
+            echo "<label>";
             echo "<div class='items ".$bookcount."'>";
             echo "<div class='i_left'>";
-            echo "<img src='大頭.jpg'>";
+            echo "<img src='book_images/".$order_ID[$bookcount]."/".$img_arr[0]."'>";
             echo "<form action='detail.php' method='post'>";
             echo "<input type='hidden' name='bookID' value='".$order_ID[$bookcount]."'>";
-            echo "<input class='items_b ".$bookcount."' name='btnsubmit' id = '".$bookcount."' type='submit' value='look'>";
+            echo "<input class='items_b ".$bookcount."' name='btnsubmit' id = '".$bookcount."' type='submit' value='look' style='display:none'>";
             echo "</form></div>";
             echo "<div class='introduce'><ul><li class='name'><span class='label'>名字:</span><span class='input' id='input_name'>".$bookname[$bookcount]."</span></li>";
             echo "<li class='address'><span class='label'>價格:</span><span class='input' id='input_address'>".$bookprice[$bookcount]."</span></li>";
             echo "<li class='condition'><span class='label'>狀態:</span><span class='input' id='input_condition'>".$booksell[$bookcount]."</span></li></ul></div></div>";
             $bookcount++;
+            echo "</label>";
           }
         }
         else {
@@ -123,17 +139,23 @@
             $bookprice[$bookcount]=$rows['price'];
             $booksell[$bookcount]=$rows['isSelled'];
             $order_ID[$bookcount]=$rows['order_ID'];
+            $orderpic[$bookcount]=$rows['image'];
+
+            $img_arr = mb_split(",",$orderpic[$bookcount]);
+
+            echo "<label>";
             echo "<div class='items ".$bookcount."'>";
             echo "<div class='i_left'>";
-            echo "<img src='大頭.jpg'>";
+            echo "<img src='book_images/".$order_ID[$bookcount]."/".$img_arr[0]."'>";
             echo "<form action='detail.php' method='post'>";
             echo "<input type='hidden' name='bookID' value='".$order_ID[$bookcount]."'>";
-            echo "<input class='items_b ".$bookcount."' name='btnsubmit' id = '".$bookcount."' type='submit' value='look'>";
+            echo "<input class='items_b ".$bookcount."' name='btnsubmit' id = '".$bookcount."' type='submit' value='look' style='display:none'>";
             echo "</form></div>";
             echo "<div class='introduce'><ul><li class='name'><span class='label'>名字:</span><span class='input' id='input_name'>".$bookname[$bookcount]."</span></li>";
             echo "<li class='address'><span class='label'>價格:</span><span class='input' id='input_address'>".$bookprice[$bookcount]."</span></li>";
             echo "<li class='condition'><span class='label'>狀態:</span><span class='input' id='input_condition'>".$booksell[$bookcount]."</span></li></ul></div></div>";
             $bookcount++;
+            echo "</label>";
           }
         }
         ?>

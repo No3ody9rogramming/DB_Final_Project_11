@@ -62,7 +62,7 @@ function toSignUp() {
       
     </div>
     <div class="user">
-      <div class="account" id="account">hi, willchiu</div>
+      <div class="account" id="account">hi, 訪客</div>
       <div class="account_b">
         <a href="signup.php">
           <input id = "signIn" type = "submit" value = "Sign Up">

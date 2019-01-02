@@ -20,25 +20,6 @@
   var address="你心中";
   var condition="販售中";
   var category_count=7;
-  $(document).ready(function(){
-    /*
-   $("#send").click(function(){
-      var dt = new Date();
-      var div= $(".c_bottom");
-      var text=$("#input_message_id").val();
-      $("#input_message_id").val("")
-      // console.log(text);
-      if(text!="")
-      {
-        var now = (dt.getMonth()+1)+"/"+dt.getDate()+" "+ dt.getHours() + ":" + dt.getMinutes() ;
-        $( ".c_bottom" ).append( "<div class='message' id='message0'>"+text+"</div><div class='time'>"+now+"</div>");
-        div[0].scrollTop=div[0].scrollHeight;
-      }
-    });*/
-//    $("#message").scroll(function() {
-//   $("#message").append('<div>Handler for .scroll() called.</div>');
-// });
-});
 
 function toSignUp() {
   if (logIn == false)
@@ -54,6 +35,9 @@ function toSignUp() {
       session_start();
       require_once "dbconnect.php"; //更嚴謹，需要確實加入此PHP  
       if (!isset($_POST["messageSubmit"]) && !isset($_POST["sendMessage"])) {
+        echo "<script>history.go(-1)</script>";
+      }
+      if (!isset($_SESSION["account"])) {
         echo "<script>history.go(-1)</script>";
       }
   ?>

@@ -484,7 +484,8 @@ html .main .center .c_center .c_top .introduce .introduce_b, body .main .center 
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: absolute;
+  bottom: 5vh;
   /*transform: translateY(-25%);*/
   /*border: solid 1px white;*/
   /*margin-top: 2%;*/
@@ -492,7 +493,7 @@ html .main .center .c_center .c_top .introduce .introduce_b, body .main .center 
 html .main .center .c_center .c_top .introduce  .introduce_b .ask, body .main .center .c_center .c_top .introduce .introduce_b .ask{
   -webkit-appearance:none;
   width:45%;
-  height:10%;
+  height:5vh;
 
   position: absolute;
   bottom:8%;
@@ -503,7 +504,7 @@ html .main .center .c_center .c_top .introduce  .introduce_b .ask, body .main .c
   color:#cec6c6;
 
 }
-html .main .center .c_center .c_top .introduce   .ask, body .main .center .c_center .c_top .introduce  .ask{
+html .main .center .c_center .c_top .introduce  .edit, body .main .center .c_center .c_top .introduce .edit{
   -webkit-appearance:none;
   width:35%;
   height:8%;
@@ -515,8 +516,8 @@ left:10%;
   border: solid 1px #5e5a5a;
   background-color: black;
   color:#cec6c6;
-
 }
+
 html .main .center .c_center .c_top .introduce   .delete, body .main .center .c_center .c_top .introduce  .delete{
   -webkit-appearance:none;
   width:35%;
@@ -529,7 +530,7 @@ html .main .center .c_center .c_top .introduce   .delete, body .main .center .c_
   border: solid 1px #5e5a5a;
   background-color: black;
   color:#cec6c6;
-
+z-index: 99999;
 
 }
 html .main .center .c_center .c_bottom, body .main .center .c_center .c_bottom {

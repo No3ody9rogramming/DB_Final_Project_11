@@ -193,20 +193,16 @@ function toSignUp() {
                     ?>
                   </select>
                 </ul>
-                <ul>
-                  <li>
+                
                     <input id="orderID" type="hidden" name="orderID">
-                    <input id="submitP" type="submit" name="submitP" class="ask" value="新增書籍"> 
-                  </li>
-                </ul>
+                    <input id="submitP" type="submit" name="submitP" class="edit" value="新增書籍"> 
+                  
               </form>
               <form action="" method="post">
-                <ul>
-                  <li>
+               
                     <input id="orderIDDelete" type="hidden" name="orderID">
-                    <input type="submit" name="deleteB" id="deleteB" style="display:none;" value="刪除此書">
-                  </li>
-                </ul>
+                    <input type="submit" name="deleteB" id="deleteB" class="delete" style="display:none;" value="刪除此書">
+                  
               </form>
               <div>
                 <?php

@@ -82,6 +82,8 @@
                 echo "$('#publisher').val('" . $result[0]['publisher'] . "');\n\t";
                 echo "$('#ISBN').val('" . $result[0]['ISBN'] . "');\n\t";
                 echo "$('#price').val('" . $result[0]['price'] . "');\n\t";
+                echo "$('#orderID').val('" . $_POST["orderID"] . "');\n\t";
+                echo "$('#isSelled').css('display', 'block');\n\t";
                 echo "$('#submitP').val('修改書籍');\n";
                 echo "});</script>";
 
@@ -132,6 +134,13 @@
                   <li class="creat_title">價格:</li>
                   <input id="price" name="price" type="number" class='creat'>
                 </ul>
+                <ul id="isSelled" style="display: none;">
+                  <li class="creat_title">是否賣出</li>
+                  <select class="drop_down category" name="isSelled">
+                    <option value="0">否</option>
+                    <option value="1">是</option>
+                  </select> 
+                </ul>
                 <ul>
                   <li>選擇圖片</li><input accept="image/jpg,image/png,image/jpeg,image/bmp" type="file" name="images[]" class="select" multiple>
                 </ul>
@@ -155,13 +164,14 @@
                   </select>
                 </ul>
                 <ul>
-                  <li><input id="submitP" type="submit" name="submitP" class="ask" value="新增書籍"></li>
+                  <li>
+                    <input id="orderID" type="hidden" name="orderID">
+                    <input id="submitP" type="submit" name="submitP" class="ask" value="新增書籍">                    
+                  </li>
                 </ul>
               </form>
               <div>
                 <?php
-
-                  //require_once "dbconnect.php";
 
                   function validUpload(){//出錯回傳false
                     $valid = true;
@@ -202,7 +212,9 @@
                       return false;
 
                     else {
-                      mkdir("./book_images/" . $ID);//先創建資料夾才能放東西
+                      if(!is_dir("./book_images/" . $ID)) {//資料夾存在就不創造
+                        mkdir("./book_images/" . $ID);//先創建資料夾才能放東西
+                      }
                       $fileCount = 0;
                       foreach($_FILES['images']['name'] as $imageName){
                         $newImageName = "./book_images/$ID/$imageName";
@@ -223,7 +235,7 @@
                   function newBook($db, $ID, &$AllImages){          
 
                     $name = $_POST["name"];
-                    $author = $_POST["publisher"];
+                    $author = $_POST["author"];
                     $ISBN = $_POST["ISBN"];
                     $publisher = $_POST["publisher"];
                     $price = $_POST["price"];
@@ -233,30 +245,51 @@
                     $stmt = $db->prepare($query);
                     $result = $stmt->execute(array($ID, $ISBN, $name, $author, $publisher, $AllImages, $price, $category, 0));
                   }
-                  
+
+                  function editBook($db, $ID, &$AllImages){
+
+                    $name = $_POST["name"];
+                    $author = $_POST["publisher"];
+                    $ISBN = $_POST["ISBN"];
+                    $publisher = $_POST["publisher"];
+                    $price = $_POST["price"];
+                    $category = $_POST["category"];
+                    $isSelled = $_POST["isSelled"];
+
+                    $ID = (int)$ID;
+
+                    $query = ("UPDATE bookOrder SET ISBN=?, name=?, author=?, publisher=?, image=?, price=?, category=?, isSelled=? WHERE order_ID=?;");
+                    $stmt = $db->prepare($query);
+                    $result = $stmt->execute(array($ISBN, $name, $author, $publisher, $AllImages, $price, $category, $isSelled, $ID));
+                  }
+
                   if(isset($_POST["submitP"])) {
 
                     $ID = 0;
+                    $AllImages = "";//準備拿來存全部的圖片名字
 
-                    if(isset($_POST['categorySubmit'])){
+                    if($_POST['submitP']=="修改書籍"){//左邊欄位已被點擊
                       $ID = $_POST['orderID'];//此處為網頁左邊的已上傳書籍orderID
+
+                      if(getImage($db, $ID, $AllImages)){ //get 到 image 後 加入bookOrder db
+                       editBook($db, $ID, $AllImages); //修改bookOrder
+                      }
                     }
-                    else {//拿新的Order_ID
+                    elseif($_POST['submitP']=="新增書籍") {//拿新的Order_ID
                       $query = ("SELECT max(order_ID) AS t FROM bookOrder;");
                       $stmt = $db->prepare($query);
                       $error = $stmt->execute();
                       $result = $stmt->fetchAll();
                       $ID = $result[0]['t'] + 1; //最大Order+1為新Order
-                    }
-
-                    $AllImages = "";//準備拿來存全部的圖片名字
-                    if(getImage($db, $ID, $AllImages)){ //get 到 image 後 加入bookOrder db
+                      if(getImage($db, $ID, $AllImages)){ //get 到 image 後 加入bookOrder db
                        newBook($db, $ID, $AllImages); //修改bookOrder
                        editMakes($db, $ID); //修改makes
+                      }
+                      else {
+                        echo "Invalid book!";
+                      }
                     }
-                    else {
-                      echo "Invalid book!";
-                    }
+
                   }
 
                 ?>

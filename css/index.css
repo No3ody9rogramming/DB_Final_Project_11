@@ -160,7 +160,7 @@ html .main .center .c_left .category_title, body .main .center .c_left .category
   background-color: #FF9901;
   
   width: 90%;
-  height: 9%;
+  /*height: 9%;*/
   margin:5px;
   text-align:center; 
   font-weight: bolder;
@@ -183,7 +183,7 @@ html .main .center .c_left .category_items, body .main .center .c_left .category
   text-overflow: ellipsis;
   border: 2px black double;
   width: 100%;
-  height: 5vh;
+  /*height: 5vh;*/
   margin:5px;
   text-align:left; 
   background-color: #747474;
@@ -267,15 +267,18 @@ html .main .center .c_center .c_bottom .items:hover, body .main .center .c_cente
 
 html .main .center .c_center .c_bottom .items .i_left, body .main .center .c_center .c_bottom .items .i_left{
   position: absolute;
-  margin:5px;
+  margin:5px 0px;
   width:35%;
   height:90%;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
   /*margin:2px;*/
 }
 html .main .center .c_center .c_bottom .items .i_left img, body .main .center .c_center .c_bottom .items .i_left img{
   /*margin:2px;*/
-  width:98%;
+  width:80%;
   height:80%;
   /*display: inline-block;*/
   border-radius: 3px;
@@ -287,6 +290,7 @@ html .main .center .c_center .c_bottom .items .i_left .items_b, body .main .cent
   transform: translateY(5px);
   width:90%;
   height:19%;
+
   display: flex;
   justify-content: center;
   text-align: center;
@@ -299,27 +303,31 @@ html .main .center .c_center .c_bottom .items .i_left .items_b, body .main .cent
 }
 html .main .center .c_center .c_bottom .items .introduce, body .main .center .c_center .c_bottom .items .introduce{
   position: absolute;
-  right:1px;
+  right:0px;
   width:63%;
-  height:96%;
-  padding: 6px;
+  height:100%;
+  /*padding-left: 5%;*/
+  /*margin-left: 5px;*/
+  /*padding: 6px;*/
 }
 html .main .center .c_center .c_bottom .items .introduce  ul, body .main .center .c_center .c_bottom .items .introduce ul{
+  position: absolute;
+  right:0;
   width: 90%;
-  height:80%;
-  margin:5px 5px 5px 5px;
+  height:70%;
+  /*margin:5px 5px 5px 5px;*/
   display: inline-block;
   /*background-color: ;*/
   /*border:white solid 1px;*/
   font-size: 15px;
   font-weight: bold;
-  padding: 0px;
-  
+  padding-left:6px;
+  border-left: 2px solid #313131;
 }
 html .main .center .c_center .c_bottom .items .introduce  ul li, body .main .center .c_center .c_bottom .items .introduce ul li{
   width: 90%;
   height:25%;
-  margin:4px 5px 3px 5px;
+  /*margin:4px 5px 3px 5px;*/
   display: inline-block;
   /*background-color: ;*/
   /*border:yellow solid 1px;*/

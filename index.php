@@ -31,7 +31,7 @@
   });
   
   $(".titlesquare").click(function() {
-    document.location.href = "main.php";
+    document.location.href = "index.php";
   });
 });
 
@@ -40,9 +40,9 @@
 <div class="main">
   <?php
       require_once "dbconnect.php";
-      session_cache_limiter(‘private’);
+      session_cache_limiter("private");
       session_start();
-      echo "<script>console.log('".$_SESSION["account"]."');</script>";
+      //echo "<script>console.log('".$_SESSION["account"]."');</script>";
   ?>
   <div class="top">
     <div class="title"> 
@@ -62,7 +62,7 @@
   </div>
   <div class="center">
     <div class="c_left">
-      <div class="category_title" id="category_title"><a href="main.php" style="text-decoration: none; color: black;">category</a></div>
+      <div class="category_title" id="category_title"><a href="index.php" style="text-decoration: none; color: black;">category</a></div>
       <div class="category_items">
         <!-- <input class="category_button" id = "category_button1" type = "button" value = "">
         <input class='category_button' id = "category_button2" type = "button" value = "">

@@ -38,7 +38,7 @@
   });
   
   $(".titlesquare").click(function() {
-    document.location.href = "main.php";
+    document.location.href = "index.php";
   });
   $(".cancel_button").click(function(){
     $(".adv").css("display","none");
@@ -120,7 +120,7 @@ function b_callback(i){
             $str = $rows['category'];
             $str1 = $rows['total'];
            
-            echo "<form action='main.php' method='post'><input type='hidden' name='category' value='".$str."'><input class='category_button' id='category_button".$categorycount."' type = 'submit' value='".$str."(".$str1.")' name='categorySubmit'></input></form>";
+            echo "<form action='index.php' method='post'><input type='hidden' name='category' value='".$str."'><input class='category_button' id='category_button".$categorycount."' type = 'submit' value='".$str."(".$str1.")' name='categorySubmit'></input></form>";
             $categorycount++;
           }
         ?>
@@ -234,7 +234,7 @@ function b_callback(i){
     echo "<script>console.log(111)</script>";
   }
   else {
-    echo "<script>document.location.href = 'main.php'</script>";
+    echo "<script>document.location.href = 'index.php'</script>";
     echo "<script>console.log('test')</script>";
   }
 ?>

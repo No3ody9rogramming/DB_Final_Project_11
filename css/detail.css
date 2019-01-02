@@ -288,6 +288,13 @@ html .main .center .c_left, body .main .center .c_left {
   border: 1px solid #313131;
   border-radius: 5px;
 }
+html .main .center .c_left a, body .main .center .c_left a{
+ /* background-color: #FF9901;*/
+  
+  text-decoration:none;
+  color:black;
+  
+}
 html .main .center .c_left .category_title, body .main .center .c_left .category_title{
  /* background-color: #FF9901;*/
   background-color: #FF9901;
@@ -457,7 +464,7 @@ html .main .center .c_center .c_top .introduce .creat, body .main .center .c_cen
   background: rgba(0,0,0,.9);
   padding: 5px 15px;
   font-size: 16px;
-  margin: 7px auto;
+  margin: -2px auto;
   color: #ccc;
   display: inline-block;
 }

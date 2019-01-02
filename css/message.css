@@ -269,32 +269,41 @@ html .main .center .c_center .c_bottom, body .main .center .c_center .c_bottom {
   /*border: solid 1px red;*/
 }
  html .main .center .c_center .input_message .message_form, body .main .center .c_center .input_message .message_form{
-  /*position: relative;*/
+  position: relative;
+  height:10vh;
   -webkit-appearance:none;
 }
 html .main .center .c_center .input_message .message_form .input_message_text, body .main .center .c_center .input_message .message_form .input_message_text{
   /*position: relative;*/
   -webkit-appearance:none;
   width: 80%;
-  height: 4vh;
-  margin-bottom:50%;
+  height: 4.6vh;
+  /*margin-bottom:50%;*/
   padding:0;
   display:inline-block;
   vertical-align:top;
   margin-left:0;
+  border: 1px solid #555;
   background-color:white;
+  position: absolute;
+  bottom:5vh;
   /*border: solid 1px red;*/
 }
 html .main .center .c_center .input_message .send, body .main .center .c_center .input_message .send{
   /*position: relative;*/
   -webkit-appearance:none;
   width: 17%;
-  /*height: 100%;*/
+  /*height: 5vh;*/
   padding:0;
+  /*margin-bottom:50%;*/
   font-size: 4vh;
   display:inline-block;
   vertical-align:top;
+  border: 1px solid #555;
   background-color:#FF9901;
+   position: absolute;
+  bottom:5vh;
+  right:0;
   /*border: solid 1px red;*/
 }
 html .main .center .c_center .c_bottom .message, body .main .center .c_center .c_bottom .message{

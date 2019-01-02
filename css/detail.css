@@ -296,7 +296,7 @@ html .main .center .c_left .category_title, body .main .center .c_left .category
   margin:5px;
   text-align:center; 
   font-weight: bolder;
-  font-size: 30px;
+  font-size: 40px;
   border-radius: 3px; 
 }
 html .main .center .c_left .category_items, body .main .center .c_left .category_items{
@@ -309,13 +309,15 @@ html .main .center .c_left .category_items, body .main .center .c_left .category
 .category_button{
   position: relative;
   font-family: song; 
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: -2px;　
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   border: 2px black double;
   width: 100%;
-  /*height: 5vh;*/
+  height: 37px;
   margin:5px;
   text-align:left; 
   background-color: #747474;

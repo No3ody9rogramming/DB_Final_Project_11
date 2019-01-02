@@ -70,6 +70,12 @@
           <div class="category_items">
             <?php
 
+              if(isset($_POST['deleteB'])){
+                $query = ("DELETE FROM bookOrder WHERE order_ID=?;");
+                $stmt = $db->prepare($query);
+                $stmt->execute([$_POST['orderID']]);
+              }
+
               if(isset($_POST['categorySubmit'])){
                 $query = "SELECT account_ID, order_ID, name, ISBN, author, publisher, user_name, phoneNum, city, school_name, department, isSelled, price, image, category FROM makes NATURAL JOIN bookOrder NATURAL JOIN users WHERE order_ID = '".$_POST["orderID"]."';";
                 $stmt = $db->prepare($query);
@@ -83,7 +89,9 @@
                 echo "$('#ISBN').val('" . $result[0]['ISBN'] . "');\n\t";
                 echo "$('#price').val('" . $result[0]['price'] . "');\n\t";
                 echo "$('#orderID').val('" . $_POST["orderID"] . "');\n\t";
+                echo "$('#orderIDDelete').val('" . $_POST["orderID"] . "');\n\t";
                 echo "$('#isSelled').css('display', 'block');\n\t";
+                echo "$('#deleteB').css('display', 'block');\n\t";
                 echo "$('#submitP').val('修改書籍');\n";
                 echo "});</script>";
 
@@ -100,7 +108,7 @@
                 $bookname = $rows['name'];
                 $orderID = $rows['order_ID'];
                
-                echo "<form action='' method='post'><input type='hidden' name='orderID' value='".$orderID."'><input class='category_button' id='category_button".$categorycount."' type = 'submit' value='".$bookname."' name='categorySubmit'></input></form>";
+                echo "<form action='' method='post'><input type='hidden' name='orderID' value='".$orderID."'><input class='category_button' id='category_button".$categorycount."' type = 'submit' value='".$bookname."' name='categorySubmit'></input></form>"; //此處的orderID是給categorySubmit的時候用
                 $categorycount++;
               }
             ?>
@@ -166,7 +174,15 @@
                 <ul>
                   <li>
                     <input id="orderID" type="hidden" name="orderID">
-                    <input id="submitP" type="submit" name="submitP" class="ask" value="新增書籍">                    
+                    <input id="submitP" type="submit" name="submitP" class="ask" value="新增書籍"> 
+                  </li>
+                </ul>
+              </form>
+              <form action="" method="post">
+                <ul>
+                  <li>
+                    <input id="orderIDDelete" type="hidden" name="orderID">
+                    <input type="submit" name="deleteB" id="deleteB" style="display:none;" value="刪除此書">
                   </li>
                 </ul>
               </form>

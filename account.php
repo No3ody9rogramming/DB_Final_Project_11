@@ -17,7 +17,7 @@
   var logIn = false;
  $(document).ready(function(){
   $(".titlename").click(function() {
-    document.location.href = "https://www.pornhub.com";
+    document.location.href = "index.php";
   });
   
   $(".titlesquare").click(function() {
@@ -215,8 +215,12 @@ function toSignUp() {
           </div>
         </div>
         <div class="c_right">
-          <button class="ad_b" type="button"><img src="大頭.jpg"></button>
-          <button class="ad_b" type="button"><img src=""></button>
+          <a href="https://jimmy1244.github.io/Solar_System_Website/">
+            <button  class="ad_b" type="button"><img src="./src/solar_system.png"></button>
+          </a>
+          <a href="https://hokuanyu.github.io/Web-Programming/">
+            <button class="ad_b" type="button"><img src="./src/tank.png"></button>
+          </a>
         </div>
       </div>
     </div>

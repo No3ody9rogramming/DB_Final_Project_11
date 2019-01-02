@@ -214,7 +214,7 @@
   var logIn = false;
  $(document).ready(function(){
   $(".titlename").click(function() {
-    document.location.href = "https://www.pornhub.com";
+    document.location.href = "index.php";
   });
   
   $(".titlesquare").click(function() {

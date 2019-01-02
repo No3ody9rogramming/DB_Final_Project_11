@@ -484,20 +484,52 @@ html .main .center .c_center .c_top .introduce .introduce_b, body .main .center 
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   /*transform: translateY(-25%);*/
   /*border: solid 1px white;*/
   /*margin-top: 2%;*/
 }
 html .main .center .c_center .c_top .introduce  .introduce_b .ask, body .main .center .c_center .c_top .introduce .introduce_b .ask{
+  -webkit-appearance:none;
   width:45%;
   height:10%;
 
   position: absolute;
   bottom:8%;
+
   border-radius: 5%;
   border: solid 1px #5e5a5a;
   background-color: black;
   color:#cec6c6;
+
+}
+html .main .center .c_center .c_top .introduce   .ask, body .main .center .c_center .c_top .introduce  .ask{
+  -webkit-appearance:none;
+  width:35%;
+  height:8%;
+
+  position: absolute;
+  bottom:8%;
+left:10%;
+  border-radius: 5%;
+  border: solid 1px #5e5a5a;
+  background-color: black;
+  color:#cec6c6;
+
+}
+html .main .center .c_center .c_top .introduce   .delete, body .main .center .c_center .c_top .introduce  .delete{
+  -webkit-appearance:none;
+  width:35%;
+  height:8%;
+
+  position: absolute;
+  bottom:8%;
+  left:50%;
+  border-radius: 5%;
+  border: solid 1px #5e5a5a;
+  background-color: black;
+  color:#cec6c6;
+
 
 }
 html .main .center .c_center .c_bottom, body .main .center .c_center .c_bottom {

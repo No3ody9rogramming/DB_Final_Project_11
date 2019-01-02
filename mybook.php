@@ -15,7 +15,7 @@
   <script type="text/javascript" src="js/slick.min.js"></script>
 
   <meta charset = "utf-8">
-  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <title></title>
 </head>
 <script type="text/javascript">
@@ -64,12 +64,27 @@
       </div>
       <div class="center">
         <div class="c_left">
-          <div class="category_title">新增</div>
+          <a href="mybook.php">
+            <div class="category_title">新增</div>
+          </a>
           <div class="category_items">
             <?php
 
               if(isset($_POST['categorySubmit'])){
-                echo "$";
+                $query = "SELECT account_ID, order_ID, name, ISBN, author, publisher, user_name, phoneNum, city, school_name, department, isSelled, price, image, category FROM makes NATURAL JOIN bookOrder NATURAL JOIN users WHERE order_ID = '".$_POST["orderID"]."';";
+                $stmt = $db->prepare($query);
+                $error = $stmt->execute();
+                $result = $stmt->fetchAll();
+
+                echo "<script>$(document).ready(function() {\n\t";
+                echo "$('#bookName').val('" . $result[0]['name'] . "');\n\t";
+                echo "$('#author').val('" . $result[0]['author'] . "');\n\t";
+                echo "$('#publisher').val('" . $result[0]['publisher'] . "');\n\t";
+                echo "$('#ISBN').val('" . $result[0]['ISBN'] . "');\n\t";
+                echo "$('#price').val('" . $result[0]['price'] . "');\n\t";
+                echo "$('#submitP').val('修改書籍');\n";
+                echo "});</script>";
+
               }
 
               $query = "SELECT account_ID, order_ID, name, ISBN, author, publisher, user_name, phoneNum, city, school_name, department, isSelled, price, image, category FROM makes NATURAL JOIN bookOrder NATURAL JOIN users WHERE account_ID = '".$_SESSION["account"]."';";
@@ -83,7 +98,7 @@
                 $bookname = $rows['name'];
                 $orderID = $rows['order_ID'];
                
-                echo "<form action='' method='post'><input type='hidden' name='category' value='".$orderID."'><input class='category_button' id='category_button".$categorycount."' type = 'submit' value='".$bookname."' name='categorySubmit'></input></form>";
+                echo "<form action='' method='post'><input type='hidden' name='orderID' value='".$orderID."'><input class='category_button' id='category_button".$categorycount."' type = 'submit' value='".$bookname."' name='categorySubmit'></input></form>";
                 $categorycount++;
               }
             ?>
@@ -99,23 +114,23 @@
               <form action="" method="post" enctype="multipart/form-data">
                 <ul>
                   <li class="creat_title bookname">書名：</li>
-                  <input name="name" type="text" class='creat'>
+                  <input id="bookName" name="name" type="text" class='creat'>
                 </ul>
                 <ul>
                   <li class="creat_title owner">作者：</li>
-                  <input name="author" type="text" class='creat'>
+                  <input id="author" name="author" type="text" class='creat'>
                 </ul>
                 <ul>
                   <li class="creat_title sell">出版：</li>
-                  <input name="publisher" type="text" class='creat'>
+                  <input id="publisher" name="publisher" type="text" class='creat'>
                 </ul>
                 <ul>
                   <li class="creat_title address">ISBN：</li>
-                  <input name="ISBN" type="text" class='creat'>
+                  <input id="ISBN" name="ISBN" type="text" class='creat'>
                 </ul>
                 <ul>
                   <li class="creat_title">價格:</li>
-                  <input name="price" type="number" class='creat'>
+                  <input id="price" name="price" type="number" class='creat'>
                 </ul>
                 <ul>
                   <li>選擇圖片</li><input accept="image/jpg,image/png,image/jpeg,image/bmp" type="file" name="images[]" class="select" multiple>
@@ -140,7 +155,7 @@
                   </select>
                 </ul>
                 <ul>
-                  <li><input type="submit" name="submitP" class="ask" value="新增書籍"></li>
+                  <li><input id="submitP" type="submit" name="submitP" class="ask" value="新增書籍"></li>
                 </ul>
               </form>
               <div>
@@ -205,7 +220,7 @@
                     $result = $stmt->execute(array($ID, $_SESSION['account']));
                   }
 
-                  function getBookInfo($db, $ID, &$AllImages){          
+                  function newBook($db, $ID, &$AllImages){          
 
                     $name = $_POST["name"];
                     $author = $_POST["publisher"];
@@ -218,19 +233,25 @@
                     $stmt = $db->prepare($query);
                     $result = $stmt->execute(array($ID, $ISBN, $name, $author, $publisher, $AllImages, $price, $category, 0));
                   }
-
+                  
                   if(isset($_POST["submitP"])) {
 
-                    //拿Order_ID
-                    $query = ("SELECT max(order_ID) AS t FROM bookOrder;");
-                    $stmt = $db->prepare($query);
-                    $error = $stmt->execute();
-                    $result = $stmt->fetchAll();
-                    $ID = $result[0]['t'] + 1; //最大Order+1為新Order
+                    $ID = 0;
+
+                    if(isset($_POST['categorySubmit'])){
+                      $ID = $_POST['orderID'];//此處為網頁左邊的已上傳書籍orderID
+                    }
+                    else {//拿新的Order_ID
+                      $query = ("SELECT max(order_ID) AS t FROM bookOrder;");
+                      $stmt = $db->prepare($query);
+                      $error = $stmt->execute();
+                      $result = $stmt->fetchAll();
+                      $ID = $result[0]['t'] + 1; //最大Order+1為新Order
+                    }
 
                     $AllImages = "";//準備拿來存全部的圖片名字
                     if(getImage($db, $ID, $AllImages)){ //get 到 image 後 加入bookOrder db
-                       getBookInfo($db, $ID, $AllImages); //修改bookOrder
+                       newBook($db, $ID, $AllImages); //修改bookOrder
                        editMakes($db, $ID); //修改makes
                     }
                     else {
@@ -242,7 +263,7 @@
               </div>
             </div> 
           </div>
-          <div class="c_bottom">
+          <div class="c_bottom" style="display:none;">
           </div>
         </div>
         <div class="c_right">

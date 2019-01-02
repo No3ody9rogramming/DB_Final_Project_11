@@ -25,6 +25,7 @@
     $( ".c_bottom" ).append( "<div class='items "+i+"''><div class='i_left'><img src="+img_src+"><form action='detail.php' method='post'><input type='hidden' name='bookID' value='1'><input class='items_b "+i+"' name='btnsubmit' id = "+i+" type = 'submit' value = 'look'></form></div><div class='introduce'><ul><li class='name'><span class='label'>名字:</span><span class='input' id='input_name'>"+name+"</span></li><li class='address'><span class='label'>地址:</span><span class='input' id='input_address'>"+address+"</span></li><li class='condition'><span class='label'>狀態:</span><span class='input' id='input_condition'>"+condition+"</span></li></ul></div></div>" );
      }
   });*/
+  var logIn = false;
  $(document).ready(function(){
   $(".titlename").click(function() {
     document.location.href = "https://www.pornhub.com";
@@ -34,6 +35,14 @@
     document.location.href = "index.php";
   });
 });
+
+function toSignUp() {
+  if (logIn == false)
+    document.location.href = "login.php";
+  else {
+    document.location.href = "logout.php";
+  }
+}
 
 </script>
 <body>
@@ -53,10 +62,14 @@
       
     </div>
     <div class="user">
-      <div class="account">hi, willchiu</div>
+      <div class="account" id="account">hi, willchiu</div>
       <div class="account_b">
-        <input id = "signIn" type = "button" value = "signIn">
-        <input id = "logIn" type = "button" value = "logIn">
+        <a href="signup.php">
+          <input id = "signIn" type = "submit" value = "Sign Up">
+        </a>
+        <a href="#" onclick="toSignUp()">
+          <input id = "logIn" type = "button" value = "Log In">
+        </a>
       </div> 
     </div>
   </div>
@@ -157,6 +170,12 @@
             $bookcount++;
             echo "</label>";
           }
+        }
+        if (isset($_SESSION["account"])) {
+          echo $_SESSION["account"];
+          echo "<script>logIn = true</script>";
+          echo "<script>document.getElementById('logIn').value = 'Log Out';</script>";
+          echo "<script>document.getElementById('signIn').style.display = 'none';</script>";
         }
         ?>
       </div>

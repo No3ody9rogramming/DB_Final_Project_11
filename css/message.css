@@ -3,6 +3,10 @@ img {
      height: auto;
      max-width: 100%;
  }
+ @font-face {
+  font-family: song;
+  src: url("cwfs.ttf");
+}
 @media only screen
 and (min-device-width : 812px) 
 and (max-device-width : 999999px)

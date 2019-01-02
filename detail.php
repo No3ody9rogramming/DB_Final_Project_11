@@ -40,6 +40,9 @@
   $(".titlesquare").click(function() {
     document.location.href = "main.php";
   });
+  $(".cancel_button").click(function(){
+    $(".adv").css("display","none");
+  })
 });
 
 function a_callback(i){
@@ -61,6 +64,22 @@ function b_callback(i){
       session_start();
       require_once "dbconnect.php"; //更嚴謹，需要確實加入此PHP  
   ?>
+  <div class="adv">
+    <div class="top">
+      <div class="title"> 
+          <div class="titlename">Book</div>
+          <div class="titlesquare">hub</div>
+    </div>
+    </div>
+    <div class="inner_adv">
+      <div class="button_adv">
+        <a href="https://www.facebook.com/profile.php?id=100001277294511"><img src="src/hung.jpg"></a>
+      </div>
+      <div class="cancel_adv">
+        <button type="button" class="cancel_button" >Continue to look</button>
+      </div>
+    </div>
+  </div>
   <div class="main">
   <div class="top">
     <div class="title"> 

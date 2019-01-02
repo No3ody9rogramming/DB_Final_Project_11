@@ -122,7 +122,7 @@ function toSignUp() {
         
       </div>
       <div class="input_message">
-        <form action="message.php" method="post">
+        <form action="message.php" method="post" class="message_form">
           <input type="text" id="input_message_id" class="input_message_text">
           <input type="button" id="send"  class="send" value="send">
         </form>
@@ -135,7 +135,7 @@ function toSignUp() {
       <button class="ad_b" type="button"><img src=""></button>
     </div>
   </div>
-  <div class="bottom"></div>
+  <!-- <div class="bottom"></div> -->
 </div>
 <?php
   if (isset($_SESSION["account"])) {

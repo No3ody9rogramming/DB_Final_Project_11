@@ -122,7 +122,7 @@
                 echo "<script>document.getElementsByName('user_name')[0].value='".$user_name."';</script>";
                 echo "<script>document.getElementsByName('city')[0].value='".$city."';</script>";
                 echo "<script>setSchoolName('".$city."','".$school_name."','".$department."');</script>";
-                
+
                 //echo "<script>console.log(".strcmp($_POST['password'], $_POST['password2']).");</script>";
                 if($passwordLength < 6 || $passwordLength > 12){
                   echo "<script>document.getElementById('password').className += ' wrongMessage';</script>";
@@ -141,12 +141,31 @@
                   $isWrong = 1;
                   $isPhoneNumWrong = 1;
                 }
+                echo "<script>console.log(".$isWrong.")</script>";
+                echo "<script>console.log('".$school_name."')</script>";
+                echo "<script>console.log('".$department."')</script>";
+                echo "<script>console.log('".$city."')</script>";
                 if ($isWrong == 0) {
-                  echo "<script>document.getElementsByName('phoneNum')[0].value='".$phoneNum."';</script>";
+                  $query = "UPDATE users SET password = ".$password.", phoneNum = ".$phoneNum.", school_name = '".$school_name."', city = '".$city."', department = '".$department."' WHERE account_ID = '".$account_ID."';";
+                  echo "<script>console.log(\"".$query."\")</script>";
+                  $stmt = $db->prepare($query);
+                  $error = $stmt->execute(); 
 
+                  echo "<script>document.getElementsByName('phoneNum')[0].value='".$phoneNum."';</script>";
+                }
+                else {
+                  if ($isPasswordWrong == 0) {
+                    echo "<script>document.getElementsByName('password')[0].value='".$password."';</script>";
+                  }
+                  if ($isPassword2Wrong == 0) {
+                    echo "<script>document.getElementsByName('password2')[0].value='".$password2."';</script>";
+                  }
+                  if ($isPhoneNumWrong == 0) {
+                    echo "<script>document.getElementsByName('phoneNum')[0].value='".$phoneNum."';</script>";
+                  }
                 }
               }
-              else if(isset($_SESSION["account"])) {      
+              else if(isset($_SESSION["account"])) {
                 $query = ("SELECT * FROM users WHERE account_ID = '".$_SESSION["account"]."';");
                 $stmt = $db->prepare($query);
                 $error = $stmt->execute(); 
@@ -168,9 +187,5 @@
       </div>
     </div>
     <div class="bottom"></div>
-    <?php
-
-              print_r($_SESSION);
-    ?>
   </body>
 </html>

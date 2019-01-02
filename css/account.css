@@ -1,7 +1,9 @@
 /** {
   border: solid 1px white;
 }*/
-
+.wrongMessage::placeholder {
+  color: red;
+}
 @font-face {
   font-family: song;
   src: url("cwfs.ttf");

@@ -11,136 +11,157 @@ html, body {
   width: 100%;
   height: 100%;
   background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
 }
 html .main, body .main {
   width: 100%;
   height: 100%;
+  position: relative;
   background-color: black;
 }
 html .main .top, body .main .top {
-  width: 100%;
-  height: 8vw;
   position: relative;
+  width: 100%;
+  height: 10%;
+  padding: 0px 0px 0px 0px;
   background-color: #1B1B1B;
-  border-bottom: 1px solid #333231;
+  border: 1px solid #313131;
+  display: flex;
+  /*justify-content: center;*/
+  align-items: center;
 }
 html .main .top .title, body .main .top .title {
-  position: relative;
-  width: 50%;
-  height: 7vw;
+  width: 40vw;
+  /*height:100%;*/
   margin: 0px 0px 0px 0px;
   display: inline-block;
   vertical-align:top;
-  background-color: #1B1B1B;
   color: white;
   font-weight: bold;
 }
-html .main .top .title ul, body .main .top .title ul {
-  list-style-type: none;
+.titlename:hover, .titlesquare:hover {
+  cursor: pointer;
 }
-html .main .top .title ul li .titlename, body .main .top .title ul li .titlename {
+html .main .top .title  .titlename, body .main .top .title  .titlename {
   display: inline-block;
-  margin-right: 1.5vw;
+  vertical-align:top;
+  width:auto;
+  margin-right: 9px;
   padding: 0px;
-  font-size: 3.5vw;
+  font-size: 45px;
 }
-html .main .top .title ul li .titlesquare, body .main .top .title ul li .titlesquare {
-  width: 7vw;
-  height: 90%;
+html .main .top .title  .titlesquare, body .main .top .title  .titlesquare {
+  width:auto;
+  height:auto;
   display: inline-block;
+  vertical-align:top;
   background-color: #FF9901;
-  font-size: 3.8vw;
+  font-size: 45px;
   border-radius: 1vw;
   color: black;
-  padding: 2px;
   margin-left: 0px;
   font-weight: bold;
   -webkit-transform: translateX(-15%);
           transform: translateX(-15%);
 }
-html .main .top .user, body .main .top .user {
-  position: relative;
-  /*top: 0px;
-  left: 70%;*/
-  width: 30%;
+html .main .top .none, body .main .top .none {
+  width: 5vw;
   height: 100%;
-  margin: 0 0px 0px 0px;
-  /*background-color: #1B1B1B;*/
+  margin: 0px 0px 0px 0px;
+  background-color: #1B1B1B;
   display: inline-block;
-  vertical-align: bottom;
+  vertical-align:top;
+  position: relative;
+}
+html .main .top .user, body .main .top .user {
+   position: absolute;
+  right:5%;
+  width: 15vw;
+  /*height: 100%;*/
+  margin: 0px 0px 0px 0px;
+  background-color: #1B1B1B;
+  
+  
 }
 html .main .top .user .account, body .main .top .user .account {
-  position: absolute;
-  top: 30px;
-  right: 7px;
-  width: 80px;
-  height: 20px;
+  width: auto;
+  /*height: 48%;*/
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #1B1B1B;
 }
-html .main .top .user #signIn, body .main .top .user #signIn {
-  position: absolute;
-  bottom: 5px;
-  right: 2%;
-  width: 10%;
-  height: 20%;
+html .main .top .user .account_b, body .main .top .user .account_b {
+  width: auto;
+  height: 48%;
+  color: white;
+  background-color: #1B1B1B;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+html .main .top .user #signIn, body .main .top .user #signIn {
+ 
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  vertical-align:bottom;
   border-color: rgba(0, 0, 0, 0);
   border-radius: 5px;
   background-color: #FF9901;
+  margin-right: 5px;
+
 }
 html .main .top .user #logIn, body .main .top .user #logIn {
-  position: absolute;
-  bottom: 5px;
-  right: 49px;
-  width: 10%;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  vertical-align:bottom;
   border-color: rgba(0, 0, 0, 0);
   border-radius: 5px;
   background-color: #FF9901;
 }
+hr{
+  /*height: 1px;*/
+  border-color:#72706e;
+}
+.marquee{
+  color:white;
+}
 html .main .center, body .main .center {
-  position: relative;
   width: 100%;
-  height: 80vh;
+  height: 80%;
+  
+  margin: 0px;
+  padding: 0px;
 }
 html .main .center .c_left, body .main .center .c_left {
-  width: 15%;
-  height: 100%;
+  background-color: #1B1B1B;
   position: relative;
   display: inline-block;
-  vertical-align: bottom;
-  /*border: solid 1px white;*/
-  background-color: #1B1B1B;
+  vertical-align:bottom;
+  transform: translateY(-20px);
+  width: 17%;
+  height: 95%;
+  border: 1px solid #313131;
+  border-radius: 5px;
 }
 html .main .center .c_left .category_title, body .main .center .c_left .category_title{
+ /* background-color: #FF9901;*/
   background-color: #FF9901;
-  position: absolute;
-  top:6px;
+  
   width: 90%;
-  height: 10%;
-  margin: 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /*height: 9%;*/
+  margin:5px;
+  text-align:center; 
   font-weight: bolder;
-  font-size: 30px;
+  font-size: 40px;
   border-radius: 3px; 
 }
 html .main .center .c_left .category_items, body .main .center .c_left .category_items{
-  position: absolute;
-  top:12%;
+  
   width: 90%;
   height: 90%;
   margin: 0px;
@@ -148,10 +169,18 @@ html .main .center .c_left .category_items, body .main .center .c_left .category
 }
 .category_button{
   position: relative;
+  font-family: song; 
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: -2px;　 
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border: 2px black double;
   width: 100%;
-  height: 50px;
-  margin:0px;
-  display: inline-block;
+  height: 37px;
+  margin:5px;
+  text-align:left; 
   background-color: #747474;
   border-radius: 5px;
   border-color: rgba(0, 0, 0, 0);

@@ -96,14 +96,16 @@ html .adv .inner_adv, body .inner_adv {
 html .adv .inner_adv .remove_button, body .inner_adv .remove_button{
   position: absolute;
   top: 7%;
-  left:100%;
-  transform: translateX(-255%);
-  width: 30px;
-  height: 30px;
+  right:5%;
+  /*transform: translateX(-255%);*/
+  width: auto;
+  height: auto;
+  /*padding:2%;*/
+  text-align:center
   border: 2px solid white;
   border-radius: 50%;
   font-weight: bolder;
-  z-index: 999;
+  z-index: 99999999999999999999;
 }
 html .adv .inner_adv .button_adv, body .inner_adv .button_adv{
   position: absolute;
@@ -714,6 +716,127 @@ and (max-width : 600px)
   body{
     background-color: black;
   }
+  html .adv, body .adv {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9999999999;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .adv .top, body .adv .top {
+  position: absolute;
+  top:0;
+  width: 100%;
+  height: 10%;
+  padding: 0px 0px 0px 0px;
+  background-color: #1B1B1B;
+  border: 1px solid #313131;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+html .adv .top .title, body .adv .top .title {
+  /*width: 40vw;*/
+
+  height:100%;
+  display: inline-block;
+  vertical-align:top;
+  color: white;
+  font-weight: bold;
+  -webkit-transform: translateY(5%);
+          transform: translateY(5%);
+}
+.titlename:hover, .titlesquare:hover {
+  cursor: pointer;
+}
+html .adv .top .title  .titlename, body .adv .top .title  .titlename {
+  display: inline-block;
+  vertical-align:top;
+  width:auto;
+  margin-right: 9px;
+  padding: 0px;
+  font-size: 47px;
+}
+html .adv .top .title  .titlesquare, body .adv .top .title  .titlesquare {
+  width:auto;
+  height:57px;
+  display: inline-block;
+  vertical-align:top;
+  background-color: #FF9901;
+  font-size: 45px;
+  letter-spacing: -4px;
+  border-radius: 1vw;
+  color: black;
+  margin-left: 0px;
+  padding-right: 5px;
+  font-weight: bold;
+  -webkit-transform: translateX(-15%);
+          transform: translateX(-15%);
+  
+}
+html .adv .inner_adv, body .inner_adv {
+  position: relative;
+  width: 100vw;
+  height: 80vw;
+  background-color: #1B1B1B;
+  border: 1px solid #313131;
+  
+}
+html .adv .inner_adv .remove_button, body .inner_adv .remove_button{
+  position: absolute;
+  top: 7%;
+  right:5%;
+  /*transform: translateX(-255%);*/
+  width: auto;
+  height: auto;
+  /*padding:2%;*/
+  text-align:center
+  border: 2px solid white;
+  border-radius: 50%;
+  font-weight: bolder;
+  z-index: 99999999999999999999;
+}
+html .adv .inner_adv .button_adv, body .inner_adv .button_adv{
+  position: absolute;
+  top: 10%;
+  left:50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 60%;
+  border: 1px solid #313131;
+  overflow: hidden;
+}
+html .adv .inner_adv .button_adv a img, body .inner_adv .button_adv a img{
+  width: 100%;
+  height: 50vw;
+  position: absolute;
+  /*top:-30%;*/
+}
+html .adv .inner_adv .cancel_adv, body .inner_adv .cancel_adv{
+  position: absolute;
+  bottom: 10%;
+  left:50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 10%;
+  border: 1px solid #313131;
+  border-radius: 5px;
+  overflow: hidden;
+
+}
+html .adv .inner_adv .cancel_adv .cancel_button, body .inner_adv .cancel_adv .cancel_button{
+  -webkit-appearance:none;
+  width:100%;
+  height:100%;
+  background-color: #1B1B1B;
+  border: 0;
+  color: #FF9901;
+  font-size:3vw;
+}
   html .main, body .main {
   width: 100%;
   height: 100%;

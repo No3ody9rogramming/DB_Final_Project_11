@@ -291,7 +291,8 @@ html .main .center .c_left, body .main .center .c_left {
 html .main .center .c_left .category_title, body .main .center .c_left .category_title{
  /* background-color: #FF9901;*/
   background-color: #FF9901;
-  
+  text-decoration:none;
+  color:black;
   width: 90%;
   /*height: 9%;*/
   margin:5px;

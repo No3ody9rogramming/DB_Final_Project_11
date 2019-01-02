@@ -12,6 +12,26 @@
   <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <title></title>
 </head>
+<script type="text/javascript">
+
+  var logIn = false;
+ $(document).ready(function(){
+  $(".titlename").click(function() {
+    document.location.href = "https://www.pornhub.com";
+  });
+  
+  $(".titlesquare").click(function() {
+    document.location.href = "index.php";
+  });
+});
+
+function toSignUp() {
+  if (logIn == false)
+    document.location.href = "login.php";
+  else {
+    document.location.href = "logout.php";
+  }
+}
 </script>
   <body>
     <?php
@@ -28,13 +48,17 @@
         <div class="none">
           
         </div>
-        <div class="user">
-          <div class="account">hi, willchiu</div>
-          <div class="account_b">
-            <input id = "signIn" type = "button" value = "signIn">
-            <input id = "logIn" type = "button" value = "logIn">
-          </div> 
-        </div>
+          <div class="user">
+            <div class="account" id="account">hi, 訪客</div>
+            <div class="account_b">
+              <a href="signup.php">
+                <input id = "signIn" type = "submit" value = "Sign Up">
+              </a>
+              <a href="#" onclick="toSignUp()">
+                <input id = "logIn" type = "button" value = "Log In">
+              </a>
+            </div> 
+          </div>
       </div>
       <div class="center">
         <div class="c_left">
@@ -164,6 +188,12 @@
                     echo "<script>document.getElementsByName('phoneNum')[0].value='".$phoneNum."';</script>";
                   }
                 }
+
+                
+                echo "<script>document.getElementById('account').innerHTML = 'hi, <a href=\"mybook.php\" style=\"color:#02e9ff\">".$_SESSION["account"]."</a><a href=\"account.php\">修改帳戶</a>'</script>";
+                echo "<script>logIn = true</script>";
+                echo "<script>document.getElementById('logIn').value = 'Log Out';</script>";
+                echo "<script>document.getElementById('signIn').style.display = 'none';</script>";
               }
               else if(isset($_SESSION["account"])) {
                 $query = ("SELECT * FROM users WHERE account_ID = '".$_SESSION["account"]."';");
@@ -176,6 +206,10 @@
 
                 echo "<script>document.getElementsByName('city')[0].value='".$result[0]["city"]."';</script>";
                 echo "<script>setSchoolName('".$result[0]["city"]."','".$result[0]["school_name"]."','".$result[0]["department"]."');</script>";
+                echo "<script>document.getElementById('account').innerHTML = 'hi, <a href=\"mybook.php\" style=\"color:#02e9ff\">".$_SESSION["account"]."</a><a href=\"account.php\">修改帳戶</a>'</script>";
+                echo "<script>logIn = true</script>";
+                echo "<script>document.getElementById('logIn').value = 'Log Out';</script>";
+                echo "<script>document.getElementById('signIn').style.display = 'none';</script>";
               }
             ?>
           </div>

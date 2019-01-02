@@ -21,6 +21,7 @@
   var condition="販售中";
   var category_count=7;
   $(document).ready(function(){
+    /*
    $("#send").click(function(){
       var dt = new Date();
       var div= $(".c_bottom");
@@ -33,7 +34,7 @@
         $( ".c_bottom" ).append( "<div class='message' id='message0'>"+text+"</div><div class='time'>"+now+"</div>");
         div[0].scrollTop=div[0].scrollHeight;
       }
-    });
+    });*/
 //    $("#message").scroll(function() {
 //   $("#message").append('<div>Handler for .scroll() called.</div>');
 // });
@@ -52,7 +53,7 @@ function toSignUp() {
       session_cache_limiter('private');
       session_start();
       require_once "dbconnect.php"; //更嚴謹，需要確實加入此PHP  
-      if (!isset($_POST["messageSubmit"])) {
+      if (!isset($_POST["messageSubmit"]) && !isset($_POST["sendMessage"])) {
         echo "<script>history.go(-1)</script>";
       }
   ?>
@@ -123,8 +124,9 @@ function toSignUp() {
       </div>
       <div class="input_message">
         <form action="message.php" method="post" class="message_form">
-          <input type="text" id="input_message_id" class="input_message_text">
-          <input type="button" id="send"  class="send" value="send">
+          <input type="hidden" id="bookID" name="bookID">
+          <input type="text" name="data" id="input_message_id" class="input_message_text">
+          <input type="submit" name="sendMessage" id="send"  class="send" value="send">
         </form>
       </div>
     </div>
@@ -138,13 +140,35 @@ function toSignUp() {
   <!-- <div class="bottom"></div> -->
 </div>
 <?php
+  print_r($_POST);
+  print_r($_SESSION);
+  if (isset($_POST["sendMessage"])) {
+    echo "<script>console.log('asdf');</script>";
+    $query = ("SELECT max(message_ID) AS t FROM message WHERE order_ID = ".$_POST["bookID"].";");
+    $stmt = $db->prepare($query);
+    $error = $stmt->execute();
+    $result = $stmt->fetchAll();
+    $maxi = $result[0]['t'];
+
+    if (is_null($maxi)) {
+      $maxi = 0;
+    }
+    else {
+      $maxi += 1;
+    }
+
+    $query = ("INSERT INTO message VALUES (".$_POST["bookID"].", ".$maxi.", '".$_SESSION["account"]."', '".$_POST["data"]."', CURRENT_TIMESTAMP);");;
+    print_r($query);
+    $stmt = $db->prepare($query);
+    $error = $stmt->execute();
+  }
   if (isset($_SESSION["account"])) {
     echo "<script>document.getElementById('account').innerHTML = 'hi, <a href=\"mybook.php\" style=\"color:#02e9ff\">".$_SESSION["account"]."</a>'</script>";
     echo "<script>logIn = true</script>";
     echo "<script>document.getElementById('logIn').value = 'Log Out';</script>";
     echo "<script>document.getElementById('signIn').style.display = 'none';</script>";
 
-    $query = ("SELECT name, price, ISBN FROM bookOrder WHERE order_ID = ".$_POST["bookID"].";");
+    $query = "SELECT name, price, ISBN FROM bookOrder WHERE order_ID = ".$_POST["bookID"].";";
     $stmt = $db->prepare($query);
     $error = $stmt->execute();
     $result = $stmt->fetchAll();
@@ -152,6 +176,28 @@ function toSignUp() {
     echo "<script>document.getElementById('bookName').innerHTML = \"".$result[0]["name"]."\"</script>";
     echo "<script>document.getElementById('price').innerHTML = \"".$result[0]["price"]."\"</script>";
     echo "<script>document.getElementById('ISBN').innerHTML = \"".$result[0]["ISBN"]."\"</script>";
+    echo "<script>document.getElementById('bookID').value = \"".$_POST["bookID"]."\"</script>";
+
+    $query = "SELECT account_ID, data, message_time FROM message WHERE order_ID = ".$_POST["bookID"]." ORDER BY message_ID;";
+    $stmt = $db->prepare($query);
+    $error = $stmt->execute();
+    $result = $stmt->fetchAll();
+
+    $query = "SELECT account_ID FROM makes WHERE order_ID = ".$_POST["bookID"].";";
+    $stmt = $db->prepare($query);
+    $error = $stmt->execute();
+    $seller = $stmt->fetchAll()[0]["account_ID"];
+
+    echo "<script>$(document).ready(function(){ </script>";
+    foreach ($result as $row) {
+      if (!strcmp($seller, $row["account_ID"])) {
+        echo "<script>$( \".c_bottom\" ).append( \"<div class='message'>".$row["account_ID"]."(賣家) : ".$row["data"]."</div><div class='time'>".$row["message_time"]."</div>\");</script>";
+      }
+      else {
+        echo "<script>$( \".c_bottom\" ).append( \"<div class='message'>".$row["account_ID"]." : ".$row["data"]."</div><div class='time'>".$row["message_time"]."</div>\");</script>";
+      }
+    }
+    echo "<script>});</script>";
   }
 ?>
 </body>

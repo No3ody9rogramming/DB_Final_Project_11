@@ -254,7 +254,7 @@ function toSignUp() {
     echo "<script>console.log('test')</script>";
   }
   if (isset($_SESSION["account"])) {
-    echo "<script>document.getElementById('account').innerHTML = 'hi, <a href=\"mybook.php\" style=\"color:#02e9ff\">".$_SESSION["account"]."</a>'</script>";
+    echo "<script>document.getElementById('account').innerHTML = 'hi, <a href=\"mybook.php\" style=\"color:#02e9ff\">".$_SESSION["account"]."</a><a href=\"account.php\">修改帳戶</a>'</script>";
     echo "<script>logIn = true</script>";
     echo "<script>document.getElementById('logIn').value = 'Log Out';</script>";
     echo "<script>document.getElementById('signIn').style.display = 'none';</script>";

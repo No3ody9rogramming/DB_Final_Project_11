@@ -15,6 +15,7 @@ and (min-width : 600px)
 and (max-device-width : 999999px)
 { 
 html, body {
+  -webkit-appearance:none;
   position: relative;
   width: 100%;
   height: 100%;
@@ -769,7 +770,7 @@ and (max-width : 1100px)
  }
 @media only screen 
 and (min-width : 0px) 
-and (max-width : 600px)
+and (max-width : 640px)
  { 
   body{
     background-color: black;
@@ -839,7 +840,7 @@ html .adv .top .title  .titlesquare, body .adv .top .title  .titlesquare {
 html .adv .inner_adv, body .inner_adv {
   position: relative;
   width: 100vw;
-  height: 80vw;
+  height: 100vw;
   background-color: #1B1B1B;
   border: 1px solid #313131;
   
@@ -870,9 +871,9 @@ html .adv .inner_adv .button_adv, body .inner_adv .button_adv{
 }
 html .adv .inner_adv .button_adv a img, body .inner_adv .button_adv a img{
   width: 100%;
-  height: 50vw;
+  height: 100vw;
   position: absolute;
-  /*top:-30%;*/
+  top:-30%;
 }
 html .adv .inner_adv .cancel_adv, body .inner_adv .cancel_adv{
   position: absolute;
@@ -959,7 +960,7 @@ html .main .top .none, body .main .top .none {
 html .main .top .user, body .main .top .user {
   position: absolute;
   top:0;
-  right:10px;
+  right:15%;
   width: 20vw;
   height: 100%;
   margin: 0px 0px 0px 0px;
@@ -1123,7 +1124,7 @@ html .main .center .c_center .c_top .book_img .book_slick .a, body .main .center
 html .main .center .c_center .c_top .book_img .book_slick img, body .main .center .c_center .c_top .book_img .book_slick img{
   position: relative;
   width: 50%;
-  height: 50%;
+  height: 80%;
   margin-top: 10%;
 
     /*border: solid 1px blue;*/
@@ -1189,7 +1190,7 @@ html .main .center .c_center .c_top .introduce .creat, body .main .center .c_cen
   margin: 7px auto;
   color: #ccc;
   display: inline-block;
-
+}
 html .main .center .c_center .c_top .introduce  .introduce_b, body .main .center .c_center .c_top .introduce  .introduce_b{
   transform: translateY(-10px);
   width: 40%;
@@ -1212,7 +1213,15 @@ html .main .center .c_center .c_bottom, body .main .center .c_center .c_bottom {
   width: 100%;
   height: 18%;
   padding:0;
+  background-color: black;
+
+  /*border: solid 1px red;*/
+}
+html .main .center .c_center .c_bottom .a, body .main .center .c_center .c_bottom .a{
+  /*position: relative;*/
   
+ 
+  background-color: black;
 
   /*border: solid 1px red;*/
 }
@@ -1259,7 +1268,7 @@ and (max-width : 460px)
 and (min-width : 0px) 
 and (max-width : 460px)
  { 
-  html .main .top .user, body .main .top .user {
+  /*html .main .top .user, body .main .top .user {
     display:none;
   position: absolute;
   top:0;
@@ -1309,5 +1318,5 @@ html .main .top .user #logIn, body .main .top .user #logIn {
   border-color: rgba(0, 0, 0, 0);
   border-radius: 5px;
   background-color: #FF9901;
-}
+}*/
   }

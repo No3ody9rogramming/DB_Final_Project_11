@@ -46,8 +46,8 @@
   });
   $(".remove_button").click(function(){
     $(".adv_img").attr("src","src/hung2.jpg");
-    $(".adv_img").css("transform","rotate(90deg)");
-    $(".adv_img").css("weight","100%");
+    // $(".adv_img").css("transform","rotate(90deg)");
+    // $(".adv_img").css("weight","100%");
     $(".cancel_button").text("喂！喂！請問你在按什麼")
   });
 });

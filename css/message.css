@@ -238,13 +238,13 @@ html .main .center .c_center .c_top .introduce ul li, body .main .center .c_cent
 html .main .center .c_center .c_top .introduce ul li .label, body .main .center .c_center .c_top .introduce ul li .label{
   height: 100%;
   display:inline-block;
-  font-size:2vw;
+  font-size:1.5vw;
   vertical-align:top;
   /*border: solid 1px white;*/
 }
 html .main .center .c_center .c_top .introduce ul li .value, body .main .center .c_center .c_top .introduce ul li .value{
   height: 100%;
-  font-size:2vw;
+  font-size:1.5vw;
   display:inline-block;
   vertical-align:top;
   /*border: solid 1px white;*/
@@ -527,7 +527,143 @@ html .main .center .c_right .ad_b img, body .main .center .c_right .ad_b img{
           animation-direction: alternate;
 }
 @media only screen 
-and (min-device-width : 375px) 
+and (min-device-width : 0px) 
+and (max-width : 1100px)
+ { 
+  html .main .center .c_right, body .main .center .c_right{
+  display: none;
+  }
+  html .main .center .c_center, body .main .center .c_center{
+  width:78%;
+  }
+ }
+ @media only screen 
+and (min-width : 0px) 
+and (max-width : 812px)
+ { 
+  html .main .top, body .main .top {
+  width: 100%;
+  height: 10vh;
+  position: relative;
+  background-color: #1B1B1B;
+  border: 1px solid #313131;
+}
+html .main .center, body .main .center {
+position: relative;
+width: 100%;
+height: 80vh;
+background-color: black;
+}
+html .main .top .title, body .main .top .title {
+  width: 240px;
+  height:100%;
+  margin-top:2px;
+  display: inline-block;
+  vertical-align:bottom;
+  color: white;
+  font-weight: bold;
+}
+.titlename:hover, .titlesquare:hover {
+  cursor: pointer;
+}
+html .main .top .title  .titlename, body .main .top .title  .titlename {
+  display: inline-block;
+  vertical-align:top;
+  width:auto;
+  margin-right: 9px;
+  padding: 0px;
+  font-size: 45px;
+}
+html .main .top .title  .titlesquare, body .main .top .title  .titlesquare {
+  width:auto;
+  height:auto;
+  display: inline-block;
+  vertical-align:top;
+  background-color: #FF9901;
+  font-size: 45px;
+  border-radius: 10px;
+  color: black;
+  margin-left: 0px;
+  font-weight: bold;
+  -webkit-transform: translateX(-15%);
+          transform: translateX(-15%);
+}
+html .main .top .none, body .main .top .none {
+  width: 0vw;
+  height: 100%;
+  margin: 0px 0px 0px 0px;
+  background-color: #1B1B1B;
+  display: inline-block;
+  vertical-align:top;
+  position: relative;
+}
+html .main .top .user, body .main .top .user {
+  position: absolute;
+  top:0;
+  right:15%;
+  width: 20vw;
+  height: 100%;
+  margin: 0px 0px 0px 0px;
+  
+  
+}
+html .main .top .user .account, body .main .top .user .account {
+  width: auto;
+  height: 48%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1B1B1B;
+}
+html .main .top .user .account_b, body .main .top .user .account_b {
+  width: auto;
+  height: 48%;
+  color: white;
+  background-color: #1B1B1B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .main .top .user #signIn, body .main .top .user #signIn {
+ 
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  vertical-align:bottom;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  background-color: #FF9901;
+  margin-right: 5px;
+
+}
+html .main .top .user #logIn, body .main .top .user #logIn {
+  
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  vertical-align:bottom;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  background-color: #FF9901;
+}
+html .main .center .c_center, body .main .center .c_center {
+  position: relative;
+  background-color: #0c0c0c;
+  /*border: solid 1px white;*/
+  
+  vertical-align: bottom;
+  width: 100%;
+  height: 100%;
+  /*background-color: yellow;*/
+}
+ html .main .center .c_left, body .main .center .c_left {
+  display:none;
+}
+
+}
+@media only screen 
+and (min-device-width : 0px) 
 and (max-device-width : 812px)
  { 
   html .main, body .main {
@@ -539,8 +675,8 @@ html .main .top, body .main .top {
   width: 100%;
   height: 10vh;
   position: relative;
-  /*background-color: green;*/
-  border-bottom: 1px solid #333231;
+  background-color: #1B1B1B;
+  border: 1px solid #313131;
 }
 html .main .center, body .main .center {
 position: relative;
@@ -549,75 +685,96 @@ height: 80vh;
 background-color: black;
 }
 html .main .top .title, body .main .top .title {
-  position: relative;
-  width: 80%;
-  height: 100%;
-  margin: 0px 0px 0px 0px;
+  width: 240px;
+  height:90%;
+  margin-top:2px;
   display: inline-block;
-  vertical-align:top;
-  background-color: #1B1B1B;
+  vertical-align:bottom;
   color: white;
   font-weight: bold;
 }
-html .main .top .title ul, body .main .top .title ul {
-  list-style-type: none;
+.titlename:hover, .titlesquare:hover {
+  cursor: pointer;
 }
-html .main .top .title ul li .titlename, body .main .top .title ul li .titlename {
+html .main .top .title  .titlename, body .main .top .title  .titlename {
   display: inline-block;
-  margin-left: 15vw;
-  margin-right: 2vw;
-  margin-top: 1vh;
+  vertical-align:top;
+  width:auto;
+  margin-right: 9px;
   padding: 0px;
-  font-size:35px;
+  font-size: 45px;
 }
-html .main .top .title ul li .titlesquare, body .main .top .title ul li .titlesquare {
-  width:13vw;
-  height: 90%;
+html .main .top .title  .titlesquare, body .main .top .title  .titlesquare {
+  width:auto;
+  height:auto;
   display: inline-block;
+  vertical-align:top;
   background-color: #FF9901;
-  font-size: 33px;
-  border-radius: 1vw;
+  font-size: 45px;
+  border-radius: 10px;
   color: black;
-  padding: 2px;
   margin-left: 0px;
   font-weight: bold;
   -webkit-transform: translateX(-15%);
           transform: translateX(-15%);
 }
-html .main .top .user, body .main .top .user {
-  position: relative;
-  width: 17%;
+html .main .top .none, body .main .top .none {
+  width: 0vw;
   height: 100%;
-  margin: 0 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
   background-color: #1B1B1B;
-  /*border: solid 1px white;*/
   display: inline-block;
-  vertical-align: top;
+  vertical-align:top;
+  position: relative;
+}
+html .main .top .user, body .main .top .user {
+  position: absolute;
+  top:0;
+  right:15%;
+  width: 20vw;
+  height: 100%;
+  margin: 0px 0px 0px 0px;
+  
+  
 }
 html .main .top .user .account, body .main .top .user .account {
-  
-  width: 20%;
-  height: 20px;
+  width: auto;
+  height: 48%;
   color: white;
-  /*display: flex;
+  display: flex;
   justify-content: center;
-  align-items: center;*/
+  align-items: center;
   background-color: #1B1B1B;
 }
+html .main .top .user .account_b, body .main .top .user .account_b {
+  width: auto;
+  height: 48%;
+  color: white;
+  background-color: #1B1B1B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 html .main .top .user #signIn, body .main .top .user #signIn {
-  
-  display: none;
+ 
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  vertical-align:bottom;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  background-color: #FF9901;
+  margin-right: 5px;
+
 }
 html .main .top .user #logIn, body .main .top .user #logIn {
-  -webkit-appearance:none;
-  margin-top: 50%;
-  width: 80%;
-  height: 20%;
-  /*display: flex;
-  justify-content: center;
-  align-items: center;*/
+  
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  vertical-align:bottom;
   border-color: rgba(0, 0, 0, 0);
-  /*border-radius: 1%;*/
+  border-radius: 5px;
   background-color: #FF9901;
 }
 html .main .center .c_left, body .main .center .c_left {
@@ -670,7 +827,7 @@ html .main .center .c_center, body .main .center .c_center {
   position: relative;
   background-color: #0c0c0c;
   /*border: solid 1px white;*/
-  display: inline-block;
+  
   vertical-align: bottom;
   width: 100%;
   height: 100%;
@@ -699,14 +856,14 @@ html .main .center .c_center .c_top .introduce ul, body .main .center .c_center 
           transform: translateX(-5%);
   width: 100%;
   /*height: 12%;*/
-  list-style-type: none;
+  /*list-style-type: none;*/
   color: #9e9c9c;
   
 }
 html .main .center .c_center .c_top .introduce ul li, body .main .center .c_center .c_top .introduce ul li {
   width: 85%;
   height: 100%;
-  font-size: 6vw;
+  font-size: 20px;
   /*border: solid 1px white;*/
   /*margin-top: 1%;*/
 }
@@ -735,62 +892,70 @@ html .main .center .c_center .c_bottom, body .main .center .c_center .c_bottom {
 }
   html .main .center .c_center .input_message, body .main .center .c_center .input_message{
   /*position: relative;*/
+  -webkit-appearance:none;
   width: 100%;
   height: 5%;
   margin-top:3%;
 /*   background-color:yellow; */
   /*border: solid 1px red;*/
 }
-html .main .center .c_center .input_message .input_message_text, body .main .center .c_center .input_message .input_message_text{
+ html .main .center .c_center .input_message .message_form, body .main .center .c_center .input_message .message_form{
+  position: relative;
+  height:10vh;
+  -webkit-appearance:none;
+}
+html .main .center .c_center .input_message .message_form .input_message_text, body .main .center .c_center .input_message .message_form .input_message_text{
   /*position: relative;*/
-  width: 80%;
-  height: 100%;
-  margin-bottom:50%;
+  -webkit-appearance:none;
+  width: 78%;
+  height: 4.6vh;
+  /*margin-bottom:50%;*/
   padding:0;
   display:inline-block;
   vertical-align:top;
-  margin-left:4px;
+  margin-left:0;
+  border: 1px solid #555;
   background-color:white;
+  position: absolute;
+  bottom:5vh;
   /*border: solid 1px red;*/
 }
 html .main .center .c_center .input_message .send, body .main .center .c_center .input_message .send{
   /*position: relative;*/
   -webkit-appearance:none;
-  width: 17%;
-  height: 100%;
+  width: 20%;
+  /*height: 5vh;*/
   padding:0;
+  /*margin-bottom:50%;*/
+  font-size: 4vh;
   display:inline-block;
   vertical-align:top;
+  border: 1px solid #555;
   background-color:#FF9901;
+   position: absolute;
+  bottom:5vh;
+  right:0;
   /*border: solid 1px red;*/
 }
 html .main .center .c_center .c_bottom .message, body .main .center .c_center .c_bottom .message{
   /*position: relative;*/
-  width: 74%;
+  width: 100%;
   /*height: 20px;*/
-  margin-top:2px;
+  margin-top:5px;
   padding:0;
-  display:inline-block;
-  vertical-align:top;
-  background-color: #1B1B1B;
-  color:white;
-  font-size: 25px;
-  word-break: break-all;
-  /*border: solid 1px red;*/
-}
-  html .main .center .c_center .c_bottom .time, body .main .center .c_center .c_bottom .time{
-  /*position: relative;*/
-  width: 25%;
-  height: 25px;
-  margin-top:2px;
-  margin-left: 1%;
-  padding-top:6px;
-  /*padding:0;*/
   display:inline-block;
   vertical-align:top;
   background-color: #1B1B1B;
   color:white;
   font-size: 18px;
+  word-break: break-all;
+  /*border: solid 1px red;*/
+}
+  html .main .center .c_center .c_bottom .time, body .main .center .c_center .c_bottom .time{
+  /*position: relative;*/
+  
+  display:none;
+  
   /*border: solid 1px red;*/
 }
 html .main .center .c_right, body .main .center .c_right {

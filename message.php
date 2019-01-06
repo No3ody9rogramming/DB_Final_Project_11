@@ -38,6 +38,13 @@ function toSignUp() {
     document.location.href = "logout.php";
   }
 }
+function toChangeAccount() {
+  if (logIn == false)
+    document.location.href = "signup.php";
+  else {
+    document.location.href = "account.php";
+  }
+}
 </script>
 <body>
   <?php
@@ -63,7 +70,7 @@ function toSignUp() {
     <div class="user">
       <div class="account" id="account">hi, willchiu</div>
       <div class="account_b">
-        <a href="signup.php">
+        <a  href="#" onclick="toChangeAccount()">
           <input id = "signIn" type = "submit" value = "Sign Up">
         </a>
         <a href="#" onclick="toSignUp()">
@@ -99,7 +106,7 @@ function toSignUp() {
         <div class="introduce">
           <ul>
             <li class="bookname"> 
-              <span class="label bookname_label">書名：</span>
+              <span class="label bookname_label">&nbsp;&nbsp;&nbsp;&nbsp;書名：</span>
               <span class="value bookname_value" id="bookName"></span>
             </li>
             <li class="condition">
@@ -161,10 +168,10 @@ function toSignUp() {
     $error = $stmt->execute();
   }
   if (isset($_SESSION["account"])) {
-    echo "<script>document.getElementById('account').innerHTML = 'hi, <a href=\"mybook.php\" style=\"color:#02e9ff\">".$_SESSION["account"]."</a><a href=\"account.php\">修改帳戶</a>'</script>";
+    echo "<script>document.getElementById('account').innerHTML = 'hi, <a href=\"mybook.php\" style=\"color:#02e9ff\">".$_SESSION["account"]."</a>'</script>";
     echo "<script>logIn = true</script>";
     echo "<script>document.getElementById('logIn').value = 'Log Out';</script>";
-    echo "<script>document.getElementById('signIn').style.display = 'none';</script>";
+     echo "<script>document.getElementById('signIn').value = '修改帳戶';</script>";
 
     $query = "SELECT name, price, ISBN FROM bookOrder WHERE order_ID = ".$_POST["bookID"].";";
     $stmt = $db->prepare($query);

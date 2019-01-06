@@ -295,22 +295,19 @@ html .main, body .main {
   background-color: black;
 }
 html .main .top, body .main .top {
-  position: relative;
-  top: 0px;
   width: 100%;
-  /*height: 13%;*/
-  padding: 0px 0px 0px 0px;
+ 
+  position: relative;
   background-color: #1B1B1B;
-  border-bottom: 1px solid #333231;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: 1px solid #313131;
 }
+
 html .main .top .title, body .main .top .title {
-  width: 240px;
+ width: 100%;
   height:100%;
-  margin-top:12px;
-  margin-left:5px;
+  margin-top:2px;
+  margin-left: 16%;
+  
   display: inline-block;
   vertical-align:bottom;
   color: white;
@@ -325,7 +322,7 @@ html .main .top .title  .titlename, body .main .top .title  .titlename {
   width:auto;
   margin-right: 9px;
   padding: 0px;
-  font-size: 45px;
+  font-size: 55px;
 }
 html .main .top .title  .titlesquare, body .main .top .title  .titlesquare {
   width:auto;
@@ -333,7 +330,7 @@ html .main .top .title  .titlesquare, body .main .top .title  .titlesquare {
   display: inline-block;
   vertical-align:top;
   background-color: #FF9901;
-  font-size: 45px;
+  font-size: 55px;
   border-radius: 10px;
   color: black;
   margin-left: 0px;
@@ -345,7 +342,7 @@ html .main .center, body .main .center {
   width: 100%;
   height: 75%;
   position: absolute;
-  top: 16%;
+  top: 15%;
 }
 html .main .center img, body .main .center img {
   position: absolute;
@@ -422,11 +419,11 @@ html .main .center .c_left .l_buttons .l_button .button, body .main .center .c_l
 html .main .center .c_center, body .main .center .c_center {
   position: absolute;
   margin: 0;
-  left: 10%;
+  left: 5%;
   display: inline-block;
   /*padding: 20px;*/
   background-color: #0c0c0c;
-  width: 80%;
+  width: 90%;
   height: 100%;
   background: rgba(0, 0, 0, 0);
 }
@@ -545,274 +542,7 @@ html .main .center .c_right, body .main .center .c_right {
 }
 }
 
-@media only screen
-and (min-device-width : 0px) 
-and (max-device-width : 730px)
-{ 
-  html, body {
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-html .main, body .main {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background-color: black;
-}
-html .main .top, body .main .top {
-  position: relative;
-  top: 0px;
-  width: 100%;
-  /*height: 13%;*/
-  padding: 0px 0px 0px 0px;
-  background-color: #1B1B1B;
-  border-bottom: 1px solid #333231;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-html .main .top .title, body .main .top .title {
-  width: 240px;
-  height:100%;
-  margin-top:12px;
-  margin-left:5px;
-  display: inline-block;
-  vertical-align:bottom;
-  color: white;
-  font-weight: bold;
-}
-.titlename:hover, .titlesquare:hover {
-  cursor: pointer;
-}
-html .main .top .title  .titlename, body .main .top .title  .titlename {
-  display: inline-block;
-  vertical-align:top;
-  width:auto;
-  margin-right: 9px;
-  padding: 0px;
-  font-size: 45px;
-}
-html .main .top .title  .titlesquare, body .main .top .title  .titlesquare {
-  width:auto;
-  height:auto;
-  display: inline-block;
-  vertical-align:top;
-  background-color: #FF9901;
-  font-size: 45px;
-  border-radius: 10px;
-  color: black;
-  margin-left: 0px;
-  font-weight: bold;
-  -webkit-transform: translateX(-15%);
-          transform: translateX(-15%);
-}
-html .main .center, body .main .center {
-  width: 100%;
-  height: 75%;
-  position: absolute;
-  top: 16%;
-}
-html .main .center img, body .main .center img {
-  position: absolute;
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  opacity:0.1;
-}
-html .main .center .c_left, body .main .center .c_left {
-  display: none;
-}
-html .main .center .c_left .l_message, body .main .center .c_left .l_message {
-  position: absolute;
-  top: 5%;
-  left: 10%;
-  width: 80%;
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 1%;
-  margin: 0px;
-  color: #e5e2de;
-  font-size: 40px;
-  font-weight: bolder;
-  letter-spacing: 3px;
-}
-html .main .center .c_left .l_buttons, body .main .center .c_left .l_buttons {
-  position: absolute;
-  top: 55%;
-  left: 8%;
-  margin: 0px;
-  padding-top: 10px;
-  width: 80%;
-  height: 40%;
-  color:white;
-}
-html .main .center .c_left .l_buttons .l_button, body .main .center .c_left .l_buttons .l_button {
-  position: relative;
-  width: 30%;
-  height: 15%;
-  margin-top: 5%;
-  margin-right: 15%;
-  display: inline-block;
-  /*border: solid 1px #333231;*/
-}
-html .main .center .c_left .l_buttons .l_button .b_img, body .main .center .c_left .l_buttons .l_button .b_img {
-  position: absolute;
-  width: 15%;
-  height: 90%;
-  /*padding-top: 100%; */
-  margin: 0px 5px 0px 0px;
-  display: inline-block;
-  opacity:1;
-  /*background: rgba(0, 0, 0, 0);*/
-  /*border: solid 1px #333231;*/
 
-}
-html .main .center .c_left .l_buttons .l_button .button, body .main .center .c_left .l_buttons .l_button .button {
-  position: absolute;
-  right: 0%;
-  width: 80%;
-  height: 90%;
-  margin: 0px 0px 0px 0px;
-  padding: 0px 0px 0px 5%;
-  display: inline-block;
-  font-size: 20px;
-  font-weight: bolder;
-  color: #e5e2de;
-  background: rgba(0, 0, 0, 0);
-  border-color: rgba(0, 0, 0, 0);
-  /*border: solid 1px #333231;*/
-}
-html .main .center .c_center, body .main .center .c_center {
-  position: absolute;
-  margin: 0;
-  left: 10%;
-  display: inline-block;
-  /*padding: 20px;*/
-  background-color: #0c0c0c;
-  width: 80%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0);
-}
-html .main .center .c_center .c_form, body .main .center .c_center .c_form {
- /* margin-top: 50px;*/
-  /*margin-left: 2%;*/
-  /*padding-left: 3%;*/
-  position: relative;
-  background-color: black;
-  border: solid 1px #333231;
-  border-radius: 5px;
-  width: 100%;
-  height: 100%;
-  color: white;
-}
-html .main .center .c_center .c_form h2, body .main .center .c_center .c_form h2 {
-  font-size: 34px;
-  color: #fff;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 3px;
-  margin-top: 10px;
-}
-html .main .center .c_center .c_form .subtitle, body .main .center .c_center .c_form .subtitle {
-  display: block;
-  text-align: center;
-  color: #898787;
-  font-size: 14px;
-}
-html .main .center .c_center .c_form form, body .main .center .c_center .c_form form {
- /* margin-top: 50px;*/
-  margin:0;
-  padding-left:5%;
-  position: absolute;
-  background-color: black;
-  /*border: solid 1px #333231;*/
-  width: 95%;
-  height: 80%;
-  color: white;
-}
-
-html .main .center .c_center .c_form form .creat, body .main .center .c_center .c_form form .creat {
- /* margin-top: 50px;*/
-  width: 90%;
-  box-sizing: border-box;
-  border-radius: 2px;
-  border: 1px solid #555;
-  background: rgba(0,0,0,.9);
-  padding: 5px 15px;
-  font-size: 16px;
-  margin: 7px auto;
-  color: #ccc;
-}
-html .main .center .c_center .c_form form .wrongMessage, body .main .center .c_center .c_form form .wrongMessage{
-    border: 2px solid red;
-}
-html .main .center .c_center .c_form form .submit, body .main .center .c_center .c_form form .submit {
-  font-family: Arial;
-  font-weight: bold;
-  width: 45%;
-  height: 10%;
-  border-radius: 10px;
-  background: #F90;
-  padding: 5px 15px;
-  border: 0px;
-  font-size: 22px;
-  margin: 40px auto;
-  color: #000;
-}
-html .main .center .c_center .c_form form .submit:hover, body .main .center .c_center .c_form form .submit {
-  cursor: pointer;
-}
-html .main .center .c_center .c_form form .or, body .main .center .c_center .c_form form .or {
-  font-family: Arial;
-  font-weight: bold;
-  border: 0px;
-  font-size: 22px;
-  margin: 40px auto;
-}
-.login {
-  font-family: Arial;
-  font-weight: bold;
-  font-size: 22px;
-  margin: 40px auto;
-  background: #000;
-  text-decoration: none;
-  color: #F90;
-}
-.login:hover {
-  text-decoration: underline;
-}
-html .main .center .c_center .c_form form .drop_down, body .main .center .c_center .c_form form .drop_down {
- /* margin-top: 50px;*/
-  width: 90%;
-  /*height: 8%;*/
-  box-sizing: border-box;
-  border-radius: 2px;
-  border: 1px solid #555;
-  background: rgba(0,0,0,.9);
-  padding: 5px 15px;
-  font-size: 16px;
-  /*margin: 2px auto;*/
-  color: #ccc;
-}
-html .main .center .c_center .c_form form .drop_down.city, body .main .center .c_center .c_form form .drop_down.city{
-  margin-top: 30px;
-}
-html .main .center .c_right, body .main .center .c_right {
-  display: inline-block;
-  position: absolute;
-  right: 0%;
-  background-color: #0c0c0c;
-  width:10%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0);
-}
-}
 @-webkit-keyframes ani {
   0% {
     left: 0;

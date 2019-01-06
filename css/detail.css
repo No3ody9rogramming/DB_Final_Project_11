@@ -1078,6 +1078,59 @@ html .main .center .c_center .c_top, body .main .center .c_center .c_top {
   /*background-color: white;*/
   
 }
+html .main .center .c_center .c_top.creat, body .main .center .c_center .c_top.creat {
+   -webkit-appearance:none;
+  position: relative;
+  width: 96%;
+  height: 90%;
+  border: 1px solid #313131;
+  margin:2%;
+  background-color: #1B1B1B;
+  border-radius: 2%;
+}
+html .main .center .c_center .c_top.creat .book_img, body .main .center .c_center .c_top.creat .book_img{
+  margin-top: 5%;
+  height: 30%;
+}
+html .main .center .c_center .c_top.creat .book_img img, body .main .center .c_center .c_top.creat .book_img img{
+  height: 90%;
+}
+html .main .center .c_center .c_top.creat .introduce, body .main .center .c_center .c_top.creat .introduce{
+  
+  height: 70%;
+  
+}
+html .main .center .c_center .c_top.creat .introduce ul .drop_down.category, body .main .center .c_center .c_top.creat .introduce ul .drop_down.category{
+  -webkit-appearance:none;
+  
+  border-radius: 5%;
+  border: solid 1px #5e5a5a;
+  background-color: black;
+  color:#cec6c6;
+  
+}
+html .main .center .c_center .c_top.creat .introduce ul .select, body .main .center .c_center .c_top.creat .introduce ul .select{
+   -webkit-appearance:none;
+ border-radius: 5%;
+  border: solid 1px #5e5a5a;
+  background-color: black;
+  color:#cec6c6;
+  margin-bottom: 5%;
+}
+html .main .center .c_center .c_top.creat .introduce  .edit, body .main .center .c_center .c_top.creat .introduce .edit{
+  -webkit-appearance:none;
+  width:35%;
+  height:8%;
+
+  position: absolute;
+  bottom:8%;
+right:10%;
+  border-radius: 5%;
+  border: solid 1px #5e5a5a;
+  background-color: black;
+  color:#cec6c6;
+}
+
 html .main .center .c_center .c_top .book_img , body .main .center .c_center .c_top .book_img  {
   position: relative;
   width: 100%;
@@ -1153,7 +1206,7 @@ html .main .center .c_center .c_top .introduce, body .main .center .c_center .c_
   height: 100%;
   padding: 0;
   margin-bottom: 0px;
-  
+  color: #9e9c9c;
 }
 
 html .main .center .c_center .c_top .introduce ul, body .main .center .c_center .c_top .introduce ul{
@@ -1170,6 +1223,7 @@ html .main .center .c_center .c_top .introduce ul, body .main .center .c_center 
 html .main .center .c_center .c_top .introduce ul li, body .main .center .c_center .c_top .introduce ul li {
   width: 85%;
   height: 100%;
+
   /*border: solid 1px white;*/
  
 }
@@ -1180,7 +1234,7 @@ html .main .center .c_center .c_top .introduce .creat_title, body .main .center 
 }
 html .main .center .c_center .c_top .introduce .creat, body .main .center .c_center .c_top .introduce .creat{
    -webkit-appearance:none;
-  width: 50%;
+  width: 80%;
   box-sizing: border-box;
   border-radius: 5px;
   border: 1px solid #555;
@@ -1192,16 +1246,22 @@ html .main .center .c_center .c_top .introduce .creat, body .main .center .c_cen
   display: inline-block;
 }
 html .main .center .c_center .c_top .introduce  .introduce_b, body .main .center .c_center .c_top .introduce  .introduce_b{
+  -webkit-appearance:none;
   transform: translateY(-10px);
   width: 40%;
   height: 5%;
+  position: absolute;
+  right:0;
   /*border: solid 1px white;*/
   /*margin-top: 2%;*/
 }
 html .main .center .c_center .c_top .introduce .introduce_b .ask,.buy, body .main .center .c_center .c_top .introduce  .introduce_b .ask,.buy{
+  -webkit-appearance:none;
   width:45%;
-  height:90%;
-  
+  height:5vh;
+
+  position: absolute;
+  bottom:8%;
   border-radius: 5%;
   border: solid 1px #5e5a5a;
   background-color: black;
@@ -1223,7 +1283,7 @@ html .main .center .c_center .c_bottom .a, body .main .center .c_center .c_botto
  
   background-color: black;
 
-  /*border: solid 1px red;*/
+  border: solid 0px ;
 }
 html .main .center .c_center .c_bottom img, body .main .center .c_center .c_bottom img{
   /*position: relative;*/
@@ -1232,7 +1292,7 @@ html .main .center .c_center .c_bottom img, body .main .center .c_center .c_bott
   margin-top: 5%;
   margin-left: 2.7vw;
   transform:translateX(-3vw);
-  /*border: solid 1px green;*/
+  border: solid 0px ;
   /*background-color:white;*/
 }
 html .main .center .c_right, body .main .center .c_right {

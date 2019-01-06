@@ -68,7 +68,13 @@ function toSignUp() {
     document.location.href = "logout.php";
   }
 }
-
+function toChangeAccount() {
+  if (logIn == false)
+    document.location.href = "signup.php";
+  else {
+    document.location.href = "account.php";
+  }
+}
 </script>
 <body>
   <form id="otherBookForm" action='detail.php' method='post'>
@@ -108,7 +114,7 @@ function toSignUp() {
     <div class="user">
       <div class="account" id="account">hi, willchiu</div>
       <div class="account_b">
-        <a href="signup.php">
+        <a  href="#" onclick="toChangeAccount()">
           <input id = "signIn" type = "submit" value = "Sign Up">
         </a>
         <a href="#" onclick="toSignUp()">
@@ -258,10 +264,10 @@ function toSignUp() {
     echo "<script>console.log('test')</script>";
   }
   if (isset($_SESSION["account"])) {
-    echo "<script>document.getElementById('account').innerHTML = 'hi, <a href=\"mybook.php\" style=\"color:#02e9ff\">".$_SESSION["account"]."</a><a href=\"account.php\">修改帳戶</a>'</script>";
+    echo "<script>document.getElementById('account').innerHTML = 'hi, <a href=\"mybook.php\" style=\"color:#02e9ff\">".$_SESSION["account"]."</a>'</script>";
     echo "<script>logIn = true</script>";
     echo "<script>document.getElementById('logIn').value = 'Log Out';</script>";
-    echo "<script>document.getElementById('signIn').style.display = 'none';</script>";
+    echo "<script>document.getElementById('signIn').value = '修改帳戶';</script>";
   }
 ?>
 </body>

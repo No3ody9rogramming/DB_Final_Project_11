@@ -65,7 +65,7 @@ function toChangeAccount() {
           <div class="titlesquare">hub</div>
     </div>
     <div class="none">
-      
+      <a href="https://drive.google.com/open?id=1wuplmq0UlpXyLu7whWPmEj0vKnzc3YuNQVWxKSFMlNU"><img style="width:50px;height:50px"src="src/GSlides.png"></a>
     </div>
     <div class="user">
       <div class="account" id="account">hi, 訪客</div>

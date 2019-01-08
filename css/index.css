@@ -39,7 +39,7 @@ html .main .top, body .main .top {
   align-items: center;
 }
 html .main .top .title, body .main .top .title {
-  width: 40vw;
+  width: 5vw;
   /*height:100%;*/
   margin: 0px 0px 0px 0px;
   display: inline-block;
@@ -73,14 +73,22 @@ html .main .top .title  .titlesquare, body .main .top .title  .titlesquare {
           transform: translateX(-15%);
 }
 html .main .top .none, body .main .top .none {
-  width: 5vw;
+  width: 2vw;
   height: 100%;
   margin: 0px 0px 0px 0px;
   background-color: #1B1B1B;
   display: inline-block;
   vertical-align:top;
-  position: relative;
 }
+/*html .main .top .none a, body .main .top .none a{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+html .main .top .none a img, body .main .top .none a img{
+  width:50px;
+  height:60px;
+}*/
 html .main .top .user, body .main .top .user {
    position: absolute;
   right:5%;
@@ -411,7 +419,7 @@ html .main .top, body .main .top {
   align-items: center;
 }
 html .main .top .title, body .main .top .title {
-  width: 40vw;
+  width: 30vw;
   /*height:100%;*/
   margin: 0px 0px 0px 0px;
   display: inline-block;
